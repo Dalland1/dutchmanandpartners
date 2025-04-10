@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "uE4AtxGenngj6L5CF",
+      });
+   })();
+</script>
+<script src="script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dutchman & Partners | Elite Sports Law Specialists</title>
@@ -855,6 +865,17 @@
         .read-more:hover i {
             transform: translateX(5px);
         }
+        /* emailjs */
+        function sendMail(){
+            let parms={
+                name : document.getElementById("name").value,
+                email : document.getElementById("email").value,
+                subject : document.getElementByid("subjec").value,
+                message : document.getElementById("message").value,
+                }
+            emailjs.send("service_rwq0m7h","template_ew55m5t",parms).then(alert("Email Sent"))
+
+        }
         
         /* Contact Section */
         .contact {
@@ -1561,7 +1582,7 @@
                         <input type="email" name="email" placeholder="Your Email" required>
                         <input type="text" name="subject" placeholder="Subject" required>
                         <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" onclick"sendMail()"=class="btn">Send Message</button>
                     </form>
                 </div>
             </div>
