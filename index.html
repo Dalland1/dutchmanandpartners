@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dutchman & Partners | Elite Sports Law Specialists</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        :root {
+            --primary: #0a0e23;
+            --secondary: #121a3a;
+            --accent: #1a2a6c;
+            --highlight: #00b4d8;
+            --highlight-hover: #00c8f0;
+            --text: #ffffff;
+            --text-secondary: #e2e2e2;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --border-radius: 12px;
+            --box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Arial', sans-serif;
+        }
+        
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        ::selection {
+            background: var(--highlight);
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(180deg, rgba(10,14,35,0.95) 0%, rgba(10,14,35,0.85) 100%);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 180, 216, 0.1);
+        }
+        
+        header.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+        
+        .logo-icon {
+            color: var(--highlight);
+            font-size: 2.2rem;
+        }
+        
+        .logo span {
+            color: var(--highlight);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--highlight);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--highlight);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            margin: 5px;
+            transition: var(--transition);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            background: linear-gradient(rgba(10, 14, 35, 0.7), rgba(18, 26, 58, 0.7)), 
+                          url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, transparent 0%, var(--primary) 70%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.3s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero h1 span {
+            color: var(--highlight);
+            position: relative;
+        }
+        
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: var(--highlight);
+            bottom: 5px;
+            left: 0;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--highlight);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+        }
+        
+        .btn:hover {
+            background: var(--highlight-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.5);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.6s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--highlight);
+            color: var(--highlight);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: var(--highlight);
+            color: var(--primary);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1;
+        }
+        
+        .scroll-down:hover {
+            color: var(--highlight);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Practice Areas */
+        .practice-areas {
+            padding: 8rem 0;
+            background-color: var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .practice-areas::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--highlight);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .area-card {
+            background: var(--primary);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .area-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 180, 216, 0.3);
+        }
+        
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--highlight);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .area-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .area-card i {
+            font-size: 2.5rem;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .area-card:hover i {
+            transform: scale(1.2);
+        }
+        
+        .area-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .area-card h3::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--highlight);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .area-card:hover h3::after {
+            width: 50px;
+        }
+        
+        .area-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .area-card .learn-more {
+            color: var(--highlight);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .area-card .learn-more i {
+            font-size: 1rem;
+            margin-left: 8px;
+            margin-bottom: 0;
+            transition: var(--transition);
+        }
+        
+        .area-card .learn-more:hover {
+            letter-spacing: 1px;
+        }
+        
+        .area-card .learn-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Featured Cases */
+        .featured-cases {
+            padding: 8rem 0;
+            background-color: var(--primary);
+            position: relative;
+        }
+        
+        .featured-cases::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .case-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 400px;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .case-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .case-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .case-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10,14,35,0.95));
+            padding: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .case-card:hover .case-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .case-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .case-overlay p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .case-overlay .btn {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 8rem 0;
+            background-color: var(--secondary);
+            position: relative;
+        }
+        
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        
+        .about-text h2 span {
+            color: var(--highlight);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            background: rgba(0, 180, 216, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0, 180, 216, 0.1);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 180, 216, 0.15);
+            border-color: rgba(0, 180, 216, 0.2);
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--highlight);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+        
+        .about-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 0;
+            background-color: var(--primary);
+            position: relative;
+        }
+        
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: var(--secondary);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            margin: 0 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .testimonial i {
+            font-size: 2.5rem;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 3px solid var(--highlight);
+        }
+        
+        .client-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .client-details p {
+            font-style: normal;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        
+        .slick-dots {
+            bottom: -50px;
+        }
+        
+        .slick-dots li button:before {
+            color: var(--text-secondary);
+            opacity: 0.5;
+            font-size: 10px;
+        }
+        
+        .slick-dots li.slick-active button:before {
+            color: var(--highlight);
+            opacity: 1;
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 8rem 0;
+            background-color: var(--secondary);
+            position: relative;
+        }
+        
+        .blog::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .blog-post {
+            background: var(--primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        
+        .post-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover .post-image img {
+            transform: scale(1.1);
+        }
+        
+        .post-content {
+            padding: 2rem;
+        }
+        
+        .post-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--highlight);
+            font-size: 0.9rem;
+        }
+        
+        .post-meta i {
+            margin-right: 5px;
+        }
+        
+        .post-meta span {
+            margin-right: 15px;
+        }
+        
+        .post-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover .post-content h3 {
+            color: var(--highlight);
+        }
+        
+        .post-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: var(--highlight);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .read-more i {
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            letter-spacing: 1px;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 8rem 0;
+            background-color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            margin-bottom: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--highlight);
+        }
+        
+        .contact-info p, .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .contact-info a:hover {
+            color: var(--highlight);
+            transform: translateX(5px);
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--highlight);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--highlight);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--highlight);
+            background: rgba(0, 180, 216, 0.05);
+            box-shadow: 0 0 10px rgba(0, 180, 216, 0.1);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--highlight);
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+        }
+        
+        .contact-form button:hover {
+            background: var(--highlight-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.5);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 5rem 0 2rem;
+            text-align: center;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-logo span {
+            color: var(--highlight);
+        }
+        
+        .footer-links {
+            display: flex;
+            list-style: none;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links li {
+            margin: 0 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--highlight);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--highlight);
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            width: 100%;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--highlight);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--highlight-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 35, 0.95);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        .modal-content {
+            background: var(--secondary);
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            position: relative;
+            box-shadow: var(--box-shadow);
+            animation: modalFadeIn 0.5s;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            color: var(--highlight);
+            transform: rotate(90deg);
+        }
+        
+        .modal h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--highlight);
+        }
+        
+        .modal p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 1000;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-text h2 {
+                font-size: 2.5rem;
+            }
+            
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.8rem;
+            }
+            
+            .section-title h2,
+            .about-text h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+            }
+            
+            .footer-links li {
+                margin: 0.8rem 0;
+            }
+            
+            .modal h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-gavel logo-icon"></i>
+                    Dutchman <span>&</span> Partners
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#practice-areas">Practice Areas</a></li>
+                    <li><a href="#featured-cases">Featured Cases</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Case Law</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Championing <span>Sports Law</span> Excellence</h1>
+            <p>Dutchman & Partners provides elite legal representation for athletes, teams, and sports organizations worldwide. Our strategic approach combines legal expertise with deep sports industry knowledge.</p>
+            <a href="#contact" class="btn">Schedule Consultation</a>
+        </div>
+        <a href="#practice-areas" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="practice-areas" class="practice-areas">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Specializations</h2>
+                <p>We offer comprehensive legal services tailored to the unique needs of the sports industry and its stakeholders.</p>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <i class="fas fa-running"></i>
+                    <h3>Athlete Representation</h3>
+                    <p>End-to-end legal support for professional athletes including contract negotiation, endorsement deals, and career management.</p>
+                    <a href="#" class="learn-more" onclick="openModal('athlete-modal')">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Team & League Advisory</h3>
+                    <p>Strategic counsel for sports teams and leagues on governance, regulatory compliance, and commercial agreements.</p>
+                    <a href="#" class="learn-more" onclick="openModal('team-modal')">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Sponsorship Agreements</h3>
+                    <p>Structuring and negotiating high-value sponsorship and partnership deals that protect your brand and interests.</p>
+                    <a href="#" class="learn-more" onclick="openModal('sponsorship-modal')">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Transfer Negotiations</h3>
+                    <p>Expert handling of player transfers, including contract terms, buyout clauses, and international regulations.</p>
+                    <a href="#" class="learn-more" onclick="openModal('transfer-modal')">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Dispute Resolution</h3>
+                    <p>Representation in arbitration, mediation, and litigation for sports-related disputes at all levels.</p>
+                    <a href="#" class="learn-more" onclick="openModal('dispute-modal')">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>International Sports Law</h3>
+                    <p>Navigating complex cross-border sports legal matters with our global network of experts.</p>
+                    <a href="#" class="learn-more" onclick="openModal('international-modal')">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cases -->
+    <section id="featured-cases" class="featured-cases">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Engagements</h2>
+                <p>Selected high-profile cases that demonstrate our expertise in sports law.</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1543357480-c60d400e2ef9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Football transfer case">
+                    <div class="case-overlay">
+                        <h3>Record Football Transfer</h3>
+                        <p></p>
+                        <a href="#" class="btn" onclick="openModal('transfer-case-modal')">Case Study</a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Olympic sponsorship case">
+                    <div class="case-overlay">
+                        <h3>Olympic Sponsorship Deal</h3>
+                        <p></p>
+                        <a href="#" class="btn" onclick="openModal('sponsorship-case-modal')">Case Study</a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sports arbitration case">
+                    <div class="case-overlay">
+                        <h3>CAS Arbitration Win</h3>
+                        <p></p>
+                        <a href="#" class="btn" onclick="openModal('cas-case-modal')">Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why <span>Dutchman & Partners</span></h2>
+                    <p>Dutchman & Partners brings unparalleled understanding of both the legal framework and the practical realities of professional sports.</p>
+                    <p>What sets us apart is our proactive approach - we don't just react to legal issues, we help clients anticipate and navigate the complex landscape of sports law to achieve their long-term objectives.</p>
+                    <p>Get In Touch<p>
+                    <p>legal@dutchmanandpartners.com<p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>20+</h3>
+                            <p>Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>$1M+</h3>
+                            <p>Deals Negotiated</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>6</h3>
+                            <p>Countries</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dutchman & Partners team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>CAS & FIFA Case Law</h2>
+                <p>Latest updates and analysis on Court of Arbitration for Sport (CAS) and FIFA decisions.</p>
+            </div>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="CAS Building">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar-alt"></i> June 15, 2025</span>
+                            <span><i class="far fa-folder"></i> CAS Decisions</span>
+                        </div>
+                        <h3>Recent CAS Ruling on Doping Cases</h3>
+                        <p>CAS Ruling on Kamila Valieva: A Landmark Decision in Anti-Doping Law.</p>
+                        <a href="#" class="read-more" onclick="openModal('cas-doping-modal')">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1543357480-c60d400e2ef9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Football Transfer">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 28, 2025</span>
+                            <span><i class="far fa-folder"></i> FIFA Regulations</span>
+                        </div>
+                        <h3>Recent CAS Ruling On A Contractual Dispute</h3>
+                        <p>In a recent and significant ruling, the Court of Arbitration for Sport (CAS) addressed a contractual dispute involving Jaka Čuber Potočnik, a professional footballer, and his former club, NK Olimpija Ljubljana. This case highlights the importance of contractual stability and the consequences of unilateral contract termination in professional sports.</p>
+                        <a href="#" class="read-more" onclick="openModal('fifa-transfer-modal')">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sports Arbitration">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span><i class="far fa-calendar-alt"></i> April 10, 2025</span>
+                            <span><i class="far fa-folder"></i> CAS Jurisprudence</span>
+                        </div>
+                        <h3>CAS on Contract Disputes</h3>
+                        <p>Examining the recent trend in CAS decisions regarding player-club contract disputes and termination clauses.</p>
+                        <a href="#" class="read-more" onclick="openModal('cas-contract-modal')">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about working with Dutchman & Partners.</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Dutchman & Partners handled my contract negotiations with exceptional skill. They secured terms that no other firm thought were possible, and their understanding of the sports industry is unmatched.</p>
+                    <div class="client-info">
+                        <div class="client-details">
+                            <h4>Anonymous</h4>
+                            <p>Professional Footballer from Georgia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <i class="fas fa-quote-left"></i>
+                    <p>When our team faced a complex regulatory issue with the league, Dutchman & Partners provided clear, strategic advice that resolved the matter favorably. Their sports law expertise is truly top-tier.</p>
+                    <div class="client-info">
+                        <div class="client-details">
+                            <h4>Anonymous/h4>
+                            <p>Team General Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Our sponsorship deal was stuck in negotiations for months until we brought in Dutchman & Partners. They quickly identified the sticking points and crafted a solution that worked for all parties.</p>
+                    <div class="client-info">
+                        
+                        <div class="client-details">
+                            <h4>Anonymous<h4>
+                            <p>Brand Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our sports law specialists for a consultation.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Our Office</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Tbilisi, 106, Georgia<br></p>
+                    <a href="mailto:legal@dutchmanandpartners.com"><i class="fas fa-envelope"></i> legal@dutchmanandpartners.com</a>
+                    
+                    <h3>Business Hours</h3>
+                    <p><i class="far fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p><i class="far fa-clock"></i> Saturday - Sunday: Closed</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" onsubmit="submitForm(event)">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-gavel"></i>
+                    Dutchman <span>&</span> Partners
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#practice-areas">Practice Areas</a></li>
+                    <li><a href="#featured-cases">Featured Cases</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Case Law</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" onclick="openModal('privacy-modal')">Privacy Policy</a></li>
+                </ul>
+                <div class="copyright">
+                    &copy; 2025 Dutchman & Partners. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Modals -->
+    <div id="athlete-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Athlete Representation</h2>
+            <p>Our athlete representation services provide comprehensive legal support throughout an athlete's career. We handle contract negotiations with teams and clubs, ensuring favorable terms regarding salary, bonuses, image rights, and performance incentives.</p>
+            <p>We specialize in endorsement and sponsorship agreements, protecting our clients' interests while maximizing their commercial opportunities. Our services extend to career management, including brand development, media relations, and post-career planning.</p>
+            <p>We also provide guidance on compliance with league regulations, anti-doping rules, and disciplinary matters. Our proactive approach helps athletes avoid legal pitfalls while focusing on their performance.</p>
+        </div>
+    </div>
+
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Team & League Advisory</h2>
+            <p>We provide strategic counsel to sports teams, franchises, and leagues on all aspects of their operations. Our services include governance structure development, regulatory compliance, and commercial agreement negotiation.</p>
+            <p>We assist with collective bargaining agreements, player contracts, and salary cap management. Our team has particular expertise in league expansion matters, franchise relocation issues, and broadcast rights negotiations.</p>
+            <p>We also handle disciplinary proceedings, anti-corruption compliance, and investigations. Our deep understanding of sports regulations helps clients navigate complex legal landscapes while achieving their business objectives.</p>
+        </div>
+    </div>
+
+    <div id="sponsorship-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Sponsorship Agreements</h2>
+            <p>Our sponsorship practice helps athletes, teams, and events secure and manage high-value sponsorship deals. We negotiate terms that protect our clients' interests while creating mutually beneficial partnerships.</p>
+            <p>We draft and review sponsorship agreements covering all key aspects: exclusivity, category rights, activation requirements, payment structures, and termination clauses. Our team has particular expertise in digital and social media sponsorship components.</p>
+            <p>We also handle sponsorship disputes, including breach of contract claims and ambush marketing issues. Our proactive approach helps clients maximize the value of their sponsorship assets while minimizing legal risks.</p>
+        </div>
+    </div>
+
+    <div id="transfer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Transfer Negotiations</h2>
+            <p>We specialize in the complex legal aspects of player transfers across all major sports. Our services include contract negotiation, buyout clause analysis, and compliance with transfer regulations.</p>
+            <p>We handle domestic and international transfers, navigating FIFA regulations, league rules, and immigration requirements. Our team has particular expertise in third-party ownership issues and solidarity payments.</p>
+            <p>We also represent clients in transfer disputes before FIFA's Dispute Resolution Chamber and the Court of Arbitration for Sport. Our strategic approach helps clients achieve favorable outcomes in even the most challenging transfer situations.</p>
+        </div>
+    </div>
+
+    <div id="dispute-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Dispute Resolution</h2>
+            <p>Our dispute resolution practice represents clients in all forms of sports-related disputes. We handle arbitration, mediation, and litigation matters before sports governing bodies, national courts, and international tribunals.</p>
+            <p>We specialize in contract disputes, disciplinary proceedings, doping cases, and eligibility issues. Our team has extensive experience with CAS (Court of Arbitration for Sport) procedures and FIFA dispute resolution mechanisms.</p>
+            <p>We take a strategic approach to dispute resolution, balancing legal arguments with practical considerations specific to the sports industry. Our goal is to achieve efficient, favorable outcomes that preserve our clients' reputations and careers.</p>
+        </div>
+    </div>
+
+    <div id="international-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>International Sports Law</h2>
+            <p>Our international sports law practice helps clients navigate the complex legal landscape of cross-border sports matters. We handle issues involving multiple jurisdictions, conflicting regulations, and international governing bodies.</p>
+            <p>We assist with international transfers, work permits, taxation issues, and cross-border endorsement deals. Our team has particular expertise in FIFA regulations, Olympic movement rules, and international anti-doping protocols.</p>
+            <p>With a global network of sports law specialists, we provide seamless representation for clients operating in multiple countries. Our understanding of cultural and legal differences helps clients avoid pitfalls in international sports transactions.</p>
+        </div>
+    </div>
+
+    <div id="transfer-case-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Record Football Transfer</h2>
+
+        </div>
+    </div>
+
+    <div id="sponsorship-case-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Olympic Sponsorship Deal</h2>
+           
+        </div>
+    </div>
+
+    <div id="cas-case-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>CAS Arbitration Win</h2>
+            
+        </div>
+    </div>
+
+    <div id="cas-doping-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>CAS Ruling on Kamila Valieva: A Landmark Decision in Anti-Doping Law</h2>
+            <p>In a case that has captured global attention, the Court of Arbitration for Sport (CAS) issued a groundbreaking ruling in January 2024 regarding Russian figure skater Kamila Valieva. This Decision not only reshaped the landscape of anti doping enforcement but also raised critical questions about accountability, fairness, and the treatment of young athletes in international sports.</p>
+            <p>The Background: What Happened?</p>
+            <p>Kamila Valieva, a rising star in figure skating, tested positive for trimetazidine (a banned substance) during the Russian Figure Skating Championships in December 2021. The positive test result came to light during the 2022 Winter Olympics in Beijing, where Valieva had already helped the Russian Olympic Committee (ROC) secure a gold medal in the team event. Despite the controversy, Valieva was permitted to continue competing at the Games while her case underwent review.<p>
+            <p>The World Anti-Doping Agency (WADA) later appealed to CAS after the Russian Anti-Doping Agency (RUSADA) concluded that Valieva bore "no fault or negligence". WADA sought stricter sanctions, arguing that the presence of a banned substance constituted a clear anti-doping violation.</p>
+            <p>The CAS Decision</p>
+            <p>In its January 2024 ruling, CAS found that Valieva had indeed committed an anti-doping violation. The court imposed a four-year suspension retroactive to December 25, 2021 - the date of her positive test. Additionally, all of Valieva's competetive results since that date were disqualified. This included her perofrmance at the Beijing Olympics, which ultimately affected medal standings for several teams.</p>    
+            <p>Key Legal Takeaways</p>
+            <p>This ruling is significant for several reasons:</p>
+            <p>Strict Liability in Anti-Doping Cases</p>
+            <p>CAS reaffirmed the principle of strict liability in anti-doping law. The presence of trimetazidine in Valieva's system was sufficient to establish a violation, regardless of intent or circumstances.</p>
+            <p>Minors and Accountability<p>
+            <p>At the time of her ivolation, Valieva was only 15 years old and clasified as a "Protected Person" under WADA rules. While her age was considered during deliberations, CAS emphasized that being a minor does not exempt an athlete from responsibility. This decision underscores the importance of holding athletes accountable while also scrutinizing their entourages.</p>
+            <p>Impact on Athlete Entourages</p>
+            <p>The case highlighted concerns about potential involvement by coaches, trainers, and other members of Valieva's support team. WADA and other organizations have since called for stricter measures to hold entourages accountable for doping violations involving minors.</p>
+            <p>Why This Case Matters</p>
+            <p>The Valieva ruling sends a powerful message about the importance of integrity in sports. It reinforces that anti-doping rules apply equally to all athletes, regardless of age or status. At the same time, it raises ethical questions about how young athletes are managed and protected within competitive environments.<p>
+            <p>For legal professionals and sports organizations alike, this case serves as a reminder of the evolving complexities in anti-doping law. It also underscores the need for robust legal frameworks to address emerging challenges—particularly when minors are involved.</p>
+            <p> The Broader Impact</p>
+            <p>Valieva's suspension runs until December 2025, effectively sidelining her from competition during what could have been pivotal years in her career. Beyond individual consequences, this ruling reshaped medal standings from major events like the Beijing Olympics and European Championships. It also reignited debates about doping enforcement and athlete welfare on an international scale.</p>
+            <p>Looking Ahead</p>
+            <p>As anti-doping authorities continue to refine their policies, this case will likely serve as a benchmark for future decisions involving young athletes and their entourages. It also underscores the importance of legal advocacy in navigating complex disputes at the intersection of sports and law.<p>
+            <p>At Dutchman & Partners, we specialize in sports law and understand how high-stakes cases like this can impact athletes' careers and reputations. Whether you're an athlete seeking representation or an organization navigating compliance issues, our team is here to guide you through every step with expertise and dedication.</p>
+            <p>Need legal advice on sports law or anti-doping disputes? Contact us today for a consultation.</p>
+                </p>
+        </div>
+    </div>
+
+    <div id="fifa-transfer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Recent Landmark Case: Jaka Čuber Potočnik vs. NK Olimpija Ljubljana</h2>
+            <p>In a recent and significant ruling, the Court of Arbitration for Sport (CAS) addressed a contractual dispute involving Jaka Čuber Potočnik, a professional footballer, and his former club, NK Olimpija Ljubljana. This case highlights the importance of contractual stability and the consequences of unilateral contract termination in professional sports.</p>
+            <p>Background of The Case</p>
+            <p>Jaka Čuber Potočnik left NK Olimpija Ljubljana without just cause, prompting the club to seek compensation for breach of contract. The Dispute Resolution Chamber of the FIFA Football Tribunal initially ruled in favor of Olimpija, ordering Potočnik to pay €51,750. Both Potočnik and his new club, FC Köln, appealed this decision to CAS.<p>
+            <p>CAS Decision</p>
+            <p>In its ruling, CAS upheld the decision that Potočnik had committed a serious breach by unilaterally terminating his contract without just cause. CAS increased the compensation to €60,000, finding a middle ground between Olimpija's request and FIFA's original decision. Additionally, Potočnik was sanctioned with a four-month period of ineligibility, and FC Köln was held jointly responsible for the compensation. FC Köln was also prohibited from registering new players for two consecutive registration periods due to its role in inducing the breach of contract.<p>
+            <p>Key Legal Takeaways<p>
+            <p>Contractual Stability: CAS reinforced the principle that contracts cannot be unilaterally terminated without just cause or fair compensation, emphasizing the importance of contractual stability in professional sports.<p>
+            <p>Fair Compensation: The ruling underscored that termination of a contract must be accompanied by fair compensation, often referred to as a transfer fee, which exceeds the payment for terminating the existing contract to sign a new one with another club.<p>
+            <p>Club Responsibility: CAS highlighted FC Köln's lack of due diligence in its dealings with Potočnik's agent, stressing that clubs must avoid inducing breaches of contract, which can lead to significant sporting sanctions.<p>
+            <p>Significance Of The Case</p>
+            <p>This decision sets a precedent for contractual disputes in sports, particularly in football. It reinforces the need for clubs and players to respect contractual obligations and ensures that breaches are met with appropriate sanctions. The ruling also underscores CAS's role in maintaining fairness and integrity in sports by upholding the principles of contractual stability and fair compensation.<p>
+            <p>Impact on Sports Law<p>
+            <p>The case demonstrates how CAS operates as a critical arbiter in resolving complex contractual disputes, ensuring that decisions align with international sports regulations while respecting legal principles. It highlights the importance of understanding and adhering to contractual obligations in professional sports, where breaches can have significant financial and reputational consequences.<p>
+            <p>At Dutchman & Partners we specialize in sports law and are equipped to guide you through the intricacies of contractual disputes and CAS arbitration. Whether you’re an athlete, club, or sponsor, our team is here to provide expert support in navigating the complex legal landscape of sports.<p>
+            <p>Need legal advice on sports law or CAS arbitration? Contact us today for a consultation.</p>
+            
+        </div>
+    </div>
+
+    <div id="cas-contract-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>CAS on Contract Disputes</h2>
+            
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>Dutchman & Partners is committed to protecting the privacy and confidentiality of our clients' information. This policy outlines how we collect, use, and safeguard personal data in accordance with applicable laws and professional obligations.</p>
+            <p>We collect information necessary to provide legal services, including contact details, case-related information, and financial data for billing purposes. This information is used solely for the purpose of representing our clients and will not be disclosed without consent except as required by law.</p>
+            <p>We implement robust security measures to protect client information, including encryption, access controls, and secure storage systems. All staff members are trained in confidentiality obligations and data protection practices.</p>
+            <p>Clients have the right to access their personal data, request corrections, and in certain circumstances, request deletion of their information. Any such requests should be directed to our Data Protection Officer at privacy@dutchmanandpartners.com.</p>
+            <p>This policy may be updated periodically to reflect changes in law or our practices. The current version is always available on our website and was last updated on January 1, 2025.</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content" style="text-align: center;">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <i class="fas fa-check-circle" style="font-size: 5rem; color: var(--highlight); margin-bottom: 2rem;"></i>
+            <h2>Thank You!</h2>
+            <p>Your message has been successfully sent. Our team will get back to you within 24 hours.</p>
+            <button class="btn" onclick="closeModal()" style="margin-top: 2rem;">Close</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            if (window.scrollY > 500) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to top button
+        document.querySelector('.back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Testimonial slider
+        $(document).ready(function(){
+            $('.testimonial-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                arrows: false
+            });
+        });
+        
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside content
+        window.addEventListener('click', (e) => {
+            document.querySelectorAll('.modal').forEach(modal => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Form submission
+        function submitForm(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For this example, we'll just show a success message
+            document.getElementById('contactForm').reset();
+            closeModal();
+            openModal('success-modal');
+        }
+        
+        // Initialize animations when elements come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.section-title, .area-card, .case-card, .stat-item, .blog-post');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.area-card, .case-card, .stat-item, .blog-post').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

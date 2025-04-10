@@ -1,0 +1,125 @@
+:root {
+    --primary: #0a0e23;
+    --secondary: #121a3a;
+    --highlight: #00b4d8;
+    --text: #ffffff;
+    --text-secondary: #e2e2e2;
+    --transition: all 0.4s ease-in-out;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: var(--primary);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: var(--secondary);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--highlight);
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(10, 14, 35, 0.7), rgba(18, 26, 58, 0.7)), 
+                url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero .btn {
+    background: var(--highlight);
+    color: var(--primary);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.hero .btn:hover {
+    background: var(--text);
+    color: var(--highlight);
+}
+
+.contact {
+    background: var(--secondary);
+    padding: 4rem 0;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+.contact-form button {
+    background: var(--highlight);
+    color: var(--primary);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contact-form button:hover {
+    background: var(--text);
+    color: var(--highlight);
+}
+
+footer {
+    background: var(--primary);
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-secondary);
+}
