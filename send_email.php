@@ -1,31 +1,10 @@
 <?php
-header('Content-Type: application/json');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Validate reCAPTCHA first
-$recaptcha_secret = 'YOUR_RECAPTCHA_SECRET';
-$recaptcha_response = $_POST['g-recaptcha-response'];
-
-$recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-$recaptcha_data = [
-    'secret' => $recaptcha_secret,
-    'response' => $recaptcha_response
-];
-
-$recaptcha_options = [
-    'http' => [
-        'method' => 'POST',
-        'content' => http_build_query($recaptcha_data)
-    ]
-];
-
-$recaptcha_context = stream_context_create($recaptcha_options);
-$recaptcha_result = json_decode(file_get_contents($recaptcha_url, false, $recaptcha_context));
-
-if (!$recaptcha_result->success) {
-    http_response_code(400);
-    echo json_encode(['message' => 'Please complete the reCAPTCHA verification.']);
-    exit;
-}
+require 'path/to/PHPMailer/src/Exception.php';
+require 'path/to/PHPMailer/src/PHPMailer.php';
+require 'path/to/PHPMailer/src/SMTP.php';
 
 // Process form data
 $name = strip_tags(trim($_POST['name']));
@@ -40,44 +19,32 @@ if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL
     exit;
 }
 
-// Email configuration
-$to = 'legal@dutchmanandpartners.com';
-$email_subject = "New Contact Form Submission: $subject";
-$email_body = "You have received a new message from your website contact form.\n\n".
-              "Name: $name\n".
-              "Email: $email\n".
-              "Subject: $subject\n\n".
-              "Message:\n$message\n";
+$mail = new PHPMailer(true);
+try {
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host       = 'mail.yourdomain.com'; // Your SMTP server
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'noreply@yourdomain.com'; // SMTP username
+    $mail->Password   = 'yourpassword'; // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
 
-$headers = "From: noreply@dutchmanandpartners.com\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$headers .= "X-Mailer: PHP/".phpversion();
+    // Recipients
+    $mail->setFrom('noreply@yourdomain.com', 'Website Contact Form');
+    $mail->addAddress('legal@dutchmanandpartners.com');
+    $mail->addReplyTo($email, $name);
 
-// Send email using SMTP (more reliable than mail())
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
+    // Content
+    $mail->isHTML(false);
+    $mail->Subject = "New Contact Form Submission: $subject";
+    $mail->Body    = "Name: $name\nEmail: $email\nSubject: $subject\n\nMessage:\n$message";
 
-$mail = new PHPMailer\PHPMailer\PHPMailer();
-$mail->isSMTP();
-$mail->Host = 'mail.dutchmanandpartners.com';
-$mail->SMTPAuth = true;
-$mail->Username = 'noreply@dutchmanandpartners.com';
-$mail->Password = 'YOUR_SMTP_PASSWORD';
-$mail->SMTPSecure = 'tls';
-$mail->Port = 587;
-
-$mail->setFrom('noreply@dutchmanandpartners.com', 'Website Contact Form');
-$mail->addAddress('legal@dutchmanandpartners.com');
-$mail->addReplyTo($email, $name);
-$mail->Subject = $email_subject;
-$mail->Body = $email_body;
-
-if ($mail->send()) {
+    $mail->send();
     http_response_code(200);
     echo json_encode(['message' => 'Thank you! Your message has been sent.']);
-} else {
+} catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['message' => 'Oops! Something went wrong. Please try again later.']);
+    echo json_encode(['message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
 }
 ?>
