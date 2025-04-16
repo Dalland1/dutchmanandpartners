@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 // Validate reCAPTCHA first
-$recaptcha_secret = '6Ldw8BorAAAAAPqHhxVc-sQI6Q089Mo6N9qQGyYk'; // Replace with your actual secret key
+$recaptcha_secret = 'YOUR_RECAPTCHA_SECRET'; // Replace with your actual secret key
 $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
 if (empty($recaptcha_response)) {
@@ -49,7 +49,7 @@ if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL
 }
 
 // Email configuration
-$to = 'your-email@example.com'; // Replace with your recipient email
+$to = 'legal@dutchmanandpartners.com'; // Your recipient email
 $email_subject = "New Contact Form Submission: $subject";
 $email_body = "
 <html>
@@ -77,47 +77,18 @@ $email_body = "
 </html>
 ";
 
-// Include PHPMailer (make sure you've installed it via Composer or manually)
-require 'vendor/autoload.php'; // Path to autoload.php if using Composer
-// OR if manually including:
-// require 'path/to/PHPMailer/src/PHPMailer.php';
-// require 'path/to/PHPMailer/src/SMTP.php';
-// require 'path/to/PHPMailer/src/Exception.php';
+// Set headers for HTML email
+$headers = "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/html; charset=UTF-8\r\n";
+$headers .= "From: no-reply@dutchmanandpartners.com\r\n";
+$headers .= "Reply-To: $email\r\n";
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-$mail = new PHPMailer(true);
-
-try {
-    // Server settings
-    $mail->isSMTP();
-    $mail->Host = 'mail.yourdomain.com'; // Your SMTP server
-    $mail->SMTPAuth = true;
-    $mail->Username = 'noreply@yourdomain.com'; // SMTP username
-    $mail->Password = 'your-smtp-password'; // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption
-    $mail->Port = 587; // TCP port to connect to
-    
-    // Recipients
-    $mail->setFrom('noreply@yourdomain.com', 'Website Contact Form');
-    $mail->addAddress($to); // Primary recipient
-    // $mail->addCC('cc@example.com'); // Uncomment to add CC
-    // $mail->addBCC('bcc@example.com'); // Uncomment to add BCC
-    $mail->addReplyTo($email, $name); // Set reply-to address
-    
-    // Content
-    $mail->isHTML(true);
-    $mail->Subject = $email_subject;
-    $mail->Body = $email_body;
-    $mail->AltBody = strip_tags($email_body); // Plain text version
-    
-    $mail->send();
+// Send email
+if (mail($to, $email_subject, $email_body, $headers)) {
     http_response_code(200);
     echo json_encode(['message' => 'Thank you! Your message has been sent successfully.']);
-} catch (Exception $e) {
+} else {
     http_response_code(500);
-    error_log('Mailer Error: ' . $mail->ErrorInfo); // Log the error
     echo json_encode(['message' => 'Sorry, something went wrong. Please try again later.']);
 }
 ?>
