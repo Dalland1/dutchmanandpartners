@@ -907,16 +907,23 @@ document.getElementById('contactForm').addEventListener('submit', function(event
             transform: translateX(5px);
         }
         /* emailjs */
-        function sendMail(){
-            let parms={
-                name : document.getElementById("name").value,
-                email : document.getElementById("email").value,
-                subject : document.getElementByid("subject").value,
-                message : document.getElementById("message").value,
-                }
-            emailjs.send("service_rwq0m7h","template_ew55m5t",parms).then(alert("Email Sent"))
-
+        /* Move this JavaScript code to a <script> block, not inside <style> */
+        /*
+        function sendMail() {
+            let parms = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+            };
+            emailjs.send("service_rwq0m7h", "template_ew55m5t", parms)
+                .then(function(response) {
+                    alert("Email Sent");
+                }, function(error) {
+                    alert("Failed to send email: " + error.text);
+                });
         }
+        */
         
         /* Contact Section */
         .contact {
