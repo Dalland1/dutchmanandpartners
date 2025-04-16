@@ -16,28 +16,40 @@
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    // Get the button and show loading state
-    const btn = this.querySelector('button');
+    const form = this;
+    const btn = form.querySelector('button');
+    const originalBtnText = btn.textContent;
+    
+    // Show loading state
     btn.disabled = true;
     btn.textContent = 'Sending...';
     
-    // Send the email
-    emailjs.sendForm('service_rwq0m7h', 'template_ew55m5t', this)
-        .then(() => {
-            // Show success message
+    // Submit form via AJAX
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
             openModal('success-modal');
-            // Reset form
-            this.reset();
-        }, (error) => {
-            // Show error message
-            alert('Failed to send message. Please try again or email us directly at legal@dutchmanandpartners.com');
-            console.error('EmailJS Error:', error);
-        })
-        .finally(() => {
-            // Reset button state
-            btn.disabled = false;
-            btn.textContent = 'Send Message';
-        });
+            form.reset();
+        } else {
+            alert('Error: ' + (data.error || 'Unknown error occurred'));
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to send message. Please try again or email us directly at legal@dutchmanandpartners.com');
+    })
+    .finally(() => {
+        // Reset button state
+        btn.disabled = false;
+        btn.textContent = originalBtnText;
+    });
 });
 </script>
 <script src="script.js"></script>
@@ -81,7 +93,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
             scroll-behavior: smooth;
         }
         
-        ::selection {
+        :selection {
             background: var(--highlight);
             color: var(--primary);
         }
