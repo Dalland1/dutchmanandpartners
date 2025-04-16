@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 // Validate reCAPTCHA first
-$recaptcha_secret = 'YOUR_RECAPTCHA_SECRET'; // Replace with your actual secret key
+$recaptcha_secret = '6Ldw8BorAAAAAPqHhxVc-sQI6Q089Mo6N9qQGyYk'; // Replace with your actual secret key
 $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
 if (empty($recaptcha_response)) {
