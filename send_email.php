@@ -89,13 +89,13 @@ try {
     $mail->isSMTP();
     $mail->Host = 'mail.dutchmanandpartners.com'; // Replace with your SMTP host
     $mail->SMTPAuth = true;
-    $mail->Username = 'noreply@dutchmanandpartners.com'; // Replace with your SMTP username
-    $mail->Password = 'YOUR_SMTP_PASSWORD'; // Replace with your SMTP password
+    $mail->Username = 'legal@dutchmanandpartners.com'; // Replace with your SMTP username
+    $mail->Password = 'mfrinaviholandieli123?!'; // Replace with your SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
     // Email headers
-    $mail->setFrom('noreply@dutchmanandpartners.com', 'Website Contact Form');
+    $mail->setFrom('legal@dutchmanandpartners.com', 'Website Contact Form');
     $mail->addAddress($to);
     $mail->addReplyTo($email, $name);
     $mail->Subject = $email_subject;
