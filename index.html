@@ -1624,17 +1624,18 @@ document.getElementById('contactForm').addEventListener('submit', function(event
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
-            <div class="contact-form">
-                <form id="contactForm" action="send_email.php" method="POST">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <!-- Add reCAPTCHA field -->
-                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
+            <!-- Contact Form -->
+<div class="contact-form">
+    <form id="contactForm" action="send_email.php" method="POST">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <!-- Add reCAPTCHA field -->
+        <div class="g-recaptcha" data-sitekey="6Ldw8BorAAAAAM7PVnfsYcoP3_G16OMe7d1uTfnh"></div>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</div>
         </div>
     </div>
 </section>
