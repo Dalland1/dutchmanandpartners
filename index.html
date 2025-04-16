@@ -1581,42 +1581,44 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with our sports law specialists for a consultation.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Our Office</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Tbilisi, 106, Georgia<br></p>
-                    <a href="mailto:legal@dutchmanandpartners.com"><i class="fas fa-envelope"></i> legal@dutchmanandpartners.com</a>
-                    
-                    <h3>Business Hours</h3>
-                    <p><i class="far fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p><i class="far fa-clock"></i> Saturday - Sunday: Closed</p>
-                    
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our sports law specialists for a consultation.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Our Office</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Tbilisi, 106, Georgia<br></p>
+                <a href="mailto:legal@dutchmanandpartners.com"><i class="fas fa-envelope"></i> legal@dutchmanandpartners.com</a>
+                
+                <h3>Business Hours</h3>
+                <p><i class="far fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p><i class="far fa-clock"></i> Saturday - Sunday: Closed</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                 </div>
-                <div class="contact-form">
-    <form id="contactForm">
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-    </form>
-</div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm" action="send_email.php" method="POST">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <!-- Add reCAPTCHA field -->
+                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
