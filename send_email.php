@@ -1,8 +1,15 @@
 <?php
 header('Content-Type: application/json');
 
-// Validate reCAPTCHA first
-$recaptcha_secret = '6Ldw8BorAAAAAPqHhxVc-sQI6Q089Mo6N9qQGyYk'; // Replace with your actual secret key
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Validate reCAPTCHA
+$recaptcha_secret = '6Ldw8BorAAAAAPqHhxVc-sQI6Q089Mo6N9qQGyYk'; // Replace with your secret key
 $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
 
 if (empty($recaptcha_response)) {
@@ -14,14 +21,12 @@ if (empty($recaptcha_response)) {
 $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
 $recaptcha_data = [
     'secret' => $recaptcha_secret,
-    'response' => $recaptcha_response,
-    'remoteip' => $_SERVER['REMOTE_ADDR']
+    'response' => $recaptcha_response
 ];
 
 $recaptcha_options = [
     'http' => [
         'method' => 'POST',
-        'header' => 'Content-type: application/x-www-form-urlencoded',
         'content' => http_build_query($recaptcha_data)
     ]
 ];
@@ -31,15 +36,15 @@ $recaptcha_result = json_decode(file_get_contents($recaptcha_url, false, $recapt
 
 if (!$recaptcha_result || !$recaptcha_result->success) {
     http_response_code(400);
-    echo json_encode(['message' => 'reCAPTCHA verification failed. Please try again.']);
+    echo json_encode(['message' => 'reCAPTCHA verification failed.']);
     exit;
 }
 
-// Process form data with sanitization
+// Process form data
 $name = strip_tags(trim($_POST['name'] ?? ''));
 $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
-$subject = strip_tags(trim($_POST['subject'] ?? 'Contact Form Submission'));
-$message = strip_tags(trim($_POST['message'] ?? ''), "<p><br><a>"); // Allow basic HTML
+$subject = strip_tags(trim($_POST['subject'] ?? ''));
+$message = trim($_POST['message'] ?? '');
 
 // Validate inputs
 if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -49,7 +54,7 @@ if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL
 }
 
 // Email configuration
-$to = 'legal@dutchmanandpartners.com'; // Your recipient email
+$to = 'legal@dutchmanandpartners.com'; // Replace with your recipient email
 $email_subject = "New Contact Form Submission: $subject";
 $email_body = "
 <html>
@@ -77,18 +82,32 @@ $email_body = "
 </html>
 ";
 
-// Set headers for HTML email
-$headers = "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/html; charset=UTF-8\r\n";
-$headers .= "From: no-reply@dutchmanandpartners.com\r\n";
-$headers .= "Reply-To: $email\r\n";
+$mail = new PHPMailer(true);
 
-// Send email
-if (mail($to, $email_subject, $email_body, $headers)) {
+try {
+    // SMTP configuration
+    $mail->isSMTP();
+    $mail->Host = 'mail.dutchmanandpartners.com'; // Replace with your SMTP host
+    $mail->SMTPAuth = true;
+    $mail->Username = 'noreply@dutchmanandpartners.com'; // Replace with your SMTP username
+    $mail->Password = 'YOUR_SMTP_PASSWORD'; // Replace with your SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    // Email headers
+    $mail->setFrom('noreply@dutchmanandpartners.com', 'Website Contact Form');
+    $mail->addAddress($to);
+    $mail->addReplyTo($email, $name);
+    $mail->Subject = $email_subject;
+    $mail->Body = $email_body;
+    $mail->isHTML(true);
+
+    // Send email
+    $mail->send();
     http_response_code(200);
     echo json_encode(['message' => 'Thank you! Your message has been sent successfully.']);
-} else {
+} catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['message' => 'Sorry, something went wrong. Please try again later.']);
+    echo json_encode(['message' => 'Sorry, something went wrong. Please try again later.', 'error' => $mail->ErrorInfo]);
 }
 ?>
