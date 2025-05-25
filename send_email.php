@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 // IMPORTANT: Replace with your actual reCAPTCHA SECRET KEY
-define('RECAPTCHA_SECRET_KEY', 'YOUR_RECAPTCHA_SECRET_KEY_HERE');
+define('RECAPTCHA_SECRET_KEY', '6LfqwUgrAAAAAEcAUn8n-C9hLGrbXav5yIS8bXh1');
 
 // Ensure this script is accessed via POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
