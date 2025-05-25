@@ -811,6 +811,7 @@
                     <i class="fas fa-globe"></i>
                     <h3>International Transfers</h3>
                     <p>Facilitating seamless international player transfers and cross-border transactions.</p>
+                <div class="g-recaptcha" data-sitekey="6LcavUgrAAAAAKXp58ipbqkvhk7VRjzCOUPHq3Y0" data-action="LOGIN"></div>
                 </div>
             </div>
         </div>
@@ -985,7 +986,7 @@
                     <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
                 </div>
 
-                <div class="g-recaptcha" data-sitekey="6LcavUgrAAAAAKXp58ipbqkvhk7VRjzCOUPHq3Y0" data-action="contact_form_submit"></div>
+                <div class="g-recaptcha" data-sitekey="6LcavUgrAAAAAKXp58ipbqkvhk7VRjzCOUPHq3Y0" data-action="LOGIN"></div>
                 <button type="submit" id="submitBtn">Send Message</button>
             </form>
         </div>
@@ -1090,54 +1091,6 @@
             animateOnScroll(); // Initial check on load
 
         });
-
-        // NEW: reCAPTCHA Enterprise client-side token generation and form submission
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Execute reCAPTCHA Enterprise and get the token
-            grecaptcha.enterprise.ready(function() {
-                // IMPORTANT: Replace "6LcavUgrAAAAAKXp58ipbqkvhk7VRjzCOUPHq3Y0" with YOUR actual reCAPTCHA Enterprise Site Key
-                grecaptcha.enterprise.execute('6LcavUgrAAAAAKXp58ipbqkvhk7VRjzCOUPHq3Y0', {action: 'contact_form_submit'}) 
-                    .then(function(token) {
-                        // Add the reCAPTCHA token to your form data
-                        const form = event.target;
-                        const recaptchaInput = document.createElement('input');
-                        recaptchaInput.type = 'hidden';
-                        recaptchaInput.name = 'g-recaptcha-response'; // Standard name for reCAPTCHA response
-                        recaptchaInput.value = token;
-                        form.appendChild(recaptchaInput);
-
-                        // Now submit the form using fetch (recommended for modern web)
-                        // Make sure your server-side script is set up to receive and verify this data
-                        fetch(form.action, {
-                            method: 'POST', // Assuming your form method is POST
-                            body: new FormData(form) // Automatically handles all form fields
-                        })
-                        .then(response => response.json()) // Assuming your server responds with JSON
-                        .then(data => {
-                            console.log('Form submission response:', data);
-                            // Handle server response here
-                            // Example: display a success or error message to the user
-                            if (data.success) {
-                                alert('Message sent successfully!');
-                                form.reset(); // Clear form fields
-                            } else {
-                                alert('Failed to send message: ' + data.message);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error submitting form:', error);
-                            alert('An error occurred. Please try again.');
-                        });
-                    })
-                    .catch(error => {
-                        console.error('reCAPTCHA execution error:', error);
-                        alert('reCAPTCHA verification failed. Please try again.');
-                    });
-            });
-        });
-        // End NEW reCAPTCHA Enterprise client-side token generation
     </script>
 </body>
 </html>
