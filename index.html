@@ -1869,77 +1869,73 @@
                 });
             });
 
-            // Contact Form Submission
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const formStatus = document.getElementById('formStatus');
+           // Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formStatus = document.getElementById('formStatus');
 
-            if (contactForm && submitBtn && formStatus) { // Ensure elements exist
-                contactForm.addEventListener('submit', function(event) {
-                    event.preventDefault();
+if (contactForm && submitBtn && formStatus) {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-                    // Check if grecaptcha is available and if a response token is present
-                    // The enterprise.js script for reCAPTCHA v3 usually handles token generation automatically
-                    // and adds it to the form data if the reCAPTCHA div is inside the form.
-                    // For explicit token retrieval (e.g., if reCAPTCHA is outside the form or for custom handling):
-                    // const recaptchaToken = grecaptcha.getResponse();
-                    // if (!recaptchaToken && typeof grecaptcha !== 'undefined') { // Check if grecaptcha is defined
-                    //     formStatus.style.color = 'red';
-                    //     formStatus.textContent = 'Please complete the reCAPTCHA.';
-                    //     return; // Stop form submission
-                    // }
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formStatus.textContent = '';
+        formStatus.style.color = '';
 
+        const formData = new FormData(contactForm);
+        
+        // For debugging - log form data
+        for (let [key, value] of formData.entries()) {
+            console.log(key, value);
+        }
 
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Sending...';
-                    formStatus.textContent = ''; // Clear previous status
-
-                    const formData = new FormData(contactForm);
-                    // The g-recaptcha-response field should be automatically included by the reCAPTCHA widget.
-                    // IMPORTANT: Your backend script (send_email.php) MUST verify this token with Google.
-                    // Example: formData.append('g-recaptcha-response', recaptchaToken); // If manually retrieved
-
-                    fetch('send_email.php', { 
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            return response.json().then(err => {
-                                throw new Error(err.message || 'Server error');
-                            }).catch(() => {
-                                throw new Error(`HTTP error! Status: ${response.status}`);
-                            });
-                        }
-                        return response.json(); 
-                    })
-                    .then(data => {
-                        console.log('SUCCESS:', data.message);
-                        formStatus.style.color = 'var(--highlight)';
-                        formStatus.textContent = data.message;
-                        contactForm.reset();
-                        if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.reset === 'function') {
-                            grecaptcha.reset(); // Reset reCAPTCHA v2 or invisible reCAPTCHA
-                        }
-                         // For reCAPTCHA v3, reset is usually not needed as it's action-based,
-                         // but if you explicitly trigger it, you might call grecaptcha.execute again if needed.
-                    })
-                    .catch(error => {
-                        console.error('FAILED:', error.message);
-                        formStatus.style.color = 'red';
-                        formStatus.textContent = `Failed to send message: ${error.message}`;
-                        if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.reset === 'function') {
-                            grecaptcha.reset();
-                        }
-                    })
-                    .finally(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Send Message';
-                    });
-                });
-            } else {
-                console.warn('Contact form elements not found. Form submission will not function.');
+        fetch('send_email.php', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
             }
+        })
+        .then(response => {
+            if (!response.ok) {
+                // Try to parse the error response as JSON
+                return response.json().then(err => {
+                    throw new Error(err.message || 'Server error');
+                }).catch(() => {
+                    // If JSON parsing fails, throw with status text
+                    throw new Error(response.statusText || `HTTP error! Status: ${response.status}`);
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('SUCCESS:', data.message);
+            formStatus.style.color = 'var(--highlight)';
+            formStatus.textContent = data.message;
+            contactForm.reset();
+            
+            // Reset reCAPTCHA if available
+            if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.reset === 'function') {
+                grecaptcha.reset();
+            }
+        })
+        .catch(error => {
+            console.error('FAILED:', error.message);
+            formStatus.style.color = 'red';
+            formStatus.textContent = `Failed to send message: ${error.message}`;
+            
+            // Reset reCAPTCHA if available
+            if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.reset === 'function') {
+                grecaptcha.reset();
+            }
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        });
+    });
+}
 
 
             // Scroll Animation for sections
