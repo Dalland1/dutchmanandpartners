@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <style>
         :root {
@@ -1569,7 +1569,7 @@
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Sports Law Avenue, Global City, GL 12345</p>
-                    <p><i class="fas fa-envelope"></i> info@dutchmanpartners.com</p>
+                    <p><i class="fas fa-envelope"></i> info@dutchmanandpartners.com</p>
                     <p><i class="fas fa-phone"></i> <a href="tel:+995597982202">+995597982202</a></p>
                     <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/995597982202" target="_blank">+995597982202</a></p>
                     <div class="social-links">
@@ -1582,10 +1582,11 @@
                 <div class="contact-form">
                     <h3>Send us a Message</h3>
                     <form id="contactForm">
-                        <input type="text" id="name" placeholder="Your Name" required>
-                        <input type="email" id="email" placeholder="Your Email" required>
-                        <input type="text" id="subject" placeholder="Subject">
-                        <textarea id="message" placeholder="Your Message" required></textarea>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"></div>
                         <button type="submit" id="submitBtn">Send Message</button>
                     </form>
                     <div id="formStatus" style="margin-top: 1rem; text-align: center; color: var(--highlight);"></div>
@@ -1702,11 +1703,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript">
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("u-gKHZKujgGdJO8bH"); // Updated API CODE
-        })();
-
         document.addEventListener('DOMContentLoaded', () => {
             // Header Scroll Effect
             const header = document.getElementById('header');
@@ -1812,7 +1808,7 @@
                 });
             });
 
-            // Contact Form EmailJS Integration
+            // Contact Form PHP Integration
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const formStatus = document.getElementById('formStatus');
@@ -1822,30 +1818,52 @@
 
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Sending...';
-                formStatus.textContent = '';
+                formStatus.textContent = ''; // Clear previous status
 
-                const templateParams = {
-                    from_name: document.getElementById('name').value,
-                    from_email: document.getElementById('email').value,
-                    subject: document.getElementById('subject').value,
-                    message: document.getElementById('message').value
-                };
+                // Collect form data
+                const formData = new FormData(contactForm);
+                // reCAPTCHA response is automatically added by the widget if it's within the form
 
-                emailjs.send('service_0un7j4z', 'template_rwx1uh8', templateParams) // Updated TEMPLATE ID
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        formStatus.style.color = 'var(--highlight)';
-                        formStatus.textContent = 'Message sent successfully!';
-                        contactForm.reset();
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                        formStatus.style.color = 'red';
-                        formStatus.textContent = 'Failed to send message. Please try again later.';
-                    })
-                    .finally(function() {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Send Message';
-                    });
+                fetch('send_email.php', { // Target your PHP script
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    // Check if response is ok (status 200-299)
+                    if (!response.ok) {
+                        // If not ok, try to parse JSON error message from PHP
+                        return response.json().then(err => {
+                            throw new Error(err.message || 'Server error');
+                        }).catch(() => {
+                            // If not JSON, throw a generic error
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        });
+                    }
+                    return response.json(); // Parse JSON success message
+                })
+                .then(data => {
+                    console.log('SUCCESS:', data.message);
+                    formStatus.style.color = 'var(--highlight)';
+                    formStatus.textContent = data.message;
+                    contactForm.reset();
+                    // Reset reCAPTCHA after successful submission
+                    if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.reset === 'function') {
+                        grecaptcha.reset();
+                    }
+                })
+                .catch(error => {
+                    console.error('FAILED:', error.message);
+                    formStatus.style.color = 'red';
+                    formStatus.textContent = `Failed to send message: ${error.message}`;
+                    // Reset reCAPTCHA on failure too
+                    if (typeof grecaptcha !== 'undefined' && typeof grecaptcha.reset === 'function') {
+                        grecaptcha.reset();
+                    }
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                });
             });
 
             // Scroll Animation for sections
