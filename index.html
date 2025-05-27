@@ -3,1896 +3,2082 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dutchman & Partners | Elite Sports Law Specialists</title> {/* [cite: 1, 2] */}
+    <title>Dutchman & Partners | Elite Sports Law Specialists</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 
     <style>
         :root {
-            --primary: #0a0e23; {/* [cite: 2, 3] */}
-            --secondary: #121a3a; {/* [cite: 3] */}
-            --accent: #1a2a6c; {/* [cite: 3] */}
-            --highlight: #00b4d8; {/* [cite: 3] */}
-            --highlight-hover: #00c8f0; {/* [cite: 3] */}
-            --text: #ffffff; {/* [cite: 3] */}
-            --text-secondary: #e2e2e2; {/* [cite: 3] */}
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); {/* [cite: 3] */}
-            --border-radius: 12px; {/* [cite: 4] */}
-            --box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); {/* [cite: 4] */}
+            --primary: #0a0e23;
+            --secondary: #121a3a;
+            --accent: #1a2a6c;
+            --highlight: #00b4d8;
+            --highlight-hover: #00c8f0;
+            --text: #ffffff;
+            --text-secondary: #e2e2e2;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --border-radius: 12px;
+            --box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
         
         * {
-            margin: 0; {/* [cite: 5] */}
-            padding: 0; {/* [cite: 6] */}
-            box-sizing: border-box; {/* [cite: 6] */}
-            font-family: 'Montserrat', 'Arial', sans-serif; {/* [cite: 6] */}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Arial', sans-serif;
         }
         
         body {
-            background-color: var(--primary); {/* [cite: 6, 7] */}
-            color: var(--text); {/* [cite: 7] */}
-            line-height: 1.7; {/* [cite: 7] */}
-            overflow-x: hidden; {/* [cite: 7] */}
-            scroll-behavior: smooth; {/* [cite: 7] */}
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            scroll-behavior: smooth;
         }
         
+        /* Custom scrollbar for better aesthetics */
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+        body::-webkit-scrollbar-track {
+            background: var(--secondary);
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: var(--highlight);
+            border-radius: 10px;
+            border: 2px solid var(--secondary);
+        }
+
         ::selection {
-            background: var(--highlight); {/* [cite: 7, 8] */}
-            color: var(--primary); {/* [cite: 8] */}
+            background: var(--highlight);
+            color: var(--primary);
         }
         
         .container {
-            max-width: 1400px; {/* [cite: 8, 9] */}
-            margin: 0 auto; {/* [cite: 9] */}
-            padding: 0 30px; {/* [cite: 9] */}
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
         }
         
         /* Header Styles */
         header {
-            background: linear-gradient(180deg, rgba(10,14,35,0.95) 0%, rgba(10,14,35,0.85) 100%); {/* [cite: 9, 10] */}
-            padding: 1.5rem 0; {/* [cite: 10] */}
-            position: fixed; {/* [cite: 10] */}
-            width: 100%; {/* [cite: 10] */}
-            z-index: 1000; {/* [cite: 10] */}
-            backdrop-filter: blur(10px); {/* [cite: 10] */}
-            transition: var(--transition); {/* [cite: 10] */}
-            border-bottom: 1px solid rgba(0, 180, 216, 0.1); {/* [cite: 10, 11] */}
+            background: linear-gradient(180deg, rgba(10,14,35,0.95) 0%, rgba(10,14,35,0.85) 100%);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 180, 216, 0.1);
         }
         
         header.scrolled {
-            padding: 1rem 0; {/* [cite: 11, 12] */}
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); {/* [cite: 12] */}
+            padding: 1rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         nav {
-            display: flex; {/* [cite: 12, 13] */}
-            justify-content: space-between; {/* [cite: 13] */}
-            align-items: center; {/* [cite: 13] */}
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
-            font-size: 2rem; {/* [cite: 13, 14] */}
-            font-weight: 700; {/* [cite: 14] */}
-            color: var(--text); {/* [cite: 14] */}
-            text-decoration: none; {/* [cite: 14] */}
-            display: flex; {/* [cite: 14] */}
-            align-items: center; {/* [cite: 14] */}
-            gap: 10px; {/* [cite: 14] */}
-            transition: var(--transition); {/* [cite: 14, 15] */}
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
         }
         
         .logo-icon {
-            color: var(--highlight); {/* [cite: 15, 16] */}
-            font-size: 2.2rem; {/* [cite: 16] */}
+            color: var(--highlight);
+            font-size: 2.2rem;
         }
         
         .logo span {
-            color: var(--highlight); {/* [cite: 16, 17] */}
+            color: var(--highlight);
         }
         
         .nav-links {
-            display: flex; {/* [cite: 17, 18] */}
-            list-style: none; {/* [cite: 18] */}
+            display: flex;
+            list-style: none;
         }
         
         .nav-links li {
-            margin-left: 2.5rem; {/* [cite: 18, 19] */}
-            position: relative; {/* [cite: 19] */}
+            margin-left: 2.5rem;
+            position: relative;
         }
         
         .nav-links a {
-            color: var(--text-secondary); {/* [cite: 19, 20] */}
-            text-decoration: none; {/* [cite: 20] */}
-            font-weight: 500; {/* [cite: 20] */}
-            transition: var(--transition); {/* [cite: 20] */}
-            position: relative; {/* [cite: 20] */}
-            font-size: 1.1rem; {/* [cite: 20, 21] */}
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.1rem;
+            padding-bottom: 5px; /* Space for underline effect */
         }
         
         .nav-links a:hover {
-            color: var(--highlight); {/* [cite: 21, 22] */}
+            color: var(--highlight);
         }
         
         .nav-links a::after {
-            content: ''; {/* [cite: 22, 23] */}
-            position: absolute; {/* [cite: 23] */}
-            width: 0; {/* [cite: 23] */}
-            height: 2px; {/* [cite: 23] */}
-            background: var(--highlight); {/* [cite: 23] */}
-            bottom: -5px; {/* [cite: 23] */}
-            left: 0; {/* [cite: 23] */}
-            transition: var(--transition); {/* [cite: 23, 24] */}
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--highlight);
+            bottom: 0; /* Adjusted for better alignment */
+            left: 0;
+            transition: var(--transition);
         }
         
         .nav-links a:hover::after {
-            width: 100%; {/* [cite: 24, 25] */}
+            width: 100%;
         }
         
         .hamburger {
-            display: none; {/* [cite: 25] */}
-            cursor: pointer; {/* [cite: 26] */}
-            z-index: 1001; {/* [cite: 26] */}
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+            flex-direction: column; /* For burger lines */
+            justify-content: space-between;
+            height: 25px; /* Adjust height for three lines */
+            width: 30px;
         }
         
         .hamburger div {
-            width: 25px; {/* [cite: 26, 27] */}
-            height: 3px; {/* [cite: 27] */}
-            background: var(--text); {/* [cite: 27] */}
-            margin: 5px; {/* [cite: 27] */}
-            transition: var(--transition); {/* [cite: 27] */}
+            width: 100%; /* Make lines fill width */
+            height: 3px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: var(--transition);
         }
-        
+
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%; /* Off-screen by default */
+            width: 300px;
+            height: 100%;
+            background: var(--secondary);
+            z-index: 999;
+            padding-top: 100px;
+            transition: right 0.5s ease-in-out;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav .nav-links {
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+
+        .mobile-nav .nav-links li {
+            margin: 1.5rem 0;
+            width: 100%;
+        }
+
+        .mobile-nav .nav-links a {
+            font-size: 1.3rem;
+            display: block;
+            padding: 10px 0;
+        }
+
         /* Hero Section */
         .hero {
-            height: 100vh; {/* [cite: 27, 28] */}
-            min-height: 800px; {/* [cite: 28] */}
+            height: 100vh;
+            min-height: 800px;
             background: linear-gradient(rgba(10, 14, 35, 0.7), rgba(18, 26, 58, 0.7)), 
-                          url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover; {/* [cite: 28, 29] */}
-            display: flex; {/* [cite: 29] */}
-            align-items: center; {/* [cite: 29] */}
-            text-align: center; {/* [cite: 29] */}
-            padding-top: 100px; {/* [cite: 29] */}
-            position: relative; {/* [cite: 29] */}
-            overflow: hidden; {/* [cite: 29, 30] */}
+                          url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 100px; /* Offset for fixed header */
+            position: relative;
+            overflow: hidden;
         }
         
         .hero::before {
-            content: ''; {/* [cite: 30, 31] */}
-            position: absolute; {/* [cite: 31] */}
-            top: 0; {/* [cite: 31] */}
-            left: 0; {/* [cite: 31] */}
-            width: 100%; {/* [cite: 31] */}
-            height: 100%; {/* [cite: 31] */}
-            background: radial-gradient(circle at 20% 50%, transparent 0%, var(--primary) 70%); {/* [cite: 31] */}
-            z-index: 0; {/* [cite: 32] */}
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, transparent 0%, var(--primary) 70%);
+            z-index: 0;
         }
         
         .hero-content {
-            max-width: 900px; {/* [cite: 32, 33] */}
-            margin: 0 auto; {/* [cite: 33] */}
-            position: relative; {/* [cite: 33] */}
-            z-index: 1; {/* [cite: 33] */}
-            transform: translateY(20px); {/* [cite: 33] */}
-            opacity: 0; {/* [cite: 33] */}
-            animation: fadeInUp 1s forwards 0.3s; {/* [cite: 33, 34] */}
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.3s;
         }
         
         @keyframes fadeInUp {
             to {
-                transform: translateY(0); {/* [cite: 34, 35] */}
-                opacity: 1; {/* [cite: 35] */}
+                transform: translateY(0);
+                opacity: 1;
             }
         }
         
         .hero h1 {
-            font-size: 4rem; {/* [cite: 35, 36] */}
-            margin-bottom: 1.5rem; {/* [cite: 36] */}
-            line-height: 1.2; {/* [cite: 36] */}
-            text-transform: uppercase; {/* [cite: 36] */}
-            letter-spacing: 2px; {/* [cite: 36] */}
-            font-weight: 700; {/* [cite: 36] */}
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); {/* [cite: 36, 37] */}
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         
         .hero h1 span {
-            color: var(--highlight); {/* [cite: 37, 38] */}
-            position: relative; {/* [cite: 38] */}
+            color: var(--highlight);
+            position: relative;
         }
         
         .hero h1 span::after {
-            content: ''; {/* [cite: 38, 39] */}
-            position: absolute; {/* [cite: 39] */}
-            width: 100%; {/* [cite: 39] */}
-            height: 5px; {/* [cite: 39] */}
-            background: var(--highlight); {/* [cite: 39] */}
-            bottom: 5px; {/* [cite: 39] */}
-            left: 0; {/* [cite: 39] */}
-            z-index: -1; {/* [cite: 39] */}
-            opacity: 0.5; {/* [cite: 39, 40] */}
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: var(--highlight);
+            bottom: 5px;
+            left: 0;
+            z-index: -1;
+            opacity: 0.5;
         }
         
         .hero p {
-            font-size: 1.3rem; {/* [cite: 40, 41] */}
-            margin-bottom: 3rem; {/* [cite: 41] */}
-            color: var(--text-secondary); {/* [cite: 41] */}
-            max-width: 700px; {/* [cite: 41] */}
-            margin-left: auto; {/* [cite: 41] */}
-            margin-right: auto; {/* [cite: 41] */}
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); {/* [cite: 41, 42] */}
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
         .btn {
-            display: inline-block; {/* [cite: 42, 43] */}
-            background: var(--highlight); {/* [cite: 43] */}
-            color: var(--primary); {/* [cite: 43] */}
-            padding: 1rem 2.5rem; {/* [cite: 43] */}
-            border: none; {/* [cite: 43] */}
-            border-radius: 50px; {/* [cite: 43] */}
-            cursor: pointer; {/* [cite: 43] */}
-            text-decoration: none; {/* [cite: 43] */}
-            font-weight: 600; {/* [cite: 43] */}
-            transition: var(--transition); {/* [cite: 43, 44] */}
-            text-transform: uppercase; {/* [cite: 44] */}
-            letter-spacing: 1px; {/* [cite: 44] */}
-            font-size: 1rem; {/* [cite: 44] */}
-            position: relative; {/* [cite: 44] */}
-            overflow: hidden; {/* [cite: 44] */}
-            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4); {/* [cite: 44, 45] */}
+            display: inline-block;
+            background: var(--highlight);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
         }
         
         .btn:hover {
-            background: var(--highlight-hover); {/* [cite: 45, 46] */}
-            transform: translateY(-5px); {/* [cite: 46] */}
-            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.5); {/* [cite: 46, 47] */}
+            background: var(--highlight-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.5);
         }
         
         .btn::before {
-            content: ''; {/* [cite: 47, 48] */}
-            position: absolute; {/* [cite: 48] */}
-            top: 0; {/* [cite: 48] */}
-            left: -100%; {/* [cite: 48] */}
-            width: 100%; {/* [cite: 48] */}
-            height: 100%; {/* [cite: 48] */}
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); {/* [cite: 48] */}
-            transition: 0.6s; {/* [cite: 48, 49] */}
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.6s;
         }
         
         .btn:hover::before {
-            left: 100%; {/* [cite: 49, 50] */}
+            left: 100%;
         }
         
         .btn-outline {
-            background: transparent; {/* [cite: 50, 51] */}
-            border: 2px solid var(--highlight); {/* [cite: 51] */}
-            color: var(--highlight); {/* [cite: 51] */}
-            box-shadow: none; {/* [cite: 51] */}
+            background: transparent;
+            border: 2px solid var(--highlight);
+            color: var(--highlight);
+            box-shadow: none;
         }
         
         .btn-outline:hover {
-            background: var(--highlight); {/* [cite: 51, 52] */}
-            color: var(--primary); {/* [cite: 52] */}
+            background: var(--highlight);
+            color: var(--primary);
         }
         
         .scroll-down {
-            position: absolute; {/* [cite: 52, 53] */}
-            bottom: 30px; {/* [cite: 53] */}
-            left: 50%; {/* [cite: 53] */}
-            transform: translateX(-50%); {/* [cite: 53] */}
-            color: var(--text-secondary); {/* [cite: 53] */}
-            font-size: 1.5rem; {/* [cite: 53] */}
-            animation: bounce 2s infinite; {/* [cite: 53] */}
-            cursor: pointer; {/* [cite: 53] */}
-            transition: var(--transition); {/* [cite: 53] */}
-            z-index: 1; {/* [cite: 53, 54] */}
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1;
         }
         
         .scroll-down:hover {
-            color: var(--highlight); {/* [cite: 54, 55] */}
+            color: var(--highlight);
         }
         
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%); {/* [cite: 55, 56] */}
+                transform: translateY(0) translateX(-50%);
             }
             40% {
-                transform: translateY(-20px) translateX(-50%); {/* [cite: 56, 57] */}
+                transform: translateY(-20px) translateX(-50%);
             }
             60% {
-                transform: translateY(-10px) translateX(-50%); {/* [cite: 57, 58] */}
+                transform: translateY(-10px) translateX(-50%);
             }
         }
         
-        /* Practice Areas */
-        .practice-areas {
-            padding: 8rem 0; {/* [cite: 58, 59] */}
-            background-color: var(--secondary); {/* [cite: 59] */}
-            position: relative; {/* [cite: 59] */}
-            overflow: hidden; {/* [cite: 59] */}
-        }
-        
-        .practice-areas::before {
-            content: ''; {/* [cite: 59, 60] */}
-            position: absolute; {/* [cite: 60] */}
-            top: -100px; {/* [cite: 60] */}
-            right: -100px; {/* [cite: 60] */}
-            width: 300px; {/* [cite: 60] */}
-            height: 300px; {/* [cite: 60] */}
-            background: var(--highlight); {/* [cite: 60] */}
-            border-radius: 50%; {/* [cite: 60] */}
-            filter: blur(100px); {/* [cite: 60] */}
-            opacity: 0.1; {/* [cite: 60] */}
-            z-index: 0; {/* [cite: 60, 61] */}
-        }
-        
+        /* Section Title (Reusable) */
         .section-title {
-            text-align: center; {/* [cite: 61, 62] */}
-            margin-bottom: 5rem; {/* [cite: 62] */}
-            position: relative; {/* [cite: 62] */}
-            z-index: 1; {/* [cite: 62] */}
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 1;
         }
         
         .section-title h2 {
-            font-size: 3rem; {/* [cite: 62, 63] */}
-            position: relative; {/* [cite: 63] */}
-            display: inline-block; {/* [cite: 63] */}
-            text-transform: uppercase; {/* [cite: 63] */}
+            font-size: 3rem;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
         }
         
         .section-title h2::after {
-            content: ''; {/* [cite: 63, 64] */}
-            position: absolute; {/* [cite: 64] */}
-            width: 80px; {/* [cite: 64] */}
-            height: 4px; {/* [cite: 64] */}
-            background: var(--highlight); {/* [cite: 64] */}
-            bottom: -15px; {/* [cite: 64] */}
-            left: 50%; {/* [cite: 64] */}
-            transform: translateX(-50%); {/* [cite: 64] */}
-            border-radius: 2px; {/* [cite: 64, 65] */}
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--highlight);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
         
         .section-title p {
-            max-width: 700px; {/* [cite: 65, 66] */}
-            margin: 1.5rem auto 0; {/* [cite: 66] */}
-            color: var(--text-secondary); {/* [cite: 66] */}
-            font-size: 1.1rem; {/* [cite: 66] */}
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Practice Areas */
+        .practice-areas {
+            padding: 8rem 0;
+            background-color: var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .practice-areas::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
         }
         
         .areas-grid {
-            display: grid; {/* [cite: 66, 67] */}
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); {/* [cite: 67] */}
-            gap: 2.5rem; {/* [cite: 67] */}
-            position: relative; {/* [cite: 67] */}
-            z-index: 1; {/* [cite: 67, 68] */}
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
         }
         
         .area-card {
-            background: var(--primary); {/* [cite: 68, 69] */}
-            padding: 2.5rem; {/* [cite: 69] */}
-            border-radius: var(--border-radius); {/* [cite: 69] */}
-            transition: var(--transition); {/* [cite: 69] */}
-            box-shadow: var(--box-shadow); {/* [cite: 69] */}
-            position: relative; {/* [cite: 69] */}
-            overflow: hidden; {/* [cite: 69] */}
-            border: 1px solid rgba(255, 255, 255, 0.05); {/* [cite: 69, 70] */}
+            background: var(--primary);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
         .area-card:hover {
-            transform: translateY(-10px); {/* [cite: 70, 71] */}
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); {/* [cite: 71] */}
-            border-color: rgba(0, 180, 216, 0.3); {/* [cite: 71, 72] */}
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 180, 216, 0.3);
         }
         
         .area-card::before {
-            content: ''; {/* [cite: 72, 73] */}
-            position: absolute; {/* [cite: 73] */}
-            top: 0; {/* [cite: 73] */}
-            left: 0; {/* [cite: 73] */}
-            width: 100%; {/* [cite: 73] */}
-            height: 5px; {/* [cite: 73] */}
-            background: var(--highlight); {/* [cite: 73] */}
-            transform: scaleX(0); {/* [cite: 73] */}
-            transform-origin: left; {/* [cite: 73] */}
-            transition: var(--transition); {/* [cite: 73, 74] */}
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--highlight);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
         }
         
         .area-card:hover::before {
-            transform: scaleX(1); {/* [cite: 74, 75] */}
+            transform: scaleX(1);
         }
         
         .area-card i {
-            font-size: 2.5rem; {/* [cite: 75, 76] */}
-            color: var(--highlight); {/* [cite: 76] */}
-            margin-bottom: 1.5rem; {/* [cite: 76] */}
-            transition: var(--transition); {/* [cite: 76] */}
+            font-size: 2.5rem;
+            color: var(--highlight);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
         }
         
         .area-card:hover i {
-            transform: scale(1.2); {/* [cite: 76, 77] */}
+            transform: scale(1.2);
         }
         
         .area-card h3 {
-            font-size: 1.6rem; {/* [cite: 77, 78] */}
-            margin-bottom: 1.5rem; {/* [cite: 78] */}
-            position: relative; {/* [cite: 78] */}
-            display: inline-block; {/* [cite: 78] */}
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
         }
         
         .area-card h3::after {
-            content: ''; {/* [cite: 78, 79] */}
-            position: absolute; {/* [cite: 79] */}
-            width: 0; {/* [cite: 79] */}
-            height: 2px; {/* [cite: 79] */}
-            background: var(--highlight); {/* [cite: 79] */}
-            bottom: -5px; {/* [cite: 79] */}
-            left: 0; {/* [cite: 79] */}
-            transition: var(--transition); {/* [cite: 79, 80] */}
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--highlight);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
         }
         
         .area-card:hover h3::after {
-            width: 50px; {/* [cite: 80, 81] */}
+            width: 50px;
         }
         
         .area-card p {
-            color: var(--text-secondary); {/* [cite: 81, 82] */}
-            margin-bottom: 1.5rem; {/* [cite: 82] */}
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
         }
         
         .area-card .learn-more {
-            color: var(--highlight); {/* [cite: 82, 83] */}
-            text-decoration: none; {/* [cite: 83] */}
-            font-weight: 600; {/* [cite: 83] */}
-            display: inline-flex; {/* [cite: 83] */}
-            align-items: center; {/* [cite: 83] */}
-            transition: var(--transition); {/* [cite: 83, 84] */}
+            color: var(--highlight);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
         }
         
         .area-card .learn-more i {
-            font-size: 1rem; {/* [cite: 84, 85] */}
-            margin-left: 8px; {/* [cite: 85] */}
-            margin-bottom: 0; {/* [cite: 85] */}
-            transition: var(--transition); {/* [cite: 85] */}
+            font-size: 1rem;
+            margin-left: 8px;
+            margin-bottom: 0;
+            transition: var(--transition);
         }
         
         .area-card .learn-more:hover {
-            letter-spacing: 1px; {/* [cite: 85, 86] */}
+            letter-spacing: 1px;
         }
         
         .area-card .learn-more:hover i {
-            transform: translateX(5px); {/* [cite: 86, 87] */}
+            transform: translateX(5px);
         }
         
         /* Featured Cases */
         .featured-cases {
-            padding: 8rem 0; {/* [cite: 87, 88] */}
-            background-color: var(--primary); {/* [cite: 88] */}
-            position: relative; {/* [cite: 88] */}
+            padding: 8rem 0;
+            background-color: var(--primary);
+            position: relative;
         }
         
         .featured-cases::before {
-            content: ''; {/* [cite: 88, 89] */}
-            position: absolute; {/* [cite: 89] */}
-            bottom: -100px; {/* [cite: 89] */}
-            left: -100px; {/* [cite: 89] */}
-            width: 300px; {/* [cite: 89] */}
-            height: 300px; {/* [cite: 89] */}
-            background: var(--highlight); {/* [cite: 89] */}
-            border-radius: 50%; {/* [cite: 89] */}
-            filter: blur(100px); {/* [cite: 89] */}
-            opacity: 0.1; {/* [cite: 89] */}
-            z-index: 0; {/* [cite: 89, 90] */}
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
         }
         
         .cases-grid {
-            display: grid; {/* [cite: 90, 91] */}
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); {/* [cite: 91] */}
-            gap: 2rem; {/* [cite: 91] */}
-            margin-top: 4rem; {/* [cite: 91] */}
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
         }
         
         .case-card {
-            position: relative; {/* [cite: 91, 92] */}
-            border-radius: var(--border-radius); {/* [cite: 92] */}
-            overflow: hidden; {/* [cite: 92] */}
-            height: 400px; {/* [cite: 92] */}
-            transition: var(--transition); {/* [cite: 92] */}
-            box-shadow: var(--box-shadow); {/* [cite: 92, 93] */}
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 400px;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
         }
         
         .case-card img {
-            width: 100%; {/* [cite: 93, 94] */}
-            height: 100%; {/* [cite: 94] */}
-            object-fit: cover; {/* [cite: 94] */}
-            transition: var(--transition); {/* [cite: 94] */}
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
         }
         
         .case-card:hover {
-            transform: translateY(-10px); {/* [cite: 94, 95] */}
+            transform: translateY(-10px);
         }
         
         .case-card:hover img {
-            transform: scale(1.1); {/* [cite: 95, 96] */}
+            transform: scale(1.1);
         }
         
         .case-overlay {
-            position: absolute; {/* [cite: 96, 97] */}
-            bottom: 0; {/* [cite: 97] */}
-            left: 0; {/* [cite: 97] */}
-            right: 0; {/* [cite: 97] */}
-            background: linear-gradient(transparent, rgba(10,14,35,0.95)); {/* [cite: 97] */}
-            padding: 2rem; {/* [cite: 97] */}
-            transform: translateY(20px); {/* [cite: 97] */}
-            opacity: 0; {/* [cite: 97] */}
-            transition: var(--transition); {/* [cite: 97, 98] */}
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10,14,35,0.95));
+            padding: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
         }
         
         .case-card:hover .case-overlay {
-            transform: translateY(0); {/* [cite: 98, 99] */}
-            opacity: 1; {/* [cite: 99] */}
+            transform: translateY(0);
+            opacity: 1;
         }
         
         .case-overlay h3 {
-            font-size: 1.5rem; {/* [cite: 99, 100] */}
-            margin-bottom: 0.5rem; {/* [cite: 100] */}
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
         
         .case-overlay p {
-            color: var(--text-secondary); {/* [cite: 100, 101] */}
-            margin-bottom: 1rem; {/* [cite: 101] */}
-            font-size: 0.9rem; /* Added for consistency */ {/* [cite: 101] */}
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.9rem; /* Added for consistency */
         }
         
         .case-overlay .btn {
-            padding: 0.7rem 1.5rem; {/* [cite: 101, 102] */}
-            font-size: 0.9rem; {/* [cite: 102] */}
+            padding: 0.7rem 1.5rem;
+            font-size: 0.9rem;
         }
         
         /* About Section */
         .about {
-            padding: 8rem 0; {/* [cite: 102, 103] */}
-            background-color: var(--secondary); {/* [cite: 103] */}
-            position: relative; {/* [cite: 103] */}
+            padding: 8rem 0;
+            background-color: var(--secondary);
+            position: relative;
         }
         
         .about::after {
-            content: ''; {/* [cite: 103, 104] */}
-            position: absolute; {/* [cite: 104] */}
-            bottom: -100px; {/* [cite: 104] */}
-            left: -100px; {/* [cite: 104] */}
-            width: 300px; {/* [cite: 104] */}
-            height: 300px; {/* [cite: 104] */}
-            background: var(--highlight); {/* [cite: 104] */}
-            border-radius: 50%; {/* [cite: 104] */}
-            filter: blur(100px); {/* [cite: 104] */}
-            opacity: 0.1; {/* [cite: 104] */}
-            z-index: 0; {/* [cite: 104, 105] */}
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
         }
         
         .about-content {
-            display: grid; {/* [cite: 105, 106] */}
-            grid-template-columns: 1fr 1fr; {/* [cite: 106] */}
-            gap: 5rem; {/* [cite: 106] */}
-            align-items: center; {/* [cite: 106] */}
-            position: relative; {/* [cite: 106] */}
-            z-index: 1; {/* [cite: 106, 107] */}
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
         }
         
         .about-text h2 {
-            font-size: 3rem; {/* [cite: 107, 108] */}
-            margin-bottom: 2rem; {/* [cite: 108] */}
-            text-transform: uppercase; {/* [cite: 108] */}
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
         }
         
         .about-text h2 span {
-            color: var(--highlight); {/* [cite: 108, 109] */}
+            color: var(--highlight);
         }
         
         .about-text p {
-            margin-bottom: 1.5rem; {/* [cite: 109, 110] */}
-            color: var(--text-secondary); {/* [cite: 110] */}
-            font-size: 1.1rem; {/* [cite: 110] */}
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
         }
         
         .stats {
-            display: grid; {/* [cite: 110, 111] */}
-            grid-template-columns: repeat(2, 1fr); {/* [cite: 111] */}
-            gap: 2rem; {/* [cite: 111] */}
-            margin-top: 3rem; {/* [cite: 111] */}
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
         .stat-item {
-            text-align: center; {/* [cite: 111, 112] */}
-            background: rgba(0, 180, 216, 0.1); {/* [cite: 112] */}
-            padding: 1.5rem; {/* [cite: 112] */}
-            border-radius: var(--border-radius); {/* [cite: 112] */}
-            border: 1px solid rgba(0, 180, 216, 0.1); {/* [cite: 112] */}
-            transition: var(--transition); {/* [cite: 112, 113] */}
+            text-align: center;
+            background: rgba(0, 180, 216, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0, 180, 216, 0.1);
+            transition: var(--transition);
         }
         
         .stat-item:hover {
-            transform: translateY(-5px); {/* [cite: 113, 114] */}
-            background: rgba(0, 180, 216, 0.15); {/* [cite: 114] */}
-            border-color: rgba(0, 180, 216, 0.2); {/* [cite: 114, 115] */}
+            transform: translateY(-5px);
+            background: rgba(0, 180, 216, 0.15);
+            border-color: rgba(0, 180, 216, 0.2);
         }
         
         .stat-item h3 {
-            font-size: 3rem; {/* [cite: 115, 116] */}
-            color: var(--highlight); {/* [cite: 116] */}
-            margin-bottom: 0.5rem; {/* [cite: 116] */}
+            font-size: 3rem;
+            color: var(--highlight);
+            margin-bottom: 0.5rem;
         }
         
         .stat-item p {
-            color: var(--text-secondary); {/* [cite: 116, 117] */}
-            font-size: 1rem; {/* [cite: 117] */}
-            text-transform: uppercase; {/* [cite: 117] */}
-            letter-spacing: 1px; {/* [cite: 117] */}
-            margin-bottom: 0; {/* [cite: 117] */}
+            color: var(--text-secondary);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0;
         }
         
         .about-image {
-            position: relative; {/* [cite: 117, 118] */}
-            border-radius: var(--border-radius); {/* [cite: 118] */}
-            overflow: hidden; {/* [cite: 118] */}
-            box-shadow: var(--box-shadow); {/* [cite: 118] */}
-            transform: perspective(1000px) rotateY(-10deg); {/* [cite: 118] */}
-            transition: var(--transition); {/* [cite: 118, 119] */}
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
         }
         
         .about-image:hover {
-            transform: perspective(1000px) rotateY(0deg); {/* [cite: 119, 120] */}
+            transform: perspective(1000px) rotateY(0deg);
         }
         
         .about-image img {
-            width: 100%; {/* [cite: 120, 121] */}
-            height: auto; {/* [cite: 121] */}
-            display: block; {/* [cite: 121] */}
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         /* Testimonials */
         .testimonials {
-            padding: 8rem 0; {/* [cite: 121, 122] */}
-            background-color: var(--primary); {/* [cite: 122] */}
-            position: relative; {/* [cite: 122] */}
+            padding: 8rem 0;
+            background-color: var(--primary);
+            position: relative;
         }
         
         .testimonial-slider {
-            max-width: 1000px; {/* [cite: 122, 123] */}
-            margin: 4rem auto 0; {/* [cite: 123] */}
-            position: relative; {/* [cite: 123] */}
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            position: relative;
         }
         
         .testimonial {
-            background: var(--secondary); {/* [cite: 123, 124] */}
-            padding: 3rem; {/* [cite: 124] */}
-            border-radius: var(--border-radius); {/* [cite: 124] */}
-            box-shadow: var(--box-shadow); {/* [cite: 124] */}
-            text-align: center; {/* [cite: 124] */}
-            margin: 0 1rem; /* For spacing between slides if multiple are shown */ {/* [cite: 124, 125] */}
-            border: 1px solid rgba(255, 255, 255, 0.05); {/* [cite: 125] */}
-            transition: var(--transition); {/* [cite: 125, 126] */}
-        }
-        
-        .testimonial:hover {
-            transform: translateY(-10px); {/* [cite: 126, 127] */}
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); {/* [cite: 127] */}
-        }
-        
-        .testimonial i.fa-quote-left { /* More specific selector for quote icon */
-            font-size: 2.5rem; {/* [cite: 127, 128] */}
-            color: var(--highlight); {/* [cite: 128] */}
-            margin-bottom: 1.5rem; {/* [cite: 128] */}
-            opacity: 0.7; {/* [cite: 128] */}
-        }
-        
-        .testimonial p.quote { /* Added class for quote styling */
-            font-style: italic; {/* [cite: 128, 129] */}
-            color: var(--text-secondary); {/* [cite: 129] */}
-            margin-bottom: 2rem; {/* [cite: 129] */}
-            font-size: 1.1rem; {/* [cite: 129] */}
-            line-height: 1.8; {/* [cite: 129] */}
-        }
-        
-        .client-info {
-            display: flex; {/* [cite: 129, 130] */}
-            align-items: center; {/* [cite: 130] */}
-            justify-content: center; {/* [cite: 130] */}
-        }
-        
-        /* Styling for client avatar placeholder */
-        .client-avatar-placeholder {
-            font-size: 50px;
-            width: 60px;
-            height: 60px;
-            line-height: 54px; /* Adjusted for border */
+            background: var(--secondary);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             text-align: center;
-            margin-right: 1rem;
+            margin: 0 1rem; /* For spacing between slides if multiple are shown */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .testimonial blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            position: relative;
+            padding: 0 1rem;
+        }
+
+        .testimonial blockquote::before {
+            content: '\201C'; /* Left double quotation mark */
+            font-size: 4rem;
             color: var(--highlight);
-            border: 3px solid var(--highlight);
+            position: absolute;
+            left: 0;
+            top: -10px;
+            opacity: 0.3;
+            line-height: 1;
+        }
+        .testimonial blockquote::after {
+            content: '\201D'; /* Right double quotation mark */
+            font-size: 4rem;
+            color: var(--highlight);
+            position: absolute;
+            right: 0;
+            bottom: -30px;
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .testimonial .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .testimonial .client-info img {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            box-sizing: border-box;
+            object-fit: cover;
+            border: 3px solid var(--highlight);
         }
         
-        .client-details h4 {
-            font-size: 1.2rem; {/* [cite: 132, 133] */}
-            margin-bottom: 0.3rem; {/* [cite: 133] */}
+        .testimonial .client-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
         
-        .client-details p {
-            font-style: normal; {/* [cite: 133, 134] */}
-            font-size: 0.9rem; {/* [cite: 134] */}
-            color: var(--text-secondary); {/* [cite: 134] */}
-            margin-bottom: 0; {/* [cite: 134] */}
+        .testimonial .client-title {
+            color: var(--highlight);
+            font-size: 0.9rem;
         }
-        
-        .slick-dots {
-            bottom: -50px; {/* [cite: 134, 135] */}
+
+        /* Slick Carousel Customization */
+        .slick-prev:before, .slick-next:before {
+            font-size: 40px;
+            color: var(--highlight);
+            opacity: 0.7;
+            transition: var(--transition);
         }
-        
+        .slick-prev:hover:before, .slick-next:hover:before {
+            opacity: 1;
+            color: var(--highlight-hover);
+        }
+        .slick-prev {
+            left: -50px;
+            z-index: 100;
+        }
+        .slick-next {
+            right: -50px;
+            z-index: 100;
+        }
         .slick-dots li button:before {
-            color: var(--text-secondary); {/* [cite: 135, 136] */}
-            opacity: 0.5; {/* [cite: 136] */}
-            font-size: 10px; {/* [cite: 136] */}
+            font-size: 12px;
+            color: var(--text-secondary);
+            opacity: 0.5;
         }
-        
         .slick-dots li.slick-active button:before {
-            color: var(--highlight); {/* [cite: 136, 137] */}
-            opacity: 1; {/* [cite: 137] */}
+            color: var(--highlight);
+            opacity: 1;
         }
         
+        /* Team Section */
+        .team {
+            padding: 8rem 0;
+            background-color: var(--secondary);
+            position: relative;
+        }
+        
+        .team::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .team-member {
+            background: var(--primary);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            padding: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 180, 216, 0.3);
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--highlight);
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+            transition: var(--transition);
+        }
+        
+        .team-member:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.5);
+        }
+        
+        .team-member h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--highlight);
+        }
+        
+        .team-member p.title {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--highlight);
+            transform: translateY(-3px);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 8rem 0;
+            background-color: var(--primary);
+            position: relative;
+        }
+        
+        .faq::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .faq-accordion {
+            max-width: 900px;
+            margin: 4rem auto 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .faq-item {
+            background: var(--secondary);
+            margin-bottom: 1.5rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            transition: var(--transition);
+            background: var(--secondary);
+        }
+        
+        .faq-question:hover {
+            background: var(--accent);
+            color: var(--highlight);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer.active {
+            max-height: 300px; /* Adjust based on content height */
+            padding: 1.5rem 2rem;
+        }
+
         /* Blog Section */
         .blog {
-            padding: 8rem 0; {/* [cite: 137, 138] */}
-            background-color: var(--secondary); {/* [cite: 138] */}
-            position: relative; {/* [cite: 138] */}
+            padding: 8rem 0;
+            background-color: var(--secondary);
+            position: relative;
         }
-        
+
         .blog::before {
-            content: ''; {/* [cite: 138, 139] */}
-            position: absolute; {/* [cite: 139] */}
-            top: -100px; {/* [cite: 139] */}
-            right: -100px; {/* [cite: 139] */}
-            width: 300px; {/* [cite: 139] */}
-            height: 300px; {/* [cite: 139] */}
-            background: var(--highlight); {/* [cite: 139] */}
-            border-radius: 50%; {/* [cite: 139] */}
-            filter: blur(100px); {/* [cite: 139] */}
-            opacity: 0.1; {/* [cite: 139] */}
-            z-index: 0; {/* [cite: 139, 140] */}
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
         }
-        
-        .blog-posts {
-            display: grid; {/* [cite: 140, 141] */}
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); {/* [cite: 141] */}
-            gap: 2.5rem; {/* [cite: 141] */}
-            margin-top: 4rem; {/* [cite: 141] */}
-            position: relative; {/* [cite: 141] */}
-            z-index: 1; {/* [cite: 141, 142] */}
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .blog-post {
-            background: var(--primary); {/* [cite: 142, 143] */}
-            border-radius: var(--border-radius); {/* [cite: 143] */}
-            overflow: hidden; {/* [cite: 143] */}
-            transition: var(--transition); {/* [cite: 143] */}
-            box-shadow: var(--box-shadow); {/* [cite: 143] */}
-            border: 1px solid rgba(255, 255, 255, 0.05); {/* [cite: 143, 144] */}
+            background: var(--primary);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .blog-post:hover {
-            transform: translateY(-10px); {/* [cite: 144, 145] */}
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); {/* [cite: 145] */}
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 180, 216, 0.3);
         }
-        
-        .post-image {
-            height: 220px; {/* [cite: 145, 146] */}
-            overflow: hidden; {/* [cite: 146] */}
+
+        .blog-post img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: var(--transition);
         }
-        
-        .post-image img {
-            width: 100%; {/* [cite: 146, 147] */}
-            height: 100%; {/* [cite: 147] */}
-            object-fit: cover; {/* [cite: 147] */}
-            transition: var(--transition); {/* [cite: 147] */}
+
+        .blog-post:hover img {
+            transform: scale(1.05);
         }
-        
-        .blog-post:hover .post-image img {
-            transform: scale(1.1); {/* [cite: 147, 148] */}
+
+        .blog-content {
+            padding: 2rem;
+            flex-grow: 1; /* Allows content to take available space */
+            display: flex;
+            flex-direction: column;
         }
-        
-        .post-content {
-            padding: 2rem; {/* [cite: 148, 149] */}
+
+        .blog-content .post-meta {
+            font-size: 0.9rem;
+            color: var(--highlight);
+            margin-bottom: 0.75rem;
         }
-        
-        .post-meta {
-            display: flex; {/* [cite: 149, 150] */}
-            align-items: center; {/* [cite: 150] */}
-            margin-bottom: 1rem; {/* [cite: 150] */}
-            color: var(--highlight); {/* [cite: 150] */}
-            font-size: 0.9rem; {/* [cite: 150] */}
+
+        .blog-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
         }
-        
-        .post-meta i {
-            margin-right: 5px; {/* [cite: 150, 151] */}
+
+        .blog-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            flex-grow: 1; /* Pushes button to bottom */
         }
-        
-        .post-meta span {
-            margin-right: 15px; {/* [cite: 151, 152] */}
+
+        .blog-content .read-more {
+            color: var(--highlight);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+            margin-top: auto; /* Aligns to bottom */
         }
-        
-        .post-content h3 {
-            font-size: 1.5rem; {/* [cite: 152, 153] */}
-            margin-bottom: 1rem; {/* [cite: 153] */}
-            transition: var(--transition); {/* [cite: 153] */}
+
+        .blog-content .read-more i {
+            font-size: 1rem;
+            margin-left: 8px;
+            transition: var(--transition);
         }
-        
-        .blog-post:hover .post-content h3 {
-            color: var(--highlight); {/* [cite: 153, 154] */}
+
+        .blog-content .read-more:hover {
+            letter-spacing: 1px;
         }
-        
-        .post-content p {
-            color: var(--text-secondary); {/* [cite: 154, 155] */}
-            margin-bottom: 1.5rem; {/* [cite: 155] */}
-        }
-        
-        .read-more {
-            color: var(--highlight); {/* [cite: 155, 156] */}
-            text-decoration: none; {/* [cite: 156] */}
-            font-weight: 600; {/* [cite: 156] */}
-            display: inline-flex; {/* [cite: 156] */}
-            align-items: center; {/* [cite: 156] */}
-            transition: var(--transition); {/* [cite: 156, 157] */}
-        }
-        
-        .read-more i {
-            font-size: 1rem; {/* [cite: 157, 158] */}
-            margin-left: 8px; {/* [cite: 158] */}
-            transition: var(--transition); {/* [cite: 158] */}
-        }
-        
-        .read-more:hover {
-            letter-spacing: 1px; {/* [cite: 158, 159] */}
-        }
-        
-        .read-more:hover i {
-            transform: translateX(5px); {/* [cite: 159, 160] */}
+
+        .blog-content .read-more:hover i {
+            transform: translateX(5px);
         }
         
         /* Contact Section */
         .contact {
-            padding: 8rem 0; {/* [cite: 160, 161] */}
-            background-color: var(--primary); {/* [cite: 161] */}
-            position: relative; {/* [cite: 161] */}
-            overflow: hidden; {/* [cite: 161] */}
+            padding: 8rem 0;
+            background-color: var(--primary);
+            position: relative;
         }
         
         .contact::before {
-            content: ''; {/* [cite: 161, 162] */}
-            position: absolute; {/* [cite: 162] */}
-            bottom: -100px; {/* [cite: 162] */}
-            right: -100px; {/* [cite: 162] */}
-            width: 300px; {/* [cite: 162] */}
-            height: 300px; {/* [cite: 162] */}
-            background: var(--highlight); {/* [cite: 162] */}
-            border-radius: 50%; {/* [cite: 162] */}
-            filter: blur(100px); {/* [cite: 162] */}
-            opacity: 0.1; {/* [cite: 162] */}
-            z-index: 0; {/* [cite: 162, 163] */}
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            z-index: 0;
         }
         
-        .contact-container {
-            display: grid; {/* [cite: 163, 164] */}
-            grid-template-columns: 1fr 1fr; {/* [cite: 164] */}
-            gap: 5rem; {/* [cite: 164] */}
-            position: relative; {/* [cite: 164] */}
-            z-index: 1; {/* [cite: 164] */}
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Adjusted for form prominence */
+            gap: 5rem;
+            align-items: flex-start; /* Align top */
+            position: relative;
+            z-index: 1;
         }
         
-        .contact-info {
-            margin-bottom: 3rem; {/* [cite: 164, 165] */}
+        .contact-info h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
         }
         
-        .contact-info h3 {
-            font-size: 1.8rem; {/* [cite: 165, 166] */}
-            margin-bottom: 1.5rem; {/* [cite: 166] */}
-            color: var(--highlight); {/* [cite: 166] */}
+        .contact-info h2 span {
+            color: var(--highlight);
         }
         
-        .contact-info p, .contact-info a {
-            color: var(--text-secondary); {/* [cite: 166, 167] */}
-            text-decoration: none; {/* [cite: 167] */}
-            display: block; {/* [cite: 167] */}
-            margin-bottom: 1rem; {/* [cite: 167] */}
-            font-size: 1.1rem; {/* [cite: 167] */}
-            transition: var(--transition); {/* [cite: 167, 168] */}
+        .contact-info p {
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
         }
         
-        .contact-info a:hover {
-            color: var(--highlight); {/* [cite: 168, 169] */}
-            transform: translateX(5px); {/* [cite: 169] */}
+        .contact-details {
+            list-style: none;
+            margin-bottom: 3rem;
         }
         
-        .contact-info i {
-            margin-right: 10px; {/* [cite: 169, 170] */}
-            color: var(--highlight); {/* [cite: 170] */}
-            width: 20px; {/* [cite: 170] */}
-            text-align: center; {/* [cite: 170] */}
-        }
-
-        .social-links {
-            display: flex; {/* [cite: 170, 171] */}
-            gap: 1.5rem; {/* [cite: 171] */}
-            margin-top: 2rem; {/* [cite: 171] */}
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
         }
         
-        .social-links a {
-            color: var(--text-secondary); {/* [cite: 171, 172] */}
-            font-size: 1.5rem; {/* [cite: 172] */}
-            transition: var(--transition); {/* [cite: 172] */}
+        .contact-details li i {
+            color: var(--highlight);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            width: 30px; /* Fixed width for alignment */
+            text-align: center;
         }
         
-        .social-links a:hover {
-            color: var(--highlight); {/* [cite: 172, 173] */}
-            transform: translateY(-5px); {/* [cite: 173] */}
+        .contact-form {
+            background: var(--secondary);
+            padding: 3.5rem; /* Increased padding */
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%; {/* [cite: 173, 174] */}
-            padding: 1.2rem; {/* [cite: 174] */}
-            margin-bottom: 1.5rem; {/* [cite: 174] */}
-            background: rgba(255, 255, 255, 0.05); {/* [cite: 174] */}
-            border: 1px solid rgba(255, 255, 255, 0.1); {/* [cite: 174] */}
-            border-radius: 5px; {/* [cite: 174] */}
-            color: var(--text); {/* [cite: 174, 175] */}
-            font-size: 1rem; {/* [cite: 175] */}
-            transition: var(--transition); {/* [cite: 175] */}
+        .contact-form h3 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            color: var(--highlight);
         }
         
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none; {/* [cite: 175, 176] */}
-            border-color: var(--highlight); {/* [cite: 176] */}
-            background: rgba(0, 180, 216, 0.05); {/* [cite: 176] */}
-            box-shadow: 0 0 10px rgba(0, 180, 216, 0.1); {/* [cite: 176, 177] */}
+        .form-group {
+            margin-bottom: 1.8rem; /* Increased spacing */
         }
         
-        .contact-form textarea {
-            height: 150px; {/* [cite: 177, 178] */}
-            resize: vertical; {/* [cite: 178] */}
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
         }
         
-        .contact-form button[type="submit"] { /* More specific selector */
-            width: 100%; {/* [cite: 178, 179] */}
-            padding: 1.2rem; {/* [cite: 179] */}
-            background: var(--highlight); {/* [cite: 179] */}
-            color: var(--primary); {/* [cite: 179] */}
-            border: none; {/* [cite: 179] */}
-            border-radius: 50px; {/* [cite: 179] */}
-            cursor: pointer; {/* [cite: 179] */}
-            font-weight: 600; {/* [cite: 179] */}
-            transition: var(--transition); {/* [cite: 179] */}
-            text-transform: uppercase; {/* [cite: 179] */}
-            letter-spacing: 1px; {/* [cite: 179, 180] */}
-            font-size: 1rem; {/* [cite: 180] */}
-            position: relative; {/* [cite: 180] */}
-            overflow: hidden; {/* [cite: 180] */}
-            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4); {/* [cite: 180, 181] */}
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: var(--primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px; /* Slightly less rounded than buttons */
+            color: var(--text);
+            font-size: 1rem;
+            transition: var(--transition);
+            outline: none;
         }
         
-        .contact-form button[type="submit"]:hover {
-            background: var(--highlight-hover); {/* [cite: 181, 182] */}
-            transform: translateY(-5px); {/* [cite: 182] */}
-            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.5); {/* [cite: 182, 183] */}
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--highlight);
+            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.3);
         }
-         .contact-form button[type="submit"]:disabled {
-            background: var(--accent); {/* [cite: 183, 184] */}
-            cursor: not-allowed; {/* [cite: 184] */}
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .contact-form .button {
+            width: 100%; /* Make button full width */
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
         }
         
         /* Footer */
         footer {
-            background: var(--primary); {/* [cite: 184, 185] */}
-            padding: 5rem 0 2rem; {/* [cite: 185] */}
-            text-align: center; {/* [cite: 185] */}
-            position: relative; {/* [cite: 185] */}
-            border-top: 1px solid rgba(255, 255, 255, 0.1); {/* [cite: 185, 186] */}
+            background-color: var(--accent);
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(0, 180, 216, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.05;
+        }
+
+        footer::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.05;
         }
         
         .footer-content {
-            display: flex; {/* [cite: 186, 187] */}
-            flex-direction: column; {/* [cite: 187] */}
-            align-items: center; {/* [cite: 187] */}
-            position: relative; {/* [cite: 187] */}
-            z-index: 1; {/* [cite: 187] */}
+            position: relative;
+            z-index: 1;
         }
-        
+
         .footer-logo {
-            font-size: 2.5rem; {/* [cite: 187, 188] */}
-            font-weight: 700; {/* [cite: 188] */}
-            margin-bottom: 2rem; {/* [cite: 188] */}
-            color: var(--text); {/* [cite: 188] */}
-            display: flex; {/* [cite: 188] */}
-            align-items: center; {/* [cite: 188] */}
-            gap: 10px; {/* [cite: 188, 189] */}
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
         }
-        
+
         .footer-logo span {
-            color: var(--highlight); {/* [cite: 189, 190] */}
+            color: var(--highlight);
+        }
+
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 1.5rem 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .footer-nav a:hover {
+            color: var(--highlight);
         }
         
-        .footer-links {
-            display: flex; {/* [cite: 190, 191] */}
-            list-style: none; {/* [cite: 191] */}
-            margin-bottom: 3rem; {/* [cite: 191] */}
-            flex-wrap: wrap; {/* [cite: 191] */}
-            justify-content: center; {/* [cite: 191] */}
+        .footer-social {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         
-        .footer-links li {
-            margin: 0 1.5rem; {/* [cite: 191, 192] */}
+        .footer-social a {
+            color: var(--text-secondary);
+            font-size: 1.8rem;
+            transition: var(--transition);
         }
         
-        .footer-links a {
-            color: var(--text-secondary); {/* [cite: 192, 193] */}
-            text-decoration: none; {/* [cite: 193] */}
-            transition: var(--transition); {/* [cite: 193] */}
-            font-size: 1.1rem; {/* [cite: 193] */}
-            position: relative; {/* [cite: 193] */}
+        .footer-social a:hover {
+            color: var(--highlight);
+            transform: translateY(-5px);
         }
         
-        .footer-links a::after {
-            content: ''; {/* [cite: 193, 194] */}
-            position: absolute; {/* [cite: 194] */}
-            width: 0; {/* [cite: 194] */}
-            height: 2px; {/* [cite: 194] */}
-            background: var(--highlight); {/* [cite: 194] */}
-            bottom: -5px; {/* [cite: 194] */}
-            left: 0; {/* [cite: 194] */}
-            transition: var(--transition); {/* [cite: 194, 195] */}
+        .footer-bottom p {
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.6);
         }
-        
-        .footer-links a:hover {
-            color: var(--highlight); {/* [cite: 195, 196] */}
+
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--highlight);
+            color: var(--primary);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 900;
         }
-        
-        .footer-links a:hover::after {
-            width: 100%; {/* [cite: 196, 197] */}
+
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-10px);
         }
-        
-        .copyright {
-            color: var(--text-secondary); {/* [cite: 197, 198] */}
-            font-size: 0.9rem; {/* [cite: 198] */}
-            margin-top: 2rem; {/* [cite: 198] */}
-            border-top: 1px solid rgba(255, 255, 255, 0.1); {/* [cite: 198] */}
-            padding-top: 1rem; /* Reduced from 2rem for better spacing */ {/* [cite: 198] */}
-            width: 100%; {/* [cite: 199] */}
+
+        #back-to-top:hover {
+            background-color: var(--highlight-hover);
+            transform: translateY(-15px);
+            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.6);
         }
-        
-        .back-to-top {
-            position: fixed; {/* [cite: 199, 200] */}
-            bottom: 30px; {/* [cite: 200] */}
-            right: 30px; {/* [cite: 200] */}
-            width: 50px; {/* [cite: 200] */}
-            height: 50px; {/* [cite: 200] */}
-            background: var(--highlight); {/* [cite: 200] */}
-            color: var(--primary); {/* [cite: 200] */}
-            border-radius: 50%; {/* [cite: 200] */}
-            display: flex; {/* [cite: 200] */}
-            align-items: center; {/* [cite: 200] */}
-            justify-content: center; {/* [cite: 200, 201] */}
-            font-size: 1.2rem; {/* [cite: 201] */}
-            cursor: pointer; {/* [cite: 201] */}
-            transition: var(--transition); {/* [cite: 201] */}
-            opacity: 0; {/* [cite: 201] */}
-            visibility: hidden; {/* [cite: 201] */}
-            z-index: 999; {/* [cite: 201] */}
-            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4); {/* [cite: 201, 202] */}
-        }
-        
-        .back-to-top.active {
-            opacity: 1; {/* [cite: 202, 203] */}
-            visibility: visible; {/* [cite: 203] */}
-        }
-        
-        .back-to-top:hover {
-            background: var(--highlight-hover); {/* [cite: 203, 204] */}
-            transform: translateY(-5px); {/* [cite: 204] */}
-            box-shadow: 0 10px 20px rgba(0, 180, 216, 0.5); {/* [cite: 204, 205] */}
-        }
-        
-        /* Modal */
-        .modal {
-            display: none; /* Hidden by default */ {/* [cite: 205, 206] */}
-            position: fixed; {/* [cite: 206] */}
-            top: 0; {/* [cite: 206, 207] */}
-            left: 0; {/* [cite: 207] */}
-            width: 100%; {/* [cite: 207] */}
-            height: 100%; {/* [cite: 207] */}
-            background: rgba(10, 14, 35, 0.95); /* Slightly more opaque backdrop */ {/* [cite: 207, 208] */}
-            z-index: 2000; {/* [cite: 208, 209] */}
-            overflow-y: auto; {/* [cite: 209] */}
-            padding: 2rem; {/* [cite: 209] */}
-            align-items: center; /* For centering modal content if not too tall */ {/* [cite: 209] */}
-            justify-content: center; /* For centering modal content */ {/* [cite: 209, 210] */}
-        }
-        
-        .modal.active { /* Class to show modal */
-            display: flex; /* Use flex to help center content */ {/* [cite: 210, 211] */}
-        }
-        
-        .modal-content {
-            background: var(--secondary); {/* [cite: 211, 212] */}
-            max-width: 800px; {/* [cite: 212] */}
-            margin: auto; /* Auto margins for centering */ {/* [cite: 212] */}
-            padding: 3rem; {/* [cite: 212, 213] */}
-            border-radius: var(--border-radius); {/* [cite: 213] */}
-            position: relative; {/* [cite: 213] */}
-            box-shadow: var(--box-shadow); {/* [cite: 213] */}
-            animation: modalFadeIn 0.5s; {/* [cite: 213] */}
-            width: 90%; /* Responsive width */ {/* [cite: 213, 214] */}
-        }
-        
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0; {/* [cite: 214, 215] */}
-                transform: translateY(-50px); {/* [cite: 215] */}
-            }
-            to {
-                opacity: 1; {/* [cite: 215, 216] */}
-                transform: translateY(0); {/* [cite: 216] */}
-            }
-        }
-        
-        .close-modal {
-            position: absolute; {/* [cite: 216, 217] */}
-            top: 20px; {/* [cite: 217] */}
-            right: 20px; {/* [cite: 217] */}
-            font-size: 1.8rem; /* Slightly larger */ {/* [cite: 217] */}
-            color: var(--text-secondary); {/* [cite: 217, 218] */}
-            cursor: pointer; {/* [cite: 218] */}
-            transition: var(--transition); {/* [cite: 218] */}
-            line-height: 1; /* Ensure it doesn't affect layout */ {/* [cite: 218] */}
-        }
-        
-        .close-modal:hover {
-            color: var(--highlight); {/* [cite: 218, 219] */}
-            transform: rotate(90deg); {/* [cite: 219] */}
-        }
-        
-        .modal h2 {
-            font-size: 2.5rem; {/* [cite: 219, 220] */}
-            margin-bottom: 1.5rem; {/* [cite: 220] */}
-            color: var(--highlight); {/* [cite: 220] */}
-        }
-        
-        .modal p {
-            color: var(--text-secondary); {/* [cite: 220, 221] */}
-            margin-bottom: 1.5rem; {/* [cite: 221] */}
-            line-height: 1.8; {/* [cite: 221] */}
-        }
-        
-        /* Responsive Design */
+
+        /* Responsive Adjustments */
         @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 3.5rem; {/* [cite: 221, 222] */}
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .about-content, .contact-container {
-                grid-template-columns: 1fr; {/* [cite: 222, 223] */}
-            }
-        
-            .about-image {
-                order: -1; /* Image on top in mobile for about section */ {/* [cite: 223, 224] */}
-                max-width: 600px; {/* [cite: 224, 225] */}
-                margin: 0 auto 3rem auto; /* Add some bottom margin */ {/* [cite: 225] */}
-                transform: perspective(1000px) rotateY(0deg); /* Disable 3D effect on smaller screens */ {/* [cite: 225, 226] */}
-            }
-        
-            .about-image:hover {
-                transform: perspective(1000px) rotateY(0deg); /* Consistent hover */ {/* [cite: 226, 227] */}
-            }
-        
-            .hero h1 {
-                font-size: 3rem; {/* [cite: 227, 228] */}
-            }
-        
-            .contact-info { /* Add margin when stacked */
-                margin-bottom: 3rem; {/* [cite: 228, 229] */}
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed; {/* [cite: 229, 230] */}
-                top: 0; {/* [cite: 230] */}
-                right: -100%; /* Start off-screen */ {/* [cite: 230] */}
-                width: 80%; {/* [cite: 230, 231] */}
-                max-width: 320px; /* Max width for mobile menu */ {/* [cite: 231] */}
-                height: 100vh; {/* [cite: 231, 232] */}
-                background: var(--primary); {/* [cite: 232] */}
-                flex-direction: column; {/* [cite: 232] */}
-                align-items: center; {/* [cite: 232] */}
-                justify-content: center; {/* [cite: 232] */}
-                transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use custom transition */ {/* [cite: 232, 233] */}
-                z-index: 1000; {/* [cite: 233, 234] */}
-                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3); {/* [cite: 234] */}
-            }
-        
-            .nav-links.active {
-                right: 0; /* Slide in */ {/* [cite: 234, 235] */}
-            }
-        
-            .nav-links li {
-                margin: 1.5rem 0; {/* [cite: 235, 236] */}
-            }
-        
-            .hamburger {
-                display: block; /* Show hamburger */ {/* [cite: 236, 237] */}
-            }
-        
-            .hamburger.active div:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px); {/* [cite: 237, 238] */}
-            }
-        
-            .hamburger.active div:nth-child(2) {
-                opacity: 0; {/* [cite: 238, 239] */}
-            }
-        
-            .hamburger.active div:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px); {/* [cite: 239, 240] */}
-            }
-        
-            .hero h1 {
-                font-size: 2.5rem; {/* [cite: 240, 241] */}
-            }
-        
-            .hero p {
-                font-size: 1.1rem; {/* [cite: 241, 242] */}
-            }
-        
-            .section-title h2 {
-                font-size: 2.5rem; {/* [cite: 242, 243] */}
-            }
-        
-            .about-text h2 {
-                font-size: 2.5rem; {/* [cite: 243, 244] */}
-            }
-        
-            .areas-grid {
-                grid-template-columns: 1fr; /* Single column for practice areas */ {/* [cite: 244, 245] */}
-            }
-        
-            .cases-grid {
-                grid-template-columns: 1fr; /* Single column for cases */ {/* [cite: 245, 246] */}
-            }
-        
-            .blog-posts {
-                grid-template-columns: 1fr; /* Single column for blog posts */ {/* [cite: 246, 247] */}
-            }
-        
-            .modal-content {
-                padding: 2rem; {/* [cite: 247, 248] */}
-                width: 95%; {/* [cite: 248] */}
-            }
-        
-            .stats {
-                grid-template-columns: 1fr; /* Stats items stacked */ {/* [cite: 248, 249] */}
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.2rem; {/* [cite: 249, 250] */}
-            }
-        
-            .btn {
-                padding: 0.8rem 1.8rem; {/* [cite: 250, 251] */}
-                font-size: 0.9rem; {/* [cite: 251] */}
-            }
-        
-            .section-title h2, .about-text h2 {
-                font-size: 2rem; {/* [cite: 251, 252] */}
-            }
-        
-            .footer-links {
-                flex-direction: column; {/* [cite: 252, 253] */}
-            }
-        
-            .footer-links li {
-                margin: 0.8rem 0; {/* [cite: 253, 254] */}
-            }
-        
-            .modal h2 {
-                font-size: 2rem; {/* [cite: 254, 255] */}
-            }
-        
             .container {
-                padding: 0 15px; /* Reduce padding on very small screens */ {/* [cite: 255, 256] */}
+                padding: 0 20px;
             }
-        
-            .contact-container {
-                gap: 3rem; {/* [cite: 256, 257] */}
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+            .about-content {
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none; /* Hide desktop nav */
+            }
+            .hamburger {
+                display: flex; /* Show hamburger */
+            }
+
+            .hero {
+                min-height: 700px;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .areas-grid, .cases-grid, .team-grid, .blog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            .about-content, .contact-content {
+                grid-template-columns: 1fr; /* Stack columns */
+                gap: 4rem;
+            }
+            .about-image {
+                transform: none; /* Remove 3D effect on small screens */
+            }
+            .stats {
+                grid-template-columns: 1fr; /* Stack stats */
+            }
+            .testimonial {
+                margin: 0; /* Remove side margin for better fit */
+            }
+            .slick-prev, .slick-next {
+                display: none !important; /* Hide arrows on mobile */
+            }
+            .faq-question {
+                font-size: 1.1rem;
+                padding: 1.2rem 1.5rem;
+            }
+            .faq-answer {
+                padding: 1rem 1.5rem;
+            }
+            .contact-form {
+                padding: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            .section-title p {
+                font-size: 1rem;
+            }
+            .area-card {
+                padding: 2rem;
+            }
+            .area-card h3 {
+                font-size: 1.4rem;
+            }
+            .testimonial blockquote {
+                font-size: 1.1rem;
+            }
+            .testimonial .client-info img {
+                width: 60px;
+                height: 60px;
+            }
+            .team-member {
+                padding: 2rem;
+            }
+            .team-member h3 {
+                font-size: 1.6rem;
+            }
+            .blog-content h3 {
+                font-size: 1.6rem;
+            }
+            .contact-info h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            .hero {
+                min-height: 600px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 0.9rem;
+            }
+            .btn {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            .section-title p {
+                font-size: 0.9rem;
+            }
+            .areas-grid, .cases-grid, .team-grid, .blog-grid {
+                grid-template-columns: 1fr; /* Single column layout */
+            }
+            .about-text h2 {
+                font-size: 2rem;
+            }
+            .contact-info h2 {
+                font-size: 2rem;
+            }
+            .contact-details li {
+                font-size: 1rem;
+            }
+            .contact-form h3 {
+                font-size: 1.5rem;
+            }
+            .contact-form {
+                padding: 1.5rem;
+            }
+            .footer-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .footer-social {
+                gap: 1rem;
+            }
+            #back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+                bottom: 15px;
+                right: 15px;
+            }
+            .mobile-nav {
+                width: 250px; /* Smaller mobile nav */
             }
         }
     </style>
 </head>
 <body>
-    <header id="header">
+    <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">
-                    <i class="fas fa-gavel logo-icon"></i>
-                    Dutchman <span>&</span> Partners {/* [cite: 257, 258] */}
+                <a href="#" class="logo" aria-label="Dutchman & Partners Home">
+                    <i class="fas fa-gavel logo-icon"></i> Dutchman & <span>Partners</span>
                 </a>
                 <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#practice-areas">Practice Areas</a></li>
-                    <li><a href="#featured-cases">Featured Cases</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#blog">Case Law</a></li> {/* [cite: 259] */}
+                    <li><a href="#featured-cases">Cases</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#team">Team</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div></div> {/* [cite: 259, 260] */}
-                    <div></div>
-                    <div></div>
+                <div class="hamburger" aria-label="Toggle navigation menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <section class="hero"> {/* [cite: 260, 261] */}
-        <div class="hero-content">
-            <h1>Championing <span>Sports Law</span> Excellence</h1>
-            <p>Dutchman & Partners provides elite legal representation for athletes, teams, and sports organizations worldwide. Our strategic approach combines legal expertise with deep sports industry knowledge.</p> {/* [cite: 261, 262] */}
-            <a href="#contact" class="btn">Schedule Consultation</a>
-        </div>
-        <a href="#practice-areas" class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
-        </a>
-    </section>
+    <div class="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#practice-areas">Practice Areas</a></li>
+            <li><a href="#featured-cases">Cases</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
-    <section id="practice-areas" class="practice-areas">
-        <div class="container">
-            <div class="section-title">
-                 <h2>Our Specializations</h2> {/* [cite: 262, 263] */}
-                <p>We offer comprehensive legal services tailored to the unique needs of the sports industry and its stakeholders.</p>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content animate-on-scroll">
+                    <h1>Your Legal Edge in <span>Sports</span></h1>
+                    <p>Expert legal counsel for athletes, clubs, and organizations across the globe. Protecting your interests, ensuring your success.</p>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                    <a href="#practice-areas" class="btn btn-outline">Our Expertise</a>
+                </div>
+                <div class="scroll-down">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
-            <div class="areas-grid">
-                <div class="area-card">
-                    <i class="fas fa-running"></i> {/* [cite: 263, 264] */}
-                    <h3>Athlete Representation</h3>
-                    <p>End-to-end legal support for professional athletes including contract negotiation, endorsement deals, and career management.</p>
-                    <a href="#" class="learn-more js-open-modal" data-modal-id="athlete-modal">Learn more <i class="fas fa-arrow-right"></i></a>
-                </div> {/* [cite: 264, 265] */}
-                <div class="area-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Team & League Advisory</h3>
-                    <p>Strategic counsel for sports teams and leagues on governance, regulatory compliance, and commercial agreements.</p> {/* [cite: 265, 266] */}
-                    <a href="#" class="learn-more js-open-modal" data-modal-id="team-modal">Learn more <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="area-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Sponsorship Agreements</h3> {/* [cite: 266, 267] */}
-                    <p>Structuring and negotiating high-value sponsorship and partnership deals that protect your brand and interests.</p>
-                    <a href="#" class="learn-more js-open-modal" data-modal-id="sponsorship-modal">Learn more <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="area-card"> {/* [cite: 267, 268] */}
-                    <i class="fas fa-trophy"></i>
-                    <h3>Transfer Negotiations</h3>
-                    <p>Expert handling of player transfers, including contract terms, buyout clauses, and international regulations.</p>
-                    <a href="#" class="learn-more js-open-modal" data-modal-id="transfer-modal">Learn more <i class="fas fa-arrow-right"></i></a> {/* [cite: 268, 269] */}
-                </div>
-                <div class="area-card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>Dispute Resolution</h3>
-                    <p>Representation in arbitration, mediation, and litigation for sports-related disputes at all levels.</p> {/* [cite: 269, 270] */}
-                    <a href="#" class="learn-more js-open-modal" data-modal-id="dispute-modal">Learn more <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="area-card">
-                    <i class="fas fa-globe"></i>
-                    <h3>International Sports Law</h3> {/* [cite: 270, 271] */}
-                    <p>Navigating complex cross-border sports legal matters with our global network of experts.</p>
-                    <a href="#" class="learn-more js-open-modal" data-modal-id="international-modal">Learn more <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div> {/* [cite: 271, 272] */}
-        </div>
-    </section>
+        </section>
 
-    <section id="featured-cases" class="featured-cases">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Engagements</h2>
-                <p>Selected high-profile cases that demonstrate our expertise in sports law.</p>
+        <section id="practice-areas" class="practice-areas">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Our <span>Practice Areas</span></h2>
+                    <p>We specialize in a comprehensive range of sports law disciplines, offering tailored solutions to meet the unique demands of the sports industry.</p>
+                </div>
+                <div class="areas-grid">
+                    <div class="area-card animate-on-scroll">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>Contract Negotiation</h3>
+                        <p>Drafting and negotiating complex contracts for athletes, coaches, and clubs, ensuring fair terms and protection.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="area-card animate-on-scroll">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Dispute Resolution</h3>
+                        <p>Representing clients in arbitration and litigation before sports tribunals like CAS, FIFA, and national federations.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="area-card animate-on-scroll">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Player Transfers</h3>
+                        <p>Navigating the legal complexities of international and domestic player transfers, including regulations and compliance.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="area-card animate-on-scroll">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Sponsorship & Endorsement</h3>
+                        <p>Advising on and structuring lucrative sponsorship and endorsement deals for athletes and brands.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="area-card animate-on-scroll">
+                        <i class="fas fa-book"></i>
+                        <h3>Intellectual Property</h3>
+                        <p>Protecting image rights, trademarks, and other intellectual property for sports entities and individuals.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="area-card animate-on-scroll">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Regulatory Compliance</h3>
+                        <p>Ensuring adherence to sports regulations, anti-doping rules, and governance frameworks.</p>
+                        <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
-             <div class="cases-grid"> {/* [cite: 272, 273] */}
-                <div class="case-card">
-                    <img src="https://images.unsplash.com/photo-1543357480-c60d400e2ef9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Football transfer case"> {/* [cite: 273] */}
-                    <div class="case-overlay">
-                        <h3>High-Profile Football Transfer</h3>
-                        <p>Facilitated a record-breaking international football player transfer, navigating complex FIFA regulations and contractual agreements.</p> {/* [cite: 273, 274] */}
-                        <a href="#" class="btn btn-outline js-open-modal" data-modal-id="case1-modal">View Case</a>
-                    </div>
-                 </div> {/* [cite: 274, 275] */}
-                <div class="case-card">
-                    <img src="https://images.unsplash.com/photo-1579952097721-a7b3c3c7e7b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Olympics doping appeal"> {/* [cite: 275] */}
-                    <div class="case-overlay">
-                        <h3>Olympic Doping Ban Appeal</h3>
-                        <p>Successfully appealed a controversial doping ban for an Olympic athlete, reinstating their eligibility for international competitions.</p> {/* [cite: 275, 276] */}
-                        <a href="#" class="btn btn-outline js-open-modal" data-modal-id="case2-modal">View Case</a>
-                    </div>
-                </div>
-                 <div class="case-card"> {/* [cite: 276, 277] */}
-                    <img src="https://images.unsplash.com/photo-1517466185816-724d550e5033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sports team acquisition"> {/* [cite: 277] */}
-                    <div class="case-overlay">
-                        <h3>Major League Team Acquisition</h3>
-                        <p>Provided legal counsel and due diligence for the acquisition of a major league sports franchise, ensuring a smooth transition.</p> {/* [cite: 277, 278] */}
-                        <a href="#" class="btn btn-outline js-open-modal" data-modal-id="case3-modal">View Case</a>
-                    </div>
-                </div>
-            </div> {/* [cite: 278, 279] */}
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Who We <span>Are</span></h2>
-                <p>Dutchman & Partners is a leading sports law firm dedicated to providing unparalleled legal services to the global sports community.</p>
-            </div> {/* [cite: 279, 280] */}
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Your Trusted <span>Legal Partner</span> in Sports</h2>
-                    <p>Founded on principles of integrity, excellence, and a deep passion for sports, Dutchman & Partners brings together a team of seasoned legal experts with extensive experience across all facets of sports law. {/* [cite: 280, 281] */} We pride ourselves on our client-centric approach, delivering bespoke solutions and strategic advice to navigate the complexities of the modern sports landscape.</p> {/* [cite: 282] */}
-                    <p>Our commitment extends beyond legal representation; we aim to be true partners in our clients' success, protecting their interests and empowering them to achieve their full potential on and off the field.</p> {/* [cite: 282, 283] */}
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3>150+</h3>
-                            <p>Successful Cases</p> {/* [cite: 283, 284] */}
+        <section id="featured-cases" class="featured-cases">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Featured <span>Cases</span></h2>
+                    <p>Explore some of our successful cases where we provided strategic legal solutions and achieved favorable outcomes for our clients.</p>
+                </div>
+                <div class="cases-grid">
+                    <div class="case-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1579952670266-96b63c78d407?auto=format&fit=crop&q=80&w=1920&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Football stadium at sunset">
+                        <div class="case-overlay">
+                            <h3>High-Profile Player Transfer</h3>
+                            <p>Successfully facilitated the record-breaking transfer of a star footballer to a major European club, handling all contractual and regulatory aspects.</p>
+                            <a href="#" class="btn">View Details</a>
                         </div>
-                        <div class="stat-item">
-                            <h3>20+</h3> {/* [cite: 284, 285] */}
-                            <p>Years Experience</p>
+                    </div>
+                    <div class="case-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1517462190989-d91f8016429f?auto=format&fit=crop&q=80&w=1920&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Basketball court">
+                        <div class="case-overlay">
+                            <h3>CAS Arbitration Victory</h3>
+                            <p>Won a landmark arbitration case at the Court of Arbitration for Sport (CAS) for an athlete facing a doping ban, leading to full exoneration.</p>
+                            <a href="#" class="btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="case-card animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1627993214502-3c2b8c5c7d0d?auto=format&fit=crop&q=80&w=1920&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Athlete running on track">
+                        <div class="case-overlay">
+                            <h3>Multi-Million Sponsorship Deal</h3>
+                            <p>Negotiated a multi-year, multi-million dollar endorsement deal between a global brand and an Olympic champion athlete.</p>
+                            <a href="#" class="btn">View Details</a>
                         </div>
                     </div>
                 </div>
-                <div class="about-image"> {/* [cite: 285, 286] */}
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ff88cd68?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="About Us"> {/* [cite: 286] */}
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-             <div class="section-title"> {/* [cite: 286, 287] */}
-                <h2>What Our <span>Clients Say</span></h2>
-                <p>Hear from athletes, clubs, and federations who have benefited from our expert legal services.</p>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <i class="fas fa-quote-left"></i> {/* [cite: 287, 288] */}
-                    <p class="quote">"Dutchman & Partners provided exceptional legal guidance during my contract negotiations. {/* [cite: 288] */} Their expertise secured the best possible outcome for my career. {/* [cite: 289] */} Truly indispensable!"</p> {/* [cite: 290] */}
-                    <div class="client-info">
-                        <i class="fas fa-user-circle client-avatar-placeholder"></i>
-                        <div class="client-details">
-                            <h4>Liam Sterling</h4>
-                            <p>Professional Footballer</p> {/* [cite: 290, 291] */}
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>About <span>Us</span></h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text animate-on-scroll">
+                        <p>At Dutchman & Partners, we are more than just legal advisors; we are trusted partners dedicated to the success and protection of our clients in the dynamic world of sports. With years of specialized experience, our team brings unparalleled expertise to every case, ensuring strategic and effective legal solutions.</p>
+                        <p>Our firm is built on a foundation of deep industry knowledge, integrity, and a passion for sports. We pride ourselves on our meticulous approach, proactive problem-solving, and commitment to achieving the best possible outcomes, whether in complex contract negotiations, dispute resolutions, or regulatory compliance.</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h3>15+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>500+</h3>
+                                <p>Successful Cases</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>95%</h3>
+                                <p>Client Satisfaction</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>10+</h3>
+                                <p>Global Offices</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial">
-                    <i class="fas fa-quote-left"></i> {/* [cite: 291, 292] */}
-                    <p class="quote">"Their team navigated a complex sponsorship dispute with remarkable skill and dedication. {/* [cite: 292] */} We couldn't have asked for better representation."</p> {/* [cite: 293] */}
-                    <div class="client-info">
-                        <i class="fas fa-user-circle client-avatar-placeholder"></i>
-                        <div class="client-details">
-                            <h4>Aisha Khan</h4>
-                            <p>Marketing Director, Global Sports Brand</p> {/* [cite: 293, 294] */}
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <i class="fas fa-quote-left"></i> {/* [cite: 294, 295] */}
-                    <p class="quote">"From governance issues to international transfers, Dutchman & Partners is our go-to firm. {/* [cite: 295] */} Their understanding of sports law is unmatched."</p> {/* [cite: 296] */}
-                    <div class="client-info">
-                        <i class="fas fa-user-circle client-avatar-placeholder"></i>
-                        <div class="client-details">
-                            <h4>Marcus 'The Hammer' Thorne</h4>
-                            <p>CEO, Elite Boxing Promotions</p> {/* [cite: 296, 297] */}
-                        </div>
+                    <div class="about-image animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1505373059885-f5e132924f35?auto=format&fit=crop&q=80&w=1920&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Legal team collaborating in a modern office">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="blog" class="blog"> {/* [cite: 297, 298] */}
-        <div class="container">
-            <div class="section-title">
-                <h2>Case <span>Law & Insights</span></h2>
-                <p>Stay informed with our latest articles, analyses, and legal insights into the world of sports.</p>
-            </div>
-            <div class="blog-posts"> {/* [cite: 298, 299] */}
-                <div class="blog-post">
-                    <div class="post-image">
-                        <img src="https://images.unsplash.com/photo-1507679704257-2e11a37c59b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Contract Law"> {/* [cite: 299] */}
+        <section id="team" class="team">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Meet Our <span>Team</span></h2>
+                    <p>Our team consists of highly skilled and dedicated sports law specialists with a proven track record of excellence and a deep understanding of the global sports landscape.</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b7557be6a57?auto=format&fit=crop&q=80&w=200&h=200&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="John Dutchman">
+                        <h3>John Dutchman</h3>
+                        <p class="title">Founding Partner & CEO</p>
+                        <p>Specializes in high-stakes contract negotiations and international arbitration.</p>
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
                     </div>
-                     <div class="post-content"> {/* [cite: 299, 300] */}
-                        <div class="post-meta">
-                            <span><i class="fas fa-calendar-alt"></i> May 10, 2024</span>
-                            <span><i class="fas fa-tag"></i> Contract Law</span>
-                        </div> {/* [cite: 300, 301] */}
-                        <h3>The Nuances of Athlete Endorsement Contracts</h3>
-                        <p>An in-depth look at key clauses and considerations for athletes entering into lucrative endorsement deals.</p>
-                        <a href="#" class="read-more js-open-modal" data-modal-id="blog1-modal">Read More <i class="fas fa-arrow-right"></i></a> {/* [cite: 301, 302] */}
+                    <div class="team-member animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sarah Williams">
+                        <h3>Sarah Williams</h3>
+                        <p class="title">Senior Legal Counsel</p>
+                        <p>Expert in intellectual property rights and sponsorship agreements.</p>
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="team-member animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1555627702-86119f9b5a15?auto=format&fit=crop&q=80&w=200&h=200&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Michael Chen">
+                        <h3>Michael Chen</h3>
+                        <p class="title">Associate Attorney</p>
+                        <p>Focuses on player transfers and regulatory compliance for emerging sports.</p>
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="team-member animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1599566150163-2919a7977ccf?auto=format&fit=crop&q=80&w=200&h=200&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Emily White">
+                        <h3>Emily White</h3>
+                        <p class="title">Head of Client Relations</p>
+                        <p>Ensures seamless client experience and manages strategic partnerships.</p>
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="blog-post">
-                    <div class="post-image">
-                        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="FIFA Regulations"> {/* [cite: 302, 303] */}
-                    </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span><i class="fas fa-calendar-alt"></i> April 28, 2024</span> {/* [cite: 303, 304] */}
-                            <span><i class="fas fa-tag"></i> Regulations</span>
-                        </div>
-                        <h3>Understanding FIFA's Latest Transfer Regulations</h3> {/* [cite: 304, 305] */}
-                        <p>A comprehensive guide to the recent changes in FIFA's player transfer rules and their implications for clubs and agents.</p>
-                        <a href="#" class="read-more js-open-modal" data-modal-id="blog2-modal">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div> {/* [cite: 305, 306] */}
-                <div class="blog-post">
-                    <div class="post-image">
-                        <img src="https://images.unsplash.com/photo-1582213233827-cd28e08d519b?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Dispute Resolution"> {/* [cite: 306] */}
-                    </div>
-                    <div class="post-content"> {/* [cite: 306, 307] */}
-                        <div class="post-meta">
-                            <span><i class="fas fa-calendar-alt"></i> April 15, 2024</span>
-                            <span><i class="fas fa-tag"></i> Arbitration</span> {/* [cite: 307, 308] */}
-                        </div>
-                        <h3>Sports Arbitration: Resolving Disputes Outside Court</h3>
-                        <p>Exploring the benefits and process of arbitration as a preferred method for resolving sports-related disputes.</p>
-                        <a href="#" class="read-more js-open-modal" data-modal-id="blog3-modal">Read More <i class="fas fa-arrow-right"></i></a> {/* [cite: 308, 309] */}
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container"> {/* [cite: 309, 310] */}
-            <div class="section-title">
-                <h2>Contact <span>Us</span></h2>
-                <p>We are ready to provide expert legal assistance. Reach out to us for a confidential consultation.</p> {/* [cite: 310, 311] */}
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Sports Law Avenue, Global City, GL 12345</p> {/* [cite: 311, 312] */}
-                    <p><i class="fas fa-envelope"></i> info@dutchmanandpartners.com</p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+995597982202">+995597982202</a></p>
-                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/995597982202" target="_blank">+995597982202</a></p>
-                    <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a> {/* [cite: 312, 313] */}
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> {/* [cite: 313, 314] */}
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Client <span>Testimonials</span></h2>
+                    <p>Hear directly from our satisfied clients about their experiences and the impactful legal support they received from Dutchman & Partners.</p>
+                </div>
+                <div class="testimonial-slider animate-on-scroll">
+                    <div class="testimonial">
+                        <blockquote>"Dutchman & Partners provided exceptional legal guidance during my contract negotiations. Their expertise and dedication were crucial in securing a deal that exceeded my expectations. Highly recommended!"</blockquote>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d951ed6?auto=format&fit=crop&q=80&w=100&h=100&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Client 1 Profile Picture">
+                            <div>
+                                <p class="client-name">Alex "The Striker" M.</p>
+                                <p class="client-title">Professional Footballer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <blockquote>"When we faced a complex player dispute, Dutchman & Partners navigated the intricate legal landscape with precision. Their strategic approach led to a swift and favorable resolution for our club."</blockquote>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1507003211169-ea5bda69cb7a?auto=format&fit=crop&q=80&w=100&h=100&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Client 2 Profile Picture">
+                            <div>
+                                <p class="client-name">Coach Elena R.</p>
+                                <p class="client-title">National Basketball Coach</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <blockquote>"Their deep understanding of sports marketing law was invaluable for our latest sponsorship campaign. They protected our brand while maximizing commercial opportunities. A truly professional team."</blockquote>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100&h=100&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Client 3 Profile Picture">
+                            <div>
+                                <p class="client-name">David L.</p>
+                                <p class="client-title">Sports Marketing Director</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Send us a Message</h3>
-                    <form id="contactForm" action="https://formspree.io/f/xzzrnpqq" method="POST"> {/* [cite: 314, 315] */}
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        <input type="text" id="subject" name="subject" placeholder="Subject">
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea> {/* [cite: 315, 316] */}
-                        <button type="submit" id="submitBtn">Send Message</button>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Frequently Asked <span>Questions</span></h2>
+                    <p>Find quick answers to common questions about our services, processes, and how we can assist you in sports law matters.</p>
+                </div>
+                <div class="faq-accordion animate-on-scroll">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What types of clients do you represent?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We represent a diverse range of clients in the sports industry, including professional athletes, sports clubs, federations, agents, marketing agencies, and sports organizations. Our expertise covers both individual and corporate legal needs.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do you handle international sports law cases?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Our team has extensive experience with international sports law, including working with governing bodies like FIFA, UEFA, IOC, and WADA, and representing clients before the Court of Arbitration for Sport (CAS). We have a global network to assist with cross-border legal challenges.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is your fee structure?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Our fee structure is transparent and can be tailored to the specific needs of each client and case. We offer various arrangements, including hourly rates, fixed fees for specific services, and success-based fees where appropriate. We'll discuss this in detail during your initial consultation.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How quickly can I get a consultation?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We prioritize urgent matters and aim to schedule initial consultations as quickly as possible, usually within 24-48 hours. Please contact us via our form or phone, and our team will get back to you promptly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Latest <span>Insights</span></h2>
+                    <p>Stay informed with our latest articles, analyses, and news on significant developments in sports law and the broader sports industry.</p>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-post animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1508826330080-b74b88939634?auto=format&fit=crop&q=80&w=1920&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gavel on legal books">
+                        <div class="blog-content">
+                            <p class="post-meta">May 20, 2024 | Contract Law</p>
+                            <h3>The Evolving Landscape of Player Contracts</h3>
+                            <p>An in-depth look at recent trends and legal challenges in professional athlete contracts and negotiation strategies.</p>
+                            <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-post animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1518176865239-2a912a23f497?auto=format&fit=crop&q=80&w=1920&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Abstract image of network connections">
+                        <div class="blog-content">
+                            <p class="post-meta">May 10, 2024 | Digital Rights</p>
+                            <h3>Navigating Image Rights in the Digital Age</h3>
+                            <p>Understanding the complexities of intellectual property and image rights for athletes in the era of social media and NFTs.</p>
+                            <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-post animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=1920&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sports Tribunal Gavel">
+                        <div class="blog-content">
+                            <p class="post-meta">April 28, 2024 | Dispute Resolution</p>
+                            <h3>Insights from Recent CAS Decisions</h3>
+                            <p>A summary of key takeaways and implications from the latest rulings by the Court of Arbitration for Sport.</p>
+                            <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Contact <span>Us</span></h2>
+                    <p>Ready to discuss your legal needs? Reach out to us today. We are here to provide expert advice and tailored solutions.</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info animate-on-scroll">
+                        <p>We are committed to providing prompt and effective communication. Fill out the form or reach us directly through the details below. Our team is ready to assist you.</p>
+                        <ul class="contact-details">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Sports Law Avenue, Global City, GC 12345</li>
+                            <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                            <li><i class="fas fa-envelope"></i> info@dutchmanpartners.com</li>
+                            <li><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 5:00 PM</li>
+                        </ul>
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <form action="https://formspree.io/f/xzzrnpqq" method="POST" class="contact-form animate-on-scroll">
+                        <h3>Send Us a Message</h3>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Inquiry about contract law" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn button">Send Message</button>
                     </form>
-                    <div id="formStatus" style="margin-top: 1rem; text-align: center;"></div> {/* [cite: 316, 317, 318] */}
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <a href="#" class="footer-logo">
-                    <i class="fas fa-gavel logo-icon"></i> {/* [cite: 318, 319] */}
-                    Dutchman <span>&</span> Partners
-                </a>
-                <ul class="footer-links">
-                    <li><a href="#practice-areas">Practice Areas</a></li>
-                    <li><a href="#featured-cases">Featured Cases</a></li> {/* [cite: 319, 320] */}
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#blog">Case Law</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul> {/* [cite: 320, 321] */}
-                <p class="copyright">&copy; 2025 Dutchman & Partners. All rights reserved.</p> {/* [cite: 321] */}
+        <div class="container footer-content">
+            <a href="#" class="footer-logo" aria-label="Dutchman & Partners Home">
+                <i class="fas fa-gavel logo-icon"></i> Dutchman & <span>Partners</span>
+            </a>
+            <ul class="footer-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#practice-areas">Practice Areas</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="footer-social">
+                <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dutchman & Partners. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <div id="athlete-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span> {/* [cite: 321, 322] */}
-            <h2>Athlete Representation</h2>
-            <p>Our athlete representation services are designed to empower professional athletes at every stage of their career. {/* [cite: 322] */} We handle all aspects of contract negotiations, ensuring fair terms, optimal compensation, and long-term career security. {/* [cite: 323] */} This includes employment contracts with clubs, endorsement deals with major brands, and image rights management.</p> {/* [cite: 324] */}
-            <p>We also provide comprehensive legal support for transfers, disciplinary proceedings, anti-doping regulations, and wealth management. {/* [cite: 324] */} Our goal is to allow athletes to focus on their performance while we protect their legal and commercial interests.</p> {/* [cite: 325] */}
-        </div>
-    </div>
-
-    <div id="team-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Team & League Advisory</h2>
-            <p>We offer strategic legal advisory services to sports teams, leagues, and federations. {/* [cite: 325] */} This includes guidance on corporate governance, regulatory compliance with national and international sports bodies (e.g., FIFA, UEFA, IOC), and dispute resolution. {/* [cite: 326] */} We assist in drafting and reviewing internal regulations, statutes, and codes of conduct.</p> {/* [cite: 327] */}
-            <p>Our expertise also covers commercial agreements such as media rights, merchandising, licensing, and venue agreements. {/* [cite: 327] */} We help organizations navigate complex legal landscapes to ensure sustainable growth and operational excellence.</p> {/* [cite: 328] */}
-        </div>
-    </div>
-
-    <div id="sponsorship-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Sponsorship Agreements</h2>
-            <p>Securing and structuring impactful sponsorship and partnership agreements is crucial for revenue generation and brand visibility in sports. {/* [cite: 328, 329] */} We specialize in negotiating and drafting these complex contracts, ensuring they align with our clients' strategic objectives and protect their commercial interests.</p> {/* [cite: 329] */}
-            <p>Our services cover all types of sponsorship deals, from title sponsorships and kit deals to individual athlete endorsements. {/* [cite: 329] */} We focus on intellectual property rights, exclusivity clauses, performance incentives, and termination provisions to mitigate risks and maximize value.</p> {/* [cite: 330] */}
-        </div>
-    </div>
-
-    <div id="transfer-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Transfer Negotiations</h2>
-            <p>Player transfers are intricate processes governed by extensive national and international regulations. {/* [cite: 330, 331] */} Our team provides expert legal handling of football and other sports transfers, managing everything from initial negotiations to the finalization of contracts and registration with relevant federations.</p> {/* [cite: 331] */}
-            <p>We advise on transfer fees, buyout clauses, solidarity mechanisms, training compensation, and third-party ownership issues. {/* [cite: 331] */} Our thorough approach ensures compliance with FIFA Regulations on the Status and Transfer of Players (RSTP) and other applicable rules, minimizing risks for clubs, players, and agents.</p> {/* [cite: 332] */}
-        </div>
-    </div>
-
-    <div id="dispute-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Dispute Resolution</h2>
-            <p>Sports disputes can arise from various issues, including contractual breaches, disciplinary matters, anti-doping violations, and intellectual property infringements. We represent clients in a range of dispute resolution forums, including arbitration bodies like the Court of Arbitration for Sport (CAS), national sports federations, and civil courts.</p> {/* [cite: 332, 333] */}
-            <p>Our services encompass pre-dispute advisory, mediation, and litigation. {/* [cite: 333] */} We develop robust legal strategies to achieve favorable outcomes for athletes, clubs, agents, and federations in both domestic and international proceedings.</p> {/* [cite: 334] */}
-        </div>
-    </div>
-
-    <div id="international-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>International Sports Law</h2>
-            <p>The global nature of sports requires a deep understanding of international legal frameworks. {/* [cite: 334, 335] */} We specialize in navigating complex cross-border sports legal matters, leveraging our extensive international network of legal professionals and industry contacts.</p> {/* [cite: 335] */}
-            <p>This includes advising on international transfers, multi-jurisdictional contracts, international tax implications for athletes and clubs, and compliance with the regulations of global sports federations. {/* [cite: 335] */} We provide seamless legal solutions for clients operating in diverse legal systems worldwide.</p> {/* [cite: 336] */}
-        </div>
-    </div>
-
-    <div id="blog1-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>The Nuances of Athlete Endorsement Contracts</h2>
-            <p>Endorsement contracts are a significant income stream for athletes, but they come with complex legal considerations. {/* [cite: 336, 337] */} This article delves into the critical clauses such as exclusivity, moral clauses, intellectual property rights, and performance-based incentives. {/* [cite: 337] */} We discuss how to effectively negotiate these terms to protect an athlete's brand and maximize their commercial value, while also ensuring compliance with anti-doping regulations and personal conduct policies.</p> {/* [cite: 338] */}
-            <p>Understanding the fine print can prevent future disputes and ensure a mutually beneficial relationship between athletes and brands. {/* [cite: 338] */} Our experts provide insights into common pitfalls and best practices for securing ironclad endorsement deals.</p> {/* [cite: 339] */}
-        </div>
-    </div>
-
-    <div id="blog2-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Understanding FIFA's Latest Transfer Regulations</h2>
-            <p>FIFA regularly updates its Regulations on the Status and Transfer of Players (RSTP), impacting how clubs and players conduct transfers globally. This article breaks down the most recent amendments, focusing on areas such as loan regulations, agent fees, and the dispute resolution mechanisms. {/* [cite: 339, 340] */} We analyze the implications of these changes for clubs, agents, and players, providing practical advice on how to adapt to the evolving regulatory landscape.</p> {/* [cite: 341] */}
-            <p>Staying abreast of these regulations is vital for legal compliance and competitive advantage in the international football market. {/* [cite: 341] */} Our legal team keeps a close watch on these developments to ensure our clients are always prepared.</p> {/* [cite: 342] */}
-        </div>
-    </div>
-
-    <div id="blog3-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Sports Arbitration: Resolving Disputes Outside Court</h2>
-            <p>Arbitration has become the cornerstone of dispute resolution in the sports industry, offering a faster, more confidential, and specialized alternative to traditional court proceedings. This article explores the advantages of sports arbitration, particularly before bodies like the Court of Arbitration for Sport (CAS).</p> {/* [cite: 342, 343] */}
-            <p>We outline the arbitration process, from initiating proceedings to the enforcement of arbitral awards, and discuss key aspects such as jurisdiction, applicable law, and the role of expert witnesses. {/* [cite: 343] */} Understanding arbitration is crucial for any party involved in a sports-related dispute.</p> {/* [cite: 344] */}
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
-            // Header Scroll Effect
-            const header = document.getElementById('header');
-            const backToTop = document.getElementById('backToTop');
 
-            const handleScroll = () => { {/* [cite: 344, 345] */}
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                    backToTop.classList.add('active');
-                } else {
-                    header.classList.remove('scrolled'); {/* [cite: 345, 346] */}
-                    backToTop.classList.remove('active');
-                }
-            };
-
-            window.addEventListener('scroll', handleScroll); {/* [cite: 346, 347] */}
-            handleScroll(); // Initial check on load {/* [cite: 347] */}
-
-            // Smooth Scroll for Navigation and Scroll Down
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(this.getAttribute('href'));
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                             behavior: 'smooth' {/* [cite: 347, 348] */}
-                        });
-                    }
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active'); {/* [cite: 348, 349] */}
-                        hamburger.classList.remove('active');
-                    }
-                });
-            });
-            // Back to Top button functionality
-            backToTop.addEventListener('click', () => { {/* [cite: 349, 350] */}
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }); {/* [cite: 350, 351] */}
-
-            // Hamburger Menu Functionality
-            const hamburger = document.querySelector('.hamburger'); {/* [cite: 351] */}
-            const navLinks = document.querySelector('.nav-links'); {/* [cite: 352] */}
-
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            });
-            // Testimonial Slider (Slick Carousel)
-            $('.testimonial-slider').slick({ {/* [cite: 352, 353] */}
-                infinite: true,
+    <script>
+        $(document).ready(function(){
+            // Initialize Slick Carousel
+            $('.testimonial-slider').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 autoplay: true,
-                autoplaySpeed: 5000, {/* [cite: 353, 354] */}
+                autoplaySpeed: 5000,
+                arrows: true,
                 dots: true,
-                arrows: false,
                 responsive: [
                     {
-                        breakpoint: 768,
-                        settings: { {/* [cite: 354, 355] */}
-                            arrows: false,
+                        breakpoint: 992,
+                        settings: {
+                            arrows: false // Hide arrows on smaller screens
                         }
                     }
-                ] {/* [cite: 355, 356] */}
+                ]
             });
-            // Modals Functionality
-            const openModalButtons = document.querySelectorAll('.js-open-modal'); {/* [cite: 356, 357] */}
-            const closeButtons = document.querySelectorAll('.close-modal'); {/* [cite: 357, 358] */}
-            const modals = document.querySelectorAll('.modal'); {/* [cite: 358] */}
 
-            openModalButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const modalId = button.dataset.modalId;
-                    const modal = document.getElementById(modalId);
-                    if (modal) { {/* [cite: 358, 359] */}
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-                    }
-                }); {/* [cite: 359, 360] */}
+            // Header scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('header').addClass('scrolled');
+                } else {
+                    $('header').removeClass('scrolled');
+                }
             });
-            closeButtons.forEach(button => { {/* [cite: 360, 361] */}
-                button.addEventListener('click', () => {
-                    const modal = button.closest('.modal');
-                    if (modal) {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = ''; // Restore scrolling {/* [cite: 361, 362] */}
-                    }
-                });
-            });
-            modals.forEach(modal => { {/* [cite: 362, 363] */}
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) { // Close if clicked on backdrop
-                        modal.classList.remove('active');
-                        document.body.style.overflow = ''; // Restore scrolling {/* [cite: 363, 364] */}
-                    }
-                });
-            });
-            
-            // Formspree Contact Form Integration
-            const contactForm = document.getElementById('contactForm'); {/* [cite: 365] */}
-            const submitBtn = document.getElementById('submitBtn'); {/* [cite: 366] */}
-            const formStatus = document.getElementById('formStatus'); {/* [cite: 366] */}
 
-            if(contactForm) { // Check if the form exists on the page
-                contactForm.addEventListener('submit', function(event) {
+            // Smooth scrolling for navigation links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.hash);
+                if (target.length) {
                     event.preventDefault();
-                    const formData = new FormData(contactForm);
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - $('header').outerHeight() + 1 // Adjust for fixed header height
+                    }, 800);
 
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Sending...';
-                    formStatus.textContent = ''; // Clear previous status {/* [cite: 366] */}
-                    formStatus.style.color = 'var(--highlight)';
+                    // Close mobile nav after clicking a link
+                    if ($('.hamburger').hasClass('active')) {
+                        $('.hamburger').removeClass('active');
+                        $('.mobile-nav').removeClass('active');
+                        $('body').removeClass('no-scroll');
+                    }
+                }
+            });
 
+            // Hamburger menu toggle
+            const hamburger = $('.hamburger');
+            const mobileNav = $('.mobile-nav');
+            
+            hamburger.on('click', function() {
+                $(this).toggleClass('active');
+                mobileNav.toggleClass('active');
+                $('body').toggleClass('no-scroll'); // Prevent scrolling when mobile nav is open
+            });
 
-                    fetch(contactForm.action, { // action attribute has the Formspree endpoint
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    }).then(response => {
-                        if (response.ok) {
-                            formStatus.style.color = 'var(--highlight)';
-                            formStatus.textContent = "Thanks for your submission!";
-                            contactForm.reset();
-                        } else {
-                            response.json().then(data => {
-                                formStatus.style.color = 'red';
-                                if (data.errors) {
-                                    formStatus.textContent = data.errors.map(error => error.message).join(", ");
-                                } else {
-                                    formStatus.textContent = "Oops! There was a problem submitting your form.";
-                                }
-                            }).catch(error => { // Catch error if response.json() fails
-                                formStatus.style.color = 'red';
-                                formStatus.textContent = "Oops! There was a problem processing the server response.";
-                            });
-                        }
-                    }).catch(error => { // Catch network errors or other issues with fetch itself
-                        formStatus.style.color = 'red';
-                        formStatus.textContent = "Oops! There was a network problem. Please try again.";
-                        console.error('Formspree submission error:', error);
-                    }).finally(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Send Message';
-                    });
-                });
-            }
+            // Back to top button
+            const backToTopButton = $('#back-to-top');
 
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) { // Show button after scrolling 300px
+                    backToTopButton.addClass('show');
+                } else {
+                    backToTopButton.removeClass('show');
+                }
+            });
 
-            // Scroll Animation for sections
-            const elementsToAnimate = document.querySelectorAll('.hero-content, .section-title, .area-card, .case-card, .stat-item, .blog-post'); {/* [cite: 377] */}
-            // Set initial state for animated elements
-            elementsToAnimate.forEach(element => { {/* [cite: 378] */}
+            backToTopButton.on('click', function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+
+            // FAQ Accordion
+            $('.faq-question').on('click', function() {
+                $(this).toggleClass('active');
+                $(this).next('.faq-answer').slideToggle(300);
+                $('.faq-question').not(this).removeClass('active').next('.faq-answer').slideUp(300); // Close other answers
+            });
+
+            // Animate on scroll logic
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+            // Initialize elements to be invisible
+            elementsToAnimate.forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(30px)'; // Slightly more pronounced effect
                 element.style.transition = 'opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            }); {/* [cite: 378, 379] */}
+            });
 
             const animateOnScroll = () => {
                 elementsToAnimate.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
                     const screenPosition = window.innerHeight / 1.2; // Trigger point
                     
-                    if (elementPosition < screenPosition) { {/* [cite: 379, 380] */}
+                    if (elementPosition < screenPosition) {
                         element.style.opacity = '1';
                         element.style.transform = 'translateY(0)';
                     }
-                    // Optional: To re-animate if scrolling up and element goes out of view then back in {/* [cite: 380, 381] */}
+                    // Optional: To re-animate if scrolling up and element goes out of view then back in
                     // else {
                     //     element.style.opacity = '0';
-                    //     element.style.transform = 'translateY(30px)'; {/* [cite: 381, 382] */}
+                    //     element.style.transform = 'translateY(30px)';
                     // }
                 });
-            }; {/* [cite: 382, 383] */}
-            
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Initial check on load
+            };
 
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll); // Run on load to animate elements already in view
         });
+
+        // Add a class to body to prevent scrolling when mobile nav is open
+        // This CSS would be needed:
+        // body.no-scroll {
+        //     overflow: hidden;
+        // }
     </script>
 </body>
 </html>
