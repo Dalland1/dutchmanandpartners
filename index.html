@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9GQCDRTQ1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,17 +12,18 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Sports Law Specialists | სპორტის სამართლის იურისტი</title>
+    <title>Dutchman & Partners | Elite Sports Law Specialists</title>
     <meta name="description" content="Premier sports law firm specializing in athlete representation, contract negotiations, and sports dispute resolution.">
     
-    <!-- Favicon -->
+    <link rel="alternate" hreflang="en" href="https://www.dutchmanandpartners.com/" />
+    <link rel="alternate" hreflang="ka" href="https://www.dutchmanandpartners.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.dutchmanandpartners.com/" />
+
     <link rel="icon" type="image/png" href="https://i.imgur.com/JQ9pYdF.png">
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- CSS Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -1719,7 +1719,6 @@
         <i class="fas fa-chevron-up"></i>
     </div>
 
-    <!-- Modals -->
     <div id="athlete-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -1809,6 +1808,8 @@
         // Translations object
         const translations = {
             en: {
+                // Page Title
+                "page-title": "Dutchman & Partners | Elite Sports Law Specialists",
                 // Header
                 "logo": "Dutchman & Partners",
                 "practice-areas": "Practice Areas",
@@ -1906,6 +1907,8 @@
                 "blog3-modal-text2": "We outline the arbitration process, from initiating proceedings to the enforcement of arbitral awards, and discuss key aspects such as jurisdiction, applicable law, and the role of expert witnesses. Understanding arbitration is crucial for any party involved in a sports-related dispute."
             },
             ka: {
+                // Page Title
+                "page-title": "სპორტის სამართლის იურისტი | Dutchman & Partners",
                 // Header
                 "logo": "Dutchman & Partners",
                 "practice-areas": "მიმართულება",
@@ -2017,12 +2020,21 @@
                 const key = el.dataset.translate;
                 if (translations[lang][key]) {
                     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = translations[lang][key];
+                        if (el.type === 'submit') { // Handle submit button text
+                             el.value = translations[lang][key];
+                        } else {
+                             el.placeholder = translations[lang][key];
+                        }
                     } else {
                         el.innerHTML = translations[lang][key];
                     }
                 }
             });
+
+            // Update document title
+            if (translations[lang]["page-title"]) {
+                document.title = translations[lang]["page-title"];
+            }
             
             // Update HTML lang attribute
             document.documentElement.lang = lang;
@@ -2159,20 +2171,22 @@
             
             // Formspree Contact Form Integration
             const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
+            const submitBtn = document.getElementById('submitBtn'); // Assuming your submit button has this ID
             const formStatus = document.getElementById('formStatus');
 
             if(contactForm) { // Check if the form exists on the page
                 contactForm.addEventListener('submit', function(event) {
                     event.preventDefault();
                     const formData = new FormData(contactForm);
+                    const currentLang = document.documentElement.lang || 'en'; // Get current language
 
                     submitBtn.disabled = true;
-                    submitBtn.textContent = 'Sending...';
+                    // Temporarily set sending text, will be replaced by translated version if available
+                    submitBtn.innerHTML = 'Sending...'; // Changed to innerHTML for <button>
                     formStatus.textContent = ''; // Clear previous status
                     formStatus.style.color = 'var(--highlight)';
 
-                    fetch(contactForm.action, { // action attribute has the Formspree endpoint
+                    fetch(contactForm.action, { 
                         method: 'POST',
                         body: formData,
                         headers: {
@@ -2181,7 +2195,7 @@
                     }).then(response => {
                         if (response.ok) {
                             formStatus.style.color = 'var(--highlight)';
-                            formStatus.textContent = "Thanks for your submission!";
+                            formStatus.textContent = "Thanks for your submission!"; // Consider translating this
                             contactForm.reset();
                         } else {
                             response.json().then(data => {
@@ -2189,20 +2203,25 @@
                                 if (data.errors) {
                                     formStatus.textContent = data.errors.map(error => error.message).join(", ");
                                 } else {
-                                    formStatus.textContent = "Oops! There was a problem submitting your form.";
+                                    formStatus.textContent = "Oops! There was a problem submitting your form."; // Translate
                                 }
-                            }).catch(error => { // Catch error if response.json() fails
+                            }).catch(error => { 
                                 formStatus.style.color = 'red';
-                                formStatus.textContent = "Oops! There was a problem processing the server response.";
+                                formStatus.textContent = "Oops! There was a problem processing the server response."; // Translate
                             });
                         }
-                    }).catch(error => { // Catch network errors or other issues with fetch itself
+                    }).catch(error => { 
                         formStatus.style.color = 'red';
-                        formStatus.textContent = "Oops! There was a network problem. Please try again.";
+                        formStatus.textContent = "Oops! There was a network problem. Please try again."; // Translate
                         console.error('Formspree submission error:', error);
                     }).finally(() => {
                         submitBtn.disabled = false;
-                        submitBtn.textContent = translations[document.documentElement.lang]['send-message-btn'];
+                        // Reset button text to translated version
+                        if(translations[currentLang] && translations[currentLang]['send-message-btn']) {
+                            submitBtn.innerHTML = translations[currentLang]['send-message-btn'];
+                        } else {
+                             submitBtn.innerHTML = 'Send Message'; // Fallback
+                        }
                     });
                 });
             }
