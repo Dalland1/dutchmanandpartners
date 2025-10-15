@@ -13,11 +13,10 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Sports Law Specialists | სპორტის სამართლის იურისტი</title>
+    <title>Elite Sports Law Specialists | Sports Law Attorney</title>
     <meta name="description" content="Premier sports law firm specializing in athlete representation, contract negotiations, and sports dispute resolution.">
     
     <link rel="alternate" hreflang="en" href="https://www.dutchmanandpartners.com/" />
-    <link rel="alternate" hreflang="ka" href="https://www.dutchmanandpartners.com/" />
     <link rel="alternate" hreflang="x-default" href="https://www.dutchmanandpartners.com/" />
 
     <link rel="icon" type="image/png" href="https://i.imgur.com/JQ9pYdF.png">
@@ -236,13 +235,16 @@
             display: none;
             cursor: pointer;
             z-index: 1001;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
         }
         
         .hamburger div {
-            width: 25px;
+            width: 100%;
             height: 3px;
             background: var(--text);
-            margin: 5px;
             transition: var(--transition);
         }
         
@@ -258,8 +260,8 @@
         }
         
         .lang-btn {
-            background: transparent;
-            color: var(--text-secondary);
+            background: var(--highlight);
+            color: var(--primary);
             border: none;
             padding: 0 1.2rem;
             cursor: pointer;
@@ -270,15 +272,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        .lang-btn.active {
-            background: var(--highlight);
-            color: var(--primary);
-        }
-        
-        .lang-btn:not(.active):hover {
-            background: rgba(255, 255, 255, 0.1);
         }
         
         /* Hero Section */
@@ -1370,7 +1363,7 @@
             }
         
             .hamburger {
-                display: block;
+                display: flex;
             }
         
             .hamburger.active div:nth-child(1) {
@@ -1407,8 +1400,50 @@
             }
 
             .language-switcher {
-                margin-left: auto;
-                margin-right: 1.5rem;
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .area-card, .blog-post, .member-card {
+                padding: 1.5rem;
+            }
+
+            .testimonial {
+                padding: 2rem;
+            }
+
+            .contact-container {
+                gap: 3rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links li {
+                margin: 0.8rem 0;
             }
         }
         
@@ -1447,6 +1482,38 @@
             .hero-buttons .btn:last-child {
                 margin-bottom: 0;
             }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                margin-bottom: 3rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .area-card, .blog-post, .member-card {
+                padding: 1.2rem;
+            }
+
+            .areas-grid, .blog-posts, .team-members {
+                gap: 1.5rem;
+            }
+
+            .testimonial {
+                padding: 1.5rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -1467,7 +1534,6 @@
                 </ul>
                 <div class="language-switcher">
                     <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="ka">KA</button>
                 </div>
                 <div class="hamburger">
                     <div></div>
@@ -1906,105 +1972,6 @@
                 "blog2-modal-text2": "Staying abreast of these regulations is vital for legal compliance and competitive advantage in the international football market. Our legal team keeps a close watch on these developments to ensure our clients are always prepared.",
                 "blog3-modal-text1": "Arbitration has become the cornerstone of dispute resolution in the sports industry, offering a faster, more confidential, and specialized alternative to traditional court proceedings. This article explores the advantages of sports arbitration, particularly before bodies like the Court of Arbitration for Sport (CAS).",
                 "blog3-modal-text2": "We outline the arbitration process, from initiating proceedings to the enforcement of arbitral awards, and discuss key aspects such as jurisdiction, applicable law, and the role of expert witnesses. Understanding arbitration is crucial for any party involved in a sports-related dispute."
-            },
-            ka: {
-                // Page Title
-                "page-title": "სპორტის სამართლის იურისტი | Dutchman & Partners",
-                // Header
-                "logo": "Dutchman & Partners",
-                "practice-areas": "მიმართულება",
-                "featured-cases": "პროექტები",
-                "about": "ჩვენ შესახებ",
-                "blog": "სასამართლო პრაქტიკა",
-                "contact": "კონტაქტი",
-                "view-case": "ნახეთ საქმე",
-                "read-more": "გაიგეთ მეტი",
-                
-                // Hero section
-                "hero-title": "იურისტი <span>სპორტის სამართლის</span> მიმართულებით",
-                "hero-text": "Dutchman & Partners უზრუნველყოფს ელიტარულ იურიდიულ მომსახურებას ფეხბურთელებისთვის, საფეხბურთო კლუბებისა და სააგენტოებისთვის მთელი მსოფლიოს მასშტაბით. ჩვენი სტრატეგიული მიდგომა აერთიანებს იურიდიულ ექსპერტიზასა და სპორტის ინდუსტრიის უმწიკვლო ცოდნას.",
-                "schedule-consultation": "უფასო კონსულტაცია",
-                "learn-more": "გაიგეთ მეტი",
-                
-                // Practice Areas
-                "our-specializations": "ჩვენი მიმართულება",
-                "practice-areas-text": "ჩვენ გთავაზობთ სრულფასოვან იურიდიულ მომსახურებას, რომელიც შექმნილია სპორტის ინდუსტრიისა და მისი მონაწილეების უნიკალური საჭიროებებისთვის.",
-                "athlete-representation": "ათლეტების წარმომადგენლობა",
-                "athlete-text": "პროფესიონალი ათლეტებისთვის სრული იურიდიული მხარდაჭერა, მათ შორის ხელშეკრულებების მომზადება, ინტელექტუალური საკუთრების დაცვა და წარმომადგენლობა.",
-                "team-league": "პარტნიორობა საფეხბურთო სააგენტოებთან",
-                "team-text": "მზად ვართ, დავიცვათ საფეხბურთო სააგენტოებისა და მათი ფეხბურთელების უფლებები.",
-                "sponsorship": "დამატებითი შეთანხმებები",
-                "sponsorship-text": "მაღალი ღირებულების სპონსორობისა და პარტნიორობის გარიგებების სტრუქტურირება და შედგენა.",
-                "transfer": "სატრანსფერო ხელშეკრულებები",
-                "transfer-text": "მოთამაშეთა სატრანსფერო ხელშეკრულების შედგენა ყველა საერთაშორისო და რეგიონული კანონმდებლობის გათვალისწინებით",
-                "dispute": "წარმომადგენლობა დავებში",
-                "dispute-text": "არბიტრაჟში, მედიაციასა და სასამართლოში წარმომადგენლობა სპორტთან დაკავშირებულ ნებისმიერი ტიპის დავებზე.",
-                "international": "საერთაშორისო სპორტის სამართალი",
-                "international-text": "რთული საერთაშორისო სპორტული იურიდიული საკითხების გადაჭრა ჩვენი გლობალური ექსპერტების ქსელის მეშვეობით.",
-                
-                // Featured Cases
-                "featured-engagements": "შერჩეული პროექტები",
-                "featured-text": "შერჩეული მაღალპროფილიანი საქმეები, რომლებიც აჩვენებს ჩვენს ექსპერტიზას სპორტულ სამართალში.",
-                "football-transfer": "მაღალპროფილიანი ფეხბურთის ტრანსფერი",
-                "football-text": "ხელშეწყობილი რეკორდული საერთაშორისო ფეხბურთელის ტრანსფერი, FIFA-ს რთული რეგულაციებისა და კონტრაქტული შეთანხმებების გათვალისწინებით.",
-                "olympic-doping": "ოლიმპიური დოპინგის აპელაცია",
-                "olympic-text": "წარმატებით განხილული იქნა ოლიმპიური სპორტსმენის დოპინგის დისკვალიფიკაციის აპელაცია, რის შედეგადაც მას აღდგა უფლება საერთაშორისო შეჯიბრებებში მონაწილეობის მისაღებად.",
-                "team-acquisition": "მთავარი ლიგის გუნდის შეძენა",
-                "acquisition-text": "იურიდიული რჩევების მიცემა და დიუს დილიჯენსი ჩატარდა მთავარი ლიგის სპორტული ფრენჩაიზის შეძენისას, რაც ხელი შეუწყო გლუვ გადასვლას.",
-                
-                // About section
-                "who-we-are": "<span>ვინ ვართ ჩვენ</span>",
-                "about-text": "Dutchman & Partners არის ბრენდი, რომელიც აერთიანებს იურისტებს სპორტის სამართლის მიმართულებით.",
-                "trusted-partner": "თქვენი სანდო <span>იურიდიული პარტნიორი</span> სპორტში",
-                "about-desc1": "დაჩი ფერაძე, არის ქართველი იურისტი სპორტის სამართლის მიმართულებით, რომელიც მზად არის დაიცვას თქვენი სპორტული ინტერესები, როგორც ტრიბუნალში, ისე მის მიღმა.",
-                "about-desc2": "ჩვენ გამოგვარჩევს კლიენტზე ორიენტირებული მიდგომა, რაც გულისხმობს ყველა დოკუმენტის მიმართ სკრუპულოზურ მიდგომასა და დეტალებზე ორიენტირებულობას, რათა უზრუნველყოფილი იყოს ჩვენი კლიენტების ინტერესები.",
-                "successful-cases": "წარმატებული საქმეები",
-                "years-experience": "წლიანი გამოცდილება",
-                "professional-athletes": "პროფესიონალი ათლეტი",
-                "Football-Agencies": "საფეხბურთო სააგენტო",
-                
-                // Blog section
-                "case-law": "<span>სასამართლო პრაქტიკა და ანალიზი</span>",
-                "blog-text": "იყავით ინფორმირებული ჩვენი უახლესი სტატიებით, ანალიზებითა და იურიდიული ინფორმაციით სპორტის სამყაროზე.",
-                "endorsement-contracts": "სახელშეკრულებო ნიუანსები",
-                "endorsement-text": "ღრმა ანალიზი ძირითადი პუნქტებისა და მოსაზრებების შესახებ, რომლებიც სპორტსმენებმა უნდა გაითვალისწინონ მომგებიანი სპონსორობის გარიგებების დადებისას.",
-                "fifa-regulations": "FIFA-ს უახლესი სატრანსფერო რეგულაციები",
-                "fifa-text": "ყოვლისმომცველი გზამკვლევი FIFA-ს მოთამაშეთა ტრანსფერის წესებში ცვლილებების შესახებ და მათი გავლენა კლუბებსა და აგენტებზე.",
-                "sports-arbitration": "სპორტის არბიტრაჟი - დავის წარმოება სასამართლოს მიღმა",
-                "arbitration-text": "არბიტრაჟის, როგორც სასურველი მეთოდის, უპირატესობებისა და პროცესის შესწავლა სპორტთან დაკავშირებული დავების მოსაგვარებლად.",
-                
-                // Contact section
-                "contact-us": "დაგვიკავშირდით",
-                "contact-text": "ჩვენ მზად ვართ გაგიწიოთ კვალიფიციური იურიდიული მომსახურება. გამოგვიგზავნეთ შეტყობინება ელექტრონული ფოსტით, ან დაგვირეკეთ მითითებულ ნომერზე.",
-                "get-in-touch": "დაგვიკავშირდით",
-                "send-message": "დაგვიკავშირდით",
-                "your-name": "თქვენი სახელი",
-                "your-email": "თქვენი ელ. ფოსტა",
-                "your-message": "თქვენი შეტყობინება",
-                "send-message-btn": "შეტყობინების გაგზავნა",
-                
-                // Footer
-                "copyright": "&copy; 2025 Dutchman & Partners. ყველა უფლება დაცულია.",
-                
-                // Modal content
-                "athlete-modal-text1": "ჩვენი სპორტსმენთა წარმომადგენლობის სერვისები შექმნილია პროფესიონალი სპორტსმენების დასახმარებლად მათი კარიერის ყველა ეტაპზე. ჩვენ ვიღებთ კონტრაქტის მოლაპარაკების ყველა ასპექტს, ვუზრუნველვყოფთ სამართლიან პირობებს, ოპტიმალურ ანაზღაურებას და კარიერულ უსაფრთხოებას. ეს მოიცავს სამუშაო კონტრაქტებს კლუბებთან, სპონსორობის გარიგებებს მსხვილ ბრენდებთან და იმიჯის უფლებების მართვას.",
-                "athlete-modal-text2": "ჩვენ ასევე ვაძლევთ სრულ იურიდიულ მხარდაჭერას ტრანსფერებში, დისციპლინურ საქმეებში, ანტიდოპინგის რეგულაციებში და ქონებრივ მართვაში. ჩვენი მიზანია სპორტსმენებმა შეძლონ კონცენტრაცია მათ შესრულებაზე, ხოლო ჩვენ დავიცავთ მათ იურიდიულ და კომერციულ ინტერესებს.",
-                "team-modal-text1": "ჩვენ ვთავაზობთ სტრატეგიულ იურიდიულ კონსულტაციებს სპორტულ გუნდებს, ლიგებსა და ფედერაციებს. ეს მოიცავს კორპორატიული მმართველობის, ეროვნული და საერთაშორისო სპორტული ორგანიზაციების (მაგ., FIFA, UEFA, IOC) რეგულაციების დაცვისა და დავების მოგვარების კონსულტაციებს. ჩვენ ვეხმარებით შიდა რეგულაციების, წესდებებისა და ქცევის კოდექსების შემუშავებასა და განხილვაში.",
-                "team-modal-text2": "ჩვენი ექსპერტიზა ასევე მოიცავს კომერციულ შეთანხმებებს, როგორიცაა მედია უფლებები, მერჩენდაიზინგი, ლიცენზირება და არენებთან დაკავშირებული შეთანხმებები. ჩვენ ვეხმარებით ორგანიზაციებს რთულ იურიდიულ გარემოში ნავიგაციას მდგრადი განვითარებისა და ოპერატიული ხარისხის უზრუნველსაყოფად.",
-                "sponsorship-modal-text1": "ეფექტური სპონსორობისა და პარტნიორობის შეთანხმებების დადება და სტრუქტურირება გადამწყვეტია შემოსავლების გენერირებისა და ბრენდის ხილვადობისთვის სპორტში. ჩვენ სპეციალიზირებული ვართ ამ რთული კონტრაქტების მოლაპარაკებასა და შემუშავებაში, რათა ისინი შეესაბამებოდეს ჩვენი კლიენტების სტრატეგიულ მიზნებს და დაიცვას მათი კომერციული ინტერესები.",
-                "sponsorship-modal-text2": "ჩვენი სერვისები მოიცავს ყველა ტიპის სპონსორობის გარიგებებს, ტიტულოვანი სპონსორობიდან და ფორმის შეთანხმებებიდან ინდივიდუალურ სპორტსმენთა ენდორსმენტებამდე. ჩვენ ვაქცევთ ყურადღებას ინტელექტუალური საკუთრების უფლებებს, ექსკლუზიურობის პუნქტებს, შესრულებაზე დაფუძნებულ სტიმულებს და შეთანხმების შეწყვეტის პირობებს რისკების მინიმიზაციისა და ღირებულების მაქსიმიზაციის მიზნით.",
-                "transfer-modal-text1": "მოთამაშეთა ტრანსფერი არის რთული პროცესი, რომელიც განსაზღვრულია ვრცელი ეროვნული და საერთაშორისო რეგულაციებით. ჩვენი გუნდი უზრუნველყოფს ექსპერტულ იურიდიულ მხარდაჭერას ფეხბურთისა და სხვა სპორტის ტრანსფერებში, მართავს ყველაფერს საწყისი მოლაპარაკებებიდან კონტრაქტების დასრულებამდე და რეგისტრაციამდე შესაბამის ფედერაციებში.",
-                "transfer-modal-text2": "ჩვენ ვუწევთ კონსულტაციას ტრანსფერული საფასურის, გამოსყიდვის კლაუზების, სოლიდარობის მექანიზმების, სასწავლო კომპენსაციისა და მესამე მხარის საკუთრების საკითხებში. ჩვენი სრულყოფილი მიდგომა უზრუნველყოფს FIFA-ს მოთამაშეთა სტატუსისა და ტრანსფერის შესახებ წესების (RSTP) და სხვა გამოყენებადი წესების დაცვას, მინიმუმამდე აყენებს რისკებს კლუბების, მოთამაშეებისა და აგენტებისთვის.",
-                "dispute-modal-text1": "სპორტულ დავებს შეუძლია წარმოიშვან სხვადასხვა საკითხებიდან, მათ შორის კონტრაქტის დარღვევებიდან, დისციპლინურ საკითხებიდან, ანტიდოპინგის დარღვევებიდან და ინტელექტუალური საკუთრების უფლებების დარღვევებიდან. ჩვენ წარმოვადგენთ კლიენტებს სპორტთან დაკავშირებული დავების მოსაგვარებლად სხვადასხვა ფორუმებზე, მათ შორის არბიტრაჟის ორგანოებზე, როგორიცაა სპორტული არბიტრაჟის სასამართლო (CAS), ეროვნულ სპორტულ ფედერაციებსა და სამოქალაქო სასამართლოებში.",
-                "dispute-modal-text2": "ჩვენი სერვისები მოიცავს დავის წინასწარ კონსულტაციას, მედიაციასა და სასამართლო პროცესს. ჩვენ ვიმუშავებთ მტკიცე იურიდიულ სტრატეგიებს, რათა მივაღწიოთ ხელსაყრელ შედეგებს სპორტსმენების, კლუბების, აგენტებისა და ფედერაციებისთვის როგორც ადგილობრივ, ასევე საერთაშორისო დონეზე.",
-                "international-modal-text1": "სპორტის გლობალური ბუნება მოითხოვს საერთაშორისო იურიდიული ჩარჩოების ღრმა გაგებას. ჩვენ სპეციალიზირებული ვართ რთული საერთაშორისო სპორტული იურიდიული საკითხების გადაჭრაში, ვიყენებთ ჩვენს ვრცელ საერთაშორისო ქსელს იურიდიულ პროფესიონალებთან და ინდუსტრიის კონტაქტებთან.",
-                "international-modal-text2": "ეს მოიცავს კონსულტაციას საერთაშორისო ტრანსფერებზე, მრავალიურისდიქციურ კონტრაქტებზე, საერთაშორისო საგადასახადო შედეგებზე სპორტსმენებისა და კლუბებისთვის, ასევე გლობალური სპორტული ფედერაციების რეგულაციების დაცვაზე. ჩვენ ვთავაზობთ უწყვეტ იურიდიულ გადაწყვეტილებებს კლიენტებისთვის, რომლებიც მოქმედებენ სხვადასხვა იურიდიულ სისტემებში მთელ მსოფლიოში.",
-                "blog1-modal-text1": "ენდორსმენტის კონტრაქტები წარმოადგენს მნიშვნელოვან შემოსავლის წყაროს სპორტსმენებისთვის, მაგრამ ისინი მოიცავს რთულ იურიდიულ ასპექტებს. ეს სტატია იკვლევს ძირითად პუნქტებს, როგორიცაა ექსკლუზიურობა, მორალური პუნქტები, ინტელექტუალური საკუთრების უფლებები და შესრულებაზე დაფუძნებული სტიმულები. ჩვენ განვიხილავთ, თუ როგორ უნდა მოხდეს ამ პირობების ეფექტური მოლაპარაკება სპორტსმენის ბრენდის დასაცავად და მისი კომერციული ღირებულების მაქსიმიზაციისთვის, ასევე ანტიდოპინგის რეგულაციებისა და პიროვნების ქცევის პოლიტიკის დაცვისთვის.",
-                "blog1-modal-text2": "წვრილმანების გაგებას შეუძლია თავიდან აიცილოს მომავალი დავები და უზრუნველყოს ორმხრივად სასარგებლო ურთიერთობა სპორტსმენებსა და ბრენდებს შორის. ჩვენი ექსპერტები გვთავაზობენ შეხედულებებს ჩვეულებრივ ხარვეზებზე და საუკეთესო პრაქტიკებს მყარი ენდორსმენტის გარიგებების დასადებად.",
-                "blog2-modal-text1": "FIFA რეგულარულად ახდენს მოთამაშეთა სტატუსისა და ტრანსფერის შესახებ წესების (RSTP) განახლებას, რაც გავლენას ახდენს კლუბებისა და მოთამაშეების მიერ ტრანსფერების ჩატარების წესებზე გლობალურად. ეს სტატია აღწერს უახლეს ცვლილებებს, ფოკუსირებულია ისეთ სფეროებზე, როგორიცაა სესხით გადაცემის წესები, აგენტების საფასური და დავების მოგვარების მექანიზმები. ჩვენ ვაანალიზებთ ამ ცვლილებების გავლენას კლუბებზე, აგენტებზე და მოთამაშეებზე, ვაძლევთ პრაქტიკულ რჩევებს, თუ როგორ უნდა ადაპტირდნენ ევოლუციურ რეგულაციურ გარემოში.",
-                "blog2-modal-text2": "ამ რეგულაციების თვალყურის დევნება აუცილებელია იურიდიული შესაბამისობისა და კონკურენტუნარიანობისთვის საერთაშორისო ფეხბურთის ბაზარზე. ჩვენი იურიდიული გუნდი აქტიურად აკვირდება ამ განვითარებებს, რათა ჩვენმა კლიენტებმა იყვნენ მუდმივად მზად.",
-                "blog3-modal-text1": "არბიტრაჟი გახდა სპორტულ ინდუსტრიაში დავების მოგვარების საფუძველი, რომელიც გთავაზობთ უფრო სწრაფ, კონფიდენციალურ და სპეციალიზირებულ ალტერნატივას ტრადიციული სასამართლო პროცედურებისთვის. ეს სტატია იკვლევს სპორტული არბიტრაჟის უპირატესობებს, განსაკუთრებით სპორტული არბიტრაჟის სასამართლოს (CAS) მსგავს ორგანოებთან მუშაობისას.",
-                "blog3-modal-text2": "ჩვენ გამოვყოფთ არბიტრაჟის პროცესს, დაწყებული პროცედურების დაწყებიდან არბიტრაჟის გადაწყვეტილებების აღსრულებამდე და განვიხილავთ ძირითად ასპექტებს, როგორიცაა იურისდიქცია, გამოყენებადი სამართალი და ექსპერტთა მოწმეების როლი. არბიტრაჟის გაგება გადამწყვეტია ნებისმიერი მხარისთვის, რომელიც ჩართულია სპორტთან დაკავშირებულ დავაში."
             }
         };
 
@@ -2196,7 +2163,7 @@
                     }).then(response => {
                         if (response.ok) {
                             formStatus.style.color = 'var(--highlight)';
-                            formStatus.textContent = "Thanks for your submission!"; // Consider translating this
+                            formStatus.textContent = "Thanks for your submission!";
                             contactForm.reset();
                         } else {
                             response.json().then(data => {
@@ -2204,16 +2171,16 @@
                                 if (data.errors) {
                                     formStatus.textContent = data.errors.map(error => error.message).join(", ");
                                 } else {
-                                    formStatus.textContent = "Oops! There was a problem submitting your form."; // Translate
+                                    formStatus.textContent = "Oops! There was a problem submitting your form.";
                                 }
                             }).catch(error => { 
                                 formStatus.style.color = 'red';
-                                formStatus.textContent = "Oops! There was a problem processing the server response."; // Translate
+                                formStatus.textContent = "Oops! There was a problem processing the server response.";
                             });
                         }
                     }).catch(error => { 
                         formStatus.style.color = 'red';
-                        formStatus.textContent = "Oops! There was a network problem. Please try again."; // Translate
+                        formStatus.textContent = "Oops! There was a network problem. Please try again.";
                         console.error('Formspree submission error:', error);
                     }).finally(() => {
                         submitBtn.disabled = false;
