@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Analytics -->
@@ -305,26 +305,10 @@
             z-index: 1001;
         }
         
-        .logo-symbol {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-black);
-            font-size: 1.2rem;
-            font-weight: 800;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .logo-symbol:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2));
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: var(--transition);
         }
         
         .logo-text {
@@ -692,9 +676,9 @@
         
         .languages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.8rem;
-            max-width: 800px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
@@ -911,6 +895,10 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2.5rem;
             }
+            
+            .languages-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
         
         @media (max-width: 992px) {
@@ -975,6 +963,10 @@
                 left: 25px;
                 width: 45px;
                 height: 45px;
+            }
+            
+            .languages-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -1051,6 +1043,10 @@
             .hero-subtitle {
                 font-size: 1.1rem;
             }
+            
+            .logo-image {
+                height: 40px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1070,12 +1066,16 @@
                 gap: 2rem;
             }
             
+            .logo-image {
+                height: 35px;
+            }
+            
             .logo-text .firm-name {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .logo-text .tagline {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
             }
             
             .contact-form {
@@ -1107,6 +1107,10 @@
                 height: 60px;
                 font-size: 1.5rem;
             }
+            
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 400px) {
@@ -1123,6 +1127,10 @@
             .story-card {
                 padding: 1.5rem;
             }
+            
+            .logo-image {
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -1131,7 +1139,16 @@
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <div class="logo-symbol">D</div>
+                <!-- REPLACE THIS WITH YOUR LOGO IMAGE -->
+                <img src="https://raw.githubusercontent.com/Dalland1/logo/10919cf56aab995c332ec288c263056416f7e422/Perfect%20logo%20(1).png" alt="Dutchman & Partners Logo" class="logo-image">
+                <!--
+                    To use your actual logo:
+                    1. Upload your logo to a hosting service or your server
+                    2. Replace the src above with your logo URL
+                    3. Recommended logo dimensions: width 200px, height 50px (or similar proportions)
+                    
+                    Example: <img src="your-logo-url-here" alt="Dutchman & Partners Logo" class="logo-image">
+                -->
                 <div class="logo-text">
                     <div class="firm-name">DUTCHMAN & PARTNERS</div>
                     <div class="tagline">SPORTS LAW</div>
@@ -1196,7 +1213,7 @@
                         <div class="stat-label">Global Support</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">3</div>
+                        <div class="stat-number">5</div>
                         <div class="stat-label">Languages</div>
                     </div>
                 </div>
@@ -1366,15 +1383,27 @@
                 </div>
                 
                 <div class="language-card">
-                    <div class="language-flag">🇷🇺</div>
-                    <h3>Russian</h3>
-                    <p style="color: var(--text-secondary);">Professional proficiency for CIS region clients and Russian-speaking athletes.</p>
+                    <div class="language-flag">🇫🇷</div>
+                    <h3>French</h3>
+                    <p style="color: var(--text-secondary);">Professional proficiency for Francophone clients and French-speaking markets.</p>
                 </div>
                 
                 <div class="language-card">
                     <div class="language-flag">🇬🇪</div>
                     <h3>Georgian</h3>
                     <p style="color: var(--text-secondary);">Native language for local representation and Georgian sports market.</p>
+                </div>
+                
+                <div class="language-card">
+                    <div class="language-flag">🇷🇺</div>
+                    <h3>Russian</h3>
+                    <p style="color: var(--text-secondary);">Professional proficiency for CIS region clients and Russian-speaking athletes.</p>
+                </div>
+                
+                <div class="language-card">
+                    <div class="language-flag">🇺🇦</div>
+                    <h3>Ukrainian</h3>
+                    <p style="color: var(--text-secondary);">Expert representation for Ukrainian athletes and sports organizations.</p>
                 </div>
             </div>
         </div>
@@ -1478,7 +1507,8 @@
             <div class="footer-grid">
                 <div>
                     <div class="logo" style="margin-bottom: 1.5rem;">
-                        <div class="logo-symbol" style="width: 36px; height: 36px; font-size: 1.1rem;">D</div>
+                        <!-- REPLACE THIS WITH YOUR LOGO IMAGE FOR FOOTER -->
+                        <img src="https://via.placeholder.com/150x40/00d4aa/ffffff?text=DUTCHMAN+%26+PARTNERS" alt="Dutchman & Partners Logo" class="logo-image" style="height: 35px;">
                         <div class="logo-text">
                             <div class="firm-name">DUTCHMAN & PARTNERS</div>
                             <div class="tagline">SPORTS LAW</div>
@@ -1525,8 +1555,10 @@
                     <h3>Languages</h3>
                     <div style="color: var(--text-secondary);">
                         <p style="margin-bottom: 0.8rem;">🇬🇧 English</p>
-                        <p style="margin-bottom: 0.8rem;">🇷🇺 Russian</p>
+                        <p style="margin-bottom: 0.8rem;">🇫🇷 French</p>
                         <p style="margin-bottom: 0.8rem;">🇬🇪 Georgian</p>
+                        <p style="margin-bottom: 0.8rem;">🇷🇺 Russian</p>
+                        <p style="margin-bottom: 0.8rem;">🇺🇦 Ukrainian</p>
                     </div>
                 </div>
             </div>
@@ -1692,4 +1724,3 @@
     </script>
 </body>
 </html>
-
