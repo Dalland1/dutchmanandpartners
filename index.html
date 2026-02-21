@@ -1,1728 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9GQCDRTQ1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-L9GQCDRTQ1');
-    </script>
-    
-    <!-- Cookie Consent -->
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L9GQCDRTQ1');</script>
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="3a331075-453f-439b-9692-2d8992bbddbc" type="text/javascript" async></script>
     
-    <!-- Meta Information -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dutchman & Partners | Elite Sports Law Firm for Athletes, Clubs & Agencies</title>
-    <meta name="description" content="Dutchman & Partners: Premier sports law representation for professional athletes, clubs, and agencies. FIFA/CAS disputes, contract negotiations, and career management.">
-    <meta name="keywords" content="sports law, athlete representation, FIFA disputes, contract negotiation, CAS arbitration, sports agency legal, football law">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>DUTCHMAN & PARTNERS | Elite Sports Law</title>
+    <meta name="description" content="Uncompromising legal representation for elite athletes, agencies, and football clubs worldwide.">
     
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Dutchman & Partners | Protecting Athletic Excellence">
-    <meta property="og:description" content="The legal edge in global sports. Elite representation for athletes, clubs, and agencies worldwide.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.dutchmanandpartners.com/">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Dalland1/logo/10919cf56aab995c332ec288c263056416f7e422/Perfect%20logo%20(1).png">
     
-    <!-- Language & SEO -->
-    <link rel="alternate" hreflang="en" href="https://www.dutchmanandpartners.com/" />
-    <link rel="alternate" hreflang="ru" href="https://www.dutchmanandpartners.com/ru" />
-    <link rel="alternate" hreflang="ka" href="https://www.dutchmanandpartners.com/ka" />
-    
-    <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Dalland1/logo/10919cf56aab995c332ec288c263056416f7e422/Perfect%20logo%20(1).png">
-    
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         :root {
-            /* Light Professional Color Palette */
-            --primary-white: #ffffff;
-            --primary-light: #f8f9fa;
-            --primary-light-gray: #f1f3f5;
-            --primary-gray: #e9ecef;
-            --accent-teal: #00897b;
-            --accent-teal-light: #00a085;
-            --accent-teal-dark: #00695c;
-            --accent-blue: #3a5fec;
-            --accent-blue-light: #4a6fff;
-            --accent-gold: #b8941f;
-            --whatsapp-green: #25D366;
-            --text-primary: #1a1a2e;
-            --text-secondary: #495057;
-            --text-muted: #6c757d;
-            --border: rgba(0, 0, 0, 0.08);
-            --border-light: rgba(0, 0, 0, 0.12);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
-            --shadow-glow: 0 0 20px rgba(0, 168, 133, 0.15);
-            --radius: 16px;
-            --radius-sm: 8px;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --section-padding: 100px 0;
-            --container-width: 1400px;
+            /* Ultra-Luxury Dark Palette */
+            --bg-deep: #030508;
+            --bg-surface: #0a0d14;
+            --gold-light: #F4D068;
+            --gold-primary: #D4AF37;
+            --text-main: #E2E8F0;
+            --text-muted: #8F9BA8;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(212, 175, 55, 0.15);
+            
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Manrope', sans-serif;
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; background-color: var(--bg-deep); }
+        body { font-family: var(--font-body); color: var(--text-main); background-color: var(--bg-deep); line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+        /* Ambient Glow */
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 70%); z-index: -1; pointer-events: none; }
+
+        /* Typography Scaling (Fluid) */
+        h1, h2, h3, .cinzel { font-family: var(--font-display); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+        h1 { font-size: clamp(2.5rem, 8vw, 6.5rem); line-height: 1.1; margin-bottom: 1.5rem; color: #fff; }
+        h1 span { color: var(--gold-primary); font-style: italic; text-transform: none; }
+        h2 { font-size: clamp(1.8rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: 2px; }
+        h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); color: var(--gold-light); letter-spacing: 1.5px; margin-bottom: 1rem; }
+        p { color: var(--text-muted); font-size: clamp(0.95rem, 2vw, 1.05rem); font-weight: 300; }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-        
-        body {
-            background-color: var(--primary-white);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        /* Modern Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--primary-light-gray);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-teal);
-            border-radius: 5px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-teal-light);
-        }
-        
-        /* Selection */
-        ::selection {
-            background-color: rgba(0, 168, 133, 0.2);
-            color: var(--text-primary);
-        }
-        
-        /* Typography */
-        h1, h2, h3, h4, h5 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        
-        h1 {
-            font-size: clamp(2.8rem, 8vw, 4.2rem);
-            color: var(--text-primary);
-            margin-bottom: 1.2rem;
-        }
-        
-        h2 {
-            font-size: clamp(2rem, 6vw, 2.8rem);
-            margin-bottom: 0.8rem;
-            color: var(--text-primary);
-        }
-        
-        h3 {
-            font-size: clamp(1.5rem, 4vw, 1.9rem);
-            margin-bottom: 0.6rem;
-            color: var(--text-primary);
-        }
-        
-        .display-font {
-            font-family: 'DM Serif Display', serif;
-            font-style: italic;
-            color: var(--accent-teal);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3.5rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            display: inline-block;
-            position: relative;
-        }
-        
-        .section-title h2 .highlight {
-            color: var(--accent-teal);
-            position: relative;
-        }
-        
-        .section-title h2 .highlight:after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, var(--accent-teal), transparent);
-            opacity: 0.3;
-            z-index: -1;
-        }
-        
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 1.2rem auto 0;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-        
-        /* Layout */
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-        
-        section {
-            padding: var(--section-padding);
-            position: relative;
-        }
-        
-        /* Gradient Backgrounds - Light Version */
-        .gradient-bg {
-            background: radial-gradient(circle at 20% 50%, rgba(0, 168, 133, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(74, 111, 255, 0.05) 0%, transparent 50%),
-                        linear-gradient(180deg, var(--primary-white) 0%, var(--primary-light) 100%);
-        }
-        
+        .container { max-width: 1440px; margin: 0 auto; padding: 0 5%; }
+        section { padding: clamp(80px, 10vw, 150px) 0; position: relative; }
+        .section-header { margin-bottom: clamp(40px, 8vw, 80px); }
+        .section-label { color: var(--gold-primary); font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; display: block; margin-bottom: 15px; }
+
         /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 1rem 2rem;
-            border-radius: var(--radius-sm);
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-teal-light));
-            color: white;
-            box-shadow: var(--shadow-glow);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 168, 133, 0.25);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border-light);
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--accent-teal);
-            background: rgba(0, 168, 133, 0.05);
-            transform: translateY(-3px);
-        }
-        
-        .btn-whatsapp {
-            background: var(--whatsapp-green);
-            color: white;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-        }
-        
-        .btn-whatsapp:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--accent-teal);
-            border: 2px solid var(--accent-teal);
-        }
-        
-        .btn-outline:hover {
-            background: var(--accent-teal);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
+        .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 15px; padding: 16px 32px; font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; transition: var(--transition-smooth); overflow: hidden; cursor: pointer; z-index: 1; text-align: center; border: 1px solid transparent; }
+        .btn-gold { background: transparent; color: var(--gold-primary); border-color: var(--gold-primary); }
+        .btn-gold::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent); transition: var(--transition-smooth); z-index: -1; }
+        .btn-gold:hover::before { left: 100%; }
+        .btn-gold:hover { background: var(--gold-primary); color: var(--bg-deep); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+
         /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1.2rem 0;
-            transition: var(--transition);
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid var(--border);
-            box-shadow: var(--shadow-light);
-        }
+        header { position: fixed; width: 100%; top: 0; z-index: 1000; padding: 20px 0; transition: var(--transition-smooth); border-bottom: 1px solid transparent; }
+        header.scrolled { background: rgba(3, 5, 8, 0.95); padding: 15px 0; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
         
-        header.scrolled {
-            padding: 0.8rem 0;
-            box-shadow: var(--shadow);
-        }
+        .logo-group { display: flex; align-items: center; gap: 15px; text-decoration: none; z-index: 1001; }
+        .logo-img { height: clamp(35px, 5vw, 45px); filter: brightness(0) invert(1); transition: var(--transition-smooth); }
+        .logo-text { display: flex; flex-direction: column; }
+        .firm-name { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.4rem); color: #fff; letter-spacing: 2px; }
+        .firm-tag { font-family: var(--font-body); font-size: 0.55rem; color: var(--gold-primary); letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; }
         
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .nav-links { display: flex; gap: 35px; list-style: none; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; transition: var(--transition-smooth); position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-primary); transition: var(--transition-smooth); }
+        .nav-links a:hover { color: var(--gold-primary); }
+        .nav-links a:hover::after { width: 100%; }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            z-index: 1001;
+        .menu-btn { display: none; color: var(--white); font-size: 1.5rem; background: none; border: none; cursor: pointer; z-index: 1001; }
+
+        /* Hero with REAL Stadium Background */
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            position: relative; 
+            background-color: var(--bg-deep);
+            background-image: linear-gradient(to right, rgba(3,5,8,0.98) 0%, rgba(3,5,8,0.6) 50%, rgba(3,5,8,0.1) 100%), url('https://images.unsplash.com/photo-1518605368461-1ee71168f8ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; padding-top: 80px; }
+        .hero-subtitle { display: inline-block; color: var(--gold-primary); font-size: clamp(0.7rem, 2vw, 0.8rem); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; border-left: 2px solid var(--gold-primary); padding-left: 15px; }
+        .hero p { max-width: 600px; margin-bottom: 40px; line-height: 1.8; }
+        .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        /* Grids */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: clamp(3rem, 5vw, 5rem); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(2rem, 4vw, 3rem); }
+
+        /* Glassmorphism Cards */
+        .glass-card { background: var(--glass-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); padding: clamp(30px, 5vw, 50px) clamp(25px, 4vw, 40px); transition: var(--transition-smooth); position: relative; overflow: hidden; }
+        .glass-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-primary), transparent); transform: scaleX(0); transition: var(--transition-smooth); }
+        .glass-card:hover { background: rgba(255,255,255,0.04); transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); border-color: var(--glass-border); }
+        .glass-card:hover::before { transform: scaleX(1); }
+        .card-icon { font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 25px; font-weight: 300; }
+
+        /* Results */
+        .result-wrapper { display: flex; flex-direction: column; gap: 2rem; }
+        .result-item { padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; align-items: start; transition: var(--transition-smooth); }
+        .result-item:hover { border-bottom-color: var(--gold-primary); }
+        .result-amount { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 2.5rem); color: #fff; line-height: 1; }
+        .result-tag { display: inline-block; font-size: 0.7rem; color: var(--gold-primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
+
+        /* Journal */
+        .journal-card { cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 30px; display: block; text-decoration: none;}
+        .journal-img-wrap { overflow: hidden; margin-bottom: 25px; height: clamp(200px, 30vw, 300px); position: relative; }
+        .journal-img-wrap::after { content: ''; position: absolute; inset: 0; background: rgba(3,5,8,0.3); transition: var(--transition-smooth); }
+        .journal-img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(50%); }
+        .journal-card:hover .journal-img-wrap::after { background: transparent; }
+        .journal-card:hover .journal-img { transform: scale(1.08); filter: grayscale(0%); }
+        .journal-meta { color: var(--gold-primary); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .journal-card h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); color: #fff; transition: var(--transition-smooth); }
+        .journal-card:hover h3 { color: var(--gold-light); }
+        .journal-card p { color: var(--text-muted); margin-bottom: 15px; transition: var(--transition-smooth); }
+        .read-link { display: inline-flex; align-items: center; gap: 10px; color: var(--text-main); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; margin-top: 15px; transition: var(--transition-smooth); }
+        .read-link i { color: var(--gold-primary); transition: transform 0.4s; }
+        .journal-card:hover .read-link { color: var(--gold-primary); }
+        .journal-card:hover .read-link i { transform: translateX(8px); }
+
+        /* Contact Form */
+        .form-group { margin-bottom: 30px; position: relative; }
+        .form-control { width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); font-family: var(--font-body); font-size: 1rem; color: #fff; background: transparent; outline: none; transition: var(--transition-smooth); border-radius: 0; -webkit-appearance: none; }
+        .form-control:focus { border-bottom-color: var(--gold-primary); }
+        .form-control::placeholder { color: rgba(255,255,255,0.4); font-weight: 300; }
+        textarea.form-control { min-height: 100px; resize: none; }
         
-        .logo-image {
-            height: 50px;
-            width: auto;
-            transition: var(--transition);
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-        
-        .logo-text .firm-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: 0.5px;
-            /* Removed border-bottom: 1px solid var(--border); */
-        }
-        
-        .logo-text .tagline {
-            font-size: 0.75rem;
-            color: var(--accent-teal);
-            letter-spacing: 1.5px;
-            margin-top: 3px;
-            text-transform: uppercase;
-            font-weight: 500;
-            /* Removed border-bottom: 1px solid var(--border-light); */
-        }
-        
-        /* Navigation */
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-        
-        .nav-link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        .nav-link:hover {
-            color: var(--accent-teal);
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-teal), var(--accent-teal-light));
-            transition: var(--transition);
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1001;
-            width: 40px;
-            height: 40px;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Hero Section - Improved Margins */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 120px 0 80px;
-        }
-        
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
-        .hero-background:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 168, 133, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(74, 111, 255, 0.05) 0%, transparent 40%);
-        }
-        
-        .hero-content {
-            max-width: 850px;
-            position: relative;
-            width: 100%;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 650px;
-            line-height: 1.7;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1.2rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 4rem;
-            padding: 2.5rem 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            font-family: 'Space Grotesk', sans-serif;
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-teal-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-        }
-        
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: var(--whatsapp-green);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 999;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            border: none;
-            text-decoration: none;
-        }
-        
-        .whatsapp-float:hover {
-            background: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-        }
-        
-        .whatsapp-tooltip {
-            position: absolute;
-            right: 70px;
-            background: var(--text-primary);
-            color: white;
-            padding: 0.8rem 1.2rem;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            border: 1px solid var(--border);
-        }
-        
-        .whatsapp-float:hover .whatsapp-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 1.8rem;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2.2rem;
-            transition: var(--transition);
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-teal);
-            box-shadow: var(--shadow);
-        }
-        
-        .service-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent, rgba(0, 168, 133, 0.03));
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .service-card:hover:before {
-            opacity: 1;
-        }
-        
-        .service-icon {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-teal-light));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Case Studies */
-        .cases-section {
-            background: var(--primary-light);
-        }
-        
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
-        }
-        
-        .case-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2.2rem;
-            transition: var(--transition);
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .case-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-teal);
-            box-shadow: var(--shadow);
-        }
-        
-        .case-tag {
-            display: inline-block;
-            background: rgba(0, 168, 133, 0.1);
-            color: var(--accent-teal);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-        }
-        
-        .case-outcome {
-            display: inline-block;
-            background: rgba(74, 111, 255, 0.1);
-            color: var(--accent-blue);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-        }
-        
-        /* Success Stories */
-        .success-stories-section {
-            position: relative;
-        }
-        
-        .stories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        
-        .story-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            transition: var(--transition);
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-        }
-        
-        .story-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-teal);
-            box-shadow: var(--shadow);
-        }
-        
-        .story-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-teal-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .story-result {
-            display: inline-block;
-            background: rgba(184, 148, 31, 0.1);
-            color: var(--accent-gold);
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-        }
-        
-        /* Languages */
-        .languages-section {
-            background: var(--primary-light);
-        }
-        
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .language-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .language-card:hover {
-            border-color: var(--accent-teal);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-        
-        .language-flag {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-teal-light));
-            border-radius: var(--radius);
-            padding: 4rem 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            margin: 4rem auto;
-            max-width: 1000px;
-        }
-        
-        .cta-section:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-        }
-        
-        /* Contact Form - Simplified */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-        
-        .contact-form {
-            background: white;
-            border-radius: var(--radius);
-            padding: 3rem;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-light);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 0.75rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 1rem;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 1rem 1.2rem;
-            background: var(--primary-light);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: var(--transition);
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-teal);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(0, 168, 133, 0.1);
-        }
-        
-        textarea.form-control {
-            min-height: 140px;
-            resize: vertical;
-        }
-        
+        .form-status { display: none; margin-top: 15px; padding: 15px; border-radius: 4px; font-size: 0.9rem; text-align: center; }
+        .form-status.success { display: block; background: rgba(37, 211, 102, 0.1); border: 1px solid #25D366; color: #25D366; }
+        .form-status.error { display: block; background: rgba(255, 59, 48, 0.1); border: 1px solid #FF3B30; color: #FF3B30; }
+
         /* Footer */
-        footer {
-            background: var(--text-primary);
-            color: white;
-            padding: 4rem 0 2rem;
-            position: relative;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
+        footer { padding: 80px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-logo { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2rem); color: #fff; letter-spacing: 3px; margin-bottom: 15px; display: block; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
         
-        .footer-grid {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent-teal);
-            transform: translateX(5px);
-        }
-        
-        .footer-links a i {
-            font-size: 0.85rem;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.85rem;
-        }
-        
-        /* Back to Top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-teal-light));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 998;
-            box-shadow: var(--shadow);
-            border: none;
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            :root {
-                --section-padding: 90px 0;
-            }
-            
-            .container {
-                padding: 0 25px;
-            }
-            
-            .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2.5rem;
-            }
-            
-            .languages-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .header-container {
-                padding: 0 20px;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 1.8rem;
-                transform: translateX(100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-                z-index: 999;
-                backdrop-filter: blur(20px);
-                background: rgba(255, 255, 255, 0.98);
-                box-shadow: var(--shadow);
-            }
-            
-            .nav-links.active {
-                transform: translateX(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .cta-section {
-                margin: 3rem auto;
-                padding: 3.5rem 2rem;
-            }
-            
-            .hero {
-                padding: 100px 0 60px;
-            }
-            
-            .whatsapp-float {
-                bottom: 25px;
-                right: 25px;
-                width: 55px;
-                height: 55px;
-                font-size: 1.6rem;
-            }
-            
-            .back-to-top {
-                bottom: 25px;
-                left: 25px;
-                width: 45px;
-                height: 45px;
-            }
-            
-            .languages-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
+        /* WhatsApp Float */
+        .whatsapp-float { position: fixed; bottom: clamp(20px, 4vw, 40px); right: clamp(20px, 4vw, 40px); width: clamp(50px, 10vw, 65px); height: clamp(50px, 10vw, 65px); background: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: clamp(1.5rem, 4vw, 2rem); z-index: 999; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2); text-decoration: none; transition: var(--transition-smooth); }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4); }
+
+        /* Mobile Specific Overrides */
         @media (max-width: 768px) {
-            :root {
-                --section-padding: 70px 0;
-            }
-            
-            h1 {
-                font-size: clamp(2.2rem, 8vw, 3rem);
-            }
-            
-            h2 {
-                font-size: clamp(1.6rem, 6vw, 2.2rem);
-            }
-            
-            .container {
-                padding: 0 20px;
-            }
-            
-            .service-card,
-            .case-card,
-            .story-card,
-            .testimonial-card,
-            .contact-form {
-                padding: 1.8rem;
-            }
-            
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-                padding: 2rem 0;
-                margin-top: 3rem;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .services-grid,
-            .cases-grid,
-            .stories-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .languages-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .hero-buttons .btn {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto 0.8rem;
-            }
-            
-            .form-control {
-                font-size: 16px; /* Prevents iOS zoom on focus */
-            }
-            
-            .section-title {
-                margin-bottom: 2.5rem;
-            }
-            
-            .whatsapp-tooltip {
-                display: none; /* Hide on mobile */
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .logo-image {
-                height: 40px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .btn {
-                padding: 0.9rem 1.8rem;
-                font-size: 0.9rem;
-            }
-            
-            .service-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-            
-            .footer-grid {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .logo-image {
-                height: 35px;
-            }
-            
-            .logo-text .firm-name {
-                font-size: 1rem;
-            }
-            
-            .logo-text .tagline {
-                font-size: 0.65rem;
-            }
-            
-            .contact-form {
-                padding: 1.5rem;
-            }
-            
-            .cta-section {
-                padding: 2.5rem 1.5rem;
-            }
-            
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .back-to-top {
-                bottom: 20px;
-                left: 20px;
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            
-            .story-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .languages-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .hero-buttons .btn {
-                max-width: 100%;
-            }
-            
-            .service-card,
-            .case-card,
-            .story-card {
-                padding: 1.5rem;
-            }
-            
-            .logo-image {
-                height: 30px;
-            }
+            .menu-btn { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: rgba(3,5,8,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); flex-direction: column; justify-content: center; align-items: center; transition: var(--transition-smooth); z-index: 1000; }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.2rem; margin: 15px 0; }
+            .hero { background-attachment: scroll; background-position: center; }
+            .result-item { grid-template-columns: 1fr; gap: 0.5rem; }
+            .hero-actions .btn { width: 100%; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header id="header">
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <!-- Logo image (same as dark version but could be a dark version if you have one) -->
-                <img src="https://raw.githubusercontent.com/Dalland1/logo/10919cf56aab995c332ec288c263056416f7e422/Perfect%20logo%20(1).png" alt="Dutchman & Partners Logo" class="logo-image">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo-group">
+                <img src="https://raw.githubusercontent.com/Dalland1/logo/10919cf56aab995c332ec288c263056416f7e422/Perfect%20logo%20(1).png" alt="Logo" class="logo-img">
                 <div class="logo-text">
-                    <div class="firm-name">DUTCHMAN & PARTNERS</div>
-                    <div class="tagline">SPORTS LAW</div>
+                    <span class="firm-name">DUTCHMAN & PARTNERS</span>
+                    <span class="firm-tag">Elite Sports Law</span>
                 </div>
             </a>
-            
             <nav>
-                <ul class="nav-links">
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#cases" class="nav-link">Case Studies</a></li>
-                    <li><a href="#success" class="nav-link">Success Stories</a></li>
-                    <li><a href="#languages" class="nav-link">Languages</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#expertise">Chambers</a></li>
+                    <li><a href="#results">Precedents</a></li>
+                    <li><a href="#journal">Journal</a></li>
+                    <li><a href="#contact">Retain Us</a></li>
                 </ul>
             </nav>
-            
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="menu-btn" id="menuToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero gradient-bg">
-        <div class="hero-background"></div>
+    <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>The Legal Edge<br>in <span class="display-font">Global Sports</span></h1>
-                <p class="hero-subtitle">
-                    Dutchman & Partners provides elite legal representation for professional athletes, 
-                    clubs, and agencies. We combine legal excellence with deep sports industry insight 
-                    to protect careers and maximize opportunities worldwide.
-                </p>
-                
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-briefcase"></i>
-                        Secure Representation
-                    </a>
-                    <a href="#cases" class="btn btn-secondary">
-                        <i class="fas fa-chart-line"></i>
-                        View Case Results
-                    </a>
-                    <a href="https://wa.me/995597982202?text=Hello%20Dutchman%20%26%20Partners,%20I%20need%20legal%20advice%20regarding%20sports%20law" 
-                       target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                        WhatsApp Call
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">€1.3M+</div>
-                        <div class="stat-label">Contracts Negotiated</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Case Success Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Global Support</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Languages</div>
-                    </div>
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+                <span class="hero-subtitle">International Legal Representation</span>
+                <h1>Protecting<br>Athletic <span>Excellence</span>.</h1>
+                <p>Uncompromising legal counsel for elite athletes, global agencies, and premier football clubs. We navigate the deepest complexities of international sports law with absolute precision.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-gold">Request Private Consultation</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="expertise">
         <div class="container">
-            <div class="section-title">
-                <h2>Professional <span class="highlight">Sports Law</span> Services</h2>
-                <p class="section-subtitle">Comprehensive legal solutions for athletes, clubs, and agencies at every level of professional sports.</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Legal Chambers</span>
+                <h2>Areas of Practice</h2>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Athlete Representation</h3>
-                    <p>Full-spectrum career management including contract negotiation, endorsement deals, image rights, and career transitions.</p>
-                    <ul style="color: var(--text-secondary); margin-top: 1rem; padding-left: 1.5rem;">
-                        <li>Contract Negotiation & Review</li>
-                        <li>Endorsement & Sponsorship Deals</li>
-                        <li>Image Rights Management</li>
-                        <li>Career Transition Support</li>
-                    </ul>
+            <div class="grid-3">
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-scale-balanced card-icon"></i>
+                    <h3>FIFA & CAS Litigation</h3>
+                    <p>Aggressive representation in international tribunals. We handle unpaid wages, solidarity mechanisms, and unjust contract terminations.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3>FIFA & CAS Disputes</h3>
-                    <p>Expert representation in FIFA, CAS, and national federation disputes, contractual conflicts, and disciplinary proceedings.</p>
-                    <ul style="color: var(--text-secondary); margin-top: 1rem; padding-left: 1.5rem;">
-                        <li>FIFA Dispute Resolution</li>
-                        <li>CAS Arbitration</li>
-                        <li>Contractual Disputes</li>
-                        <li>Disciplinary Proceedings</li>
-                    </ul>
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-file-signature card-icon"></i>
+                    <h3>Contract Architecture</h3>
+                    <p>Ironclad legal frameworks for playing contracts and transfer agreements to ensure your absolute financial security and leverage.</p>
                 </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3>Contract Drafting & Negotiation</h3>
-                    <p>Strategic contract analysis, drafting, and negotiation for transfers, sponsorships, and commercial partnerships.</p>
-                    <ul style="color: var(--text-secondary); margin-top: 1rem; padding-left: 1.5rem;">
-                        <li>Contract Drafting & Review</li>
-                        <li>Transfer Agreements</li>
-                        <li>Sponsorship Contracts</li>
-                        <li>Commercial Partnerships</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Agency & Club Advisory</h3>
-                    <p>Strategic counsel for sports agencies and clubs on governance, transfers, and commercial operations.</p>
-                    <ul style="color: var(--text-secondary); margin-top: 1rem; padding-left: 1.5rem;">
-                        <li>Agency Compliance</li>
-                        <li>Club Operations</li>
-                        <li>Transfer Strategy</li>
-                        <li>Commercial Development</li>
-                    </ul>
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-shield-halved card-icon"></i>
+                    <h3>Agency Advisory</h3>
+                    <p>Strict regulatory compliance strategy for intermediaries, focusing on FFAR regulations and safeguarding commission structures.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies -->
-    <section id="cases" class="cases-section">
+    <section id="results" style="background-color: var(--bg-surface);">
         <div class="container">
-            <div class="section-title">
-                <h2>Recent <span class="highlight">Case Studies</span></h2>
-                <p class="section-subtitle">Real results that demonstrate our expertise and success in sports law.</p>
-            </div>
-            
-            <div class="cases-grid">
-                <div class="case-card">
-                    <span class="case-tag">Player Representation</span>
-                    <h3>Won FIFA Dispute for Professional Footballer</h3>
-                    <p>Successfully represented a professional footballer in a complex FIFA dispute against his former club. The club withheld salary payments and registration rights, threatening the player's career.</p>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">Our legal team secured full payment of €850,000 in outstanding wages and obtained a favorable ruling that allowed the player to continue his professional career without restrictions.</p>
-                    <div class="case-outcome">Won Case at FIFA</div>
+            <div class="grid-2">
+                <div data-aos="fade-right">
+                    <span class="section-label">Track Record</span>
+                    <h2>Proven<br>Precedents.</h2>
+                    <p>Our firm’s reputation is forged by the decisive victories we secure for our clients across the most complex jurisdictional disputes in global sports.</p>
                 </div>
                 
-                <div class="case-card">
-                    <span class="case-tag">Agency Representation</span>
-                    <h3>Successful CAS Appeal for Sports Agency</h3>
-                    <p>Represented a football agency in a CAS appeal against unfair commission deductions by a major European club. The club attempted to withhold €500,000 in agency fees.</p>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">Our strategic approach and thorough documentation led to a complete victory at CAS, securing the full commission payment plus legal costs for our client agency.</p>
-                    <div class="case-outcome">CAS Appeal Won</div>
-                </div>
-                
-                <div class="case-card">
-                    <span class="case-tag">Contract Drafting</span>
-                    <h3>Comprehensive Contracts for Football Agency</h3>
-                    <p>Developed a complete contract suite for a growing football agency, including player representation agreements, transfer contracts, and sponsorship deals.</p>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">Created robust legal templates that protected the agency's interests while maintaining flexibility for various scenarios. The contracts have been successfully used in over 50 transfers with zero legal disputes.</p>
-                    <div class="case-outcome">50+ Successful Deals</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Stories Section -->
-    <section id="success" class="success-stories-section gradient-bg">
-        <div class="container">
-            <div class="section-title">
-                <h2>Client <span class="highlight">Success Stories</span></h2>
-                <p class="section-subtitle">Real victories for our clients in sports law matters.</p>
-            </div>
-            
-            <div class="stories-grid">
-                <div class="story-card">
-                    <div class="story-icon">
-                        <i class="fas fa-futbol"></i>
-                    </div>
-                    <h3>Player Representation Victory</h3>
-                    <p>Represented a professional footballer in a FIFA dispute against his club for unpaid wages. The club claimed financial difficulties and refused to pay €850,000 in salary arrears.</p>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">Our legal strategy involved thorough documentation of the employment contract, payment records, and correspondence. We presented a compelling case at FIFA that resulted in a complete victory for the player.</p>
-                    <div class="story-result">€850,000 Recovered</div>
-                </div>
-                
-                <div class="story-card">
-                    <div class="story-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Agency Commission Protected</h3>
-                    <p>Defended a football agency in a CAS appeal against a major European club that withheld €500,000 in legitimate agency fees for a successful player transfer.</p>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">We demonstrated that the agency had fulfilled all contractual obligations and that the club's withholding was unjustified. The CAS panel ruled in our favor, awarding full payment plus legal costs.</p>
-                    <div class="story-result">€500,000 Secured</div>
-                </div>
-                
-                <div class="story-card">
-                    <div class="story-icon">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <h3>Contract Excellence for Football Agency</h3>
-                    <p>Developed a comprehensive legal framework for a football agency expanding its operations across Europe, requiring contracts for player representation, transfers, and commercial deals.</p>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">Created adaptable contract templates that protected the agency's interests while remaining flexible for different jurisdictions. These contracts have facilitated over 50 successful transfers without legal disputes.</p>
-                    <div class="story-result">50+ Successful Transfers</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Languages -->
-    <section id="languages" class="languages-section">
-        <div class="container">
-            <div class="section-title">
-                <h2><span class="highlight">Multi-Lingual</span> Representation</h2>
-                <p class="section-subtitle">Providing legal services in multiple languages for global sports representation.</p>
-            </div>
-            
-            <div class="languages-grid">
-                <div class="language-card">
-                    <div class="language-flag">🇬🇧</div>
-                    <h3>English</h3>
-                    <p style="color: var(--text-secondary);">Native fluency for international sports law proceedings and documentation.</p>
-                </div>
-                
-                <div class="language-card">
-                    <div class="language-flag">🇫🇷</div>
-                    <h3>French</h3>
-                    <p style="color: var(--text-secondary);">Professional proficiency for Francophone clients and French-speaking markets.</p>
-                </div>
-                
-                <div class="language-card">
-                    <div class="language-flag">🇬🇪</div>
-                    <h3>Georgian</h3>
-                    <p style="color: var(--text-secondary);">Native language for local representation and Georgian sports market.</p>
-                </div>
-                
-                <div class="language-card">
-                    <div class="language-flag">🇷🇺</div>
-                    <h3>Russian</h3>
-                    <p style="color: var(--text-secondary);">Professional proficiency for CIS region clients and Russian-speaking athletes.</p>
-                </div>
-                
-                <div class="language-card">
-                    <div class="language-flag">🇺🇦</div>
-                    <h3>Ukrainian</h3>
-                    <p style="color: var(--text-secondary);">Expert representation for Ukrainian athletes and sports organizations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <div class="container">
-        <div class="cta-section">
-            <h2 style="color: white; margin-bottom: 1.2rem;">Ready for Professional Legal Representation?</h2>
-            <p class="section-subtitle" style="max-width: 800px; margin: 0 auto 2.5rem; color: rgba(255, 255, 255, 0.9);">
-                Schedule a confidential consultation to discuss how we can protect your sports career or organization with expert legal counsel.
-            </p>
-            <a href="#contact" class="btn btn-primary" style="padding: 1.1rem 2.5rem; font-size: 1rem; background: white; color: var(--accent-teal);">
-                <i class="fas fa-scale-balanced"></i>
-                Book Professional Consultation
-            </a>
-        </div>
-    </div>
-
-    <!-- Contact Section - Simplified -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact <span class="highlight">Dutchman & Partners</span></h2>
-                <p class="section-subtitle">Get in touch for expert sports law representation.</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div>
-                    <h3 style="margin-bottom: 1.5rem;">Why Choose Our Firm?</h3>
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);">
-                        We combine legal excellence with deep sports industry insight. Our focus is on achieving real results for athletes, clubs, and agencies through strategic legal representation.
-                    </p>
-                    
-                    <div style="margin-top: 3rem;">
-                        <h4 style="margin-bottom: 1.5rem;">Direct Contact</h4>
-                        <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                            <i class="fas fa-phone" style="color: var(--accent-teal); margin-right: 10px;"></i>
-                            <a href="tel:+995597982202" style="color: var(--accent-teal); text-decoration: none; font-weight: 500;">
-                                +995 597 982 202
-                            </a>
-                        </p>
-                        <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                            <i class="fas fa-envelope" style="color: var(--accent-teal); margin-right: 10px;"></i>
-                            <a href="mailto:legal@dutchmanandpartners.com" style="color: var(--accent-teal); text-decoration: none; font-weight: 500;">
-                                legal@dutchmanandpartners.com
-                            </a>
-                        </p>
-                        <p style="color: var(--text-secondary);">
-                            <i class="fas fa-map-marker-alt" style="color: var(--accent-teal); margin-right: 10px;"></i>
-                            Tbilisi, Georgia
-                        </p>
+                <div class="result-wrapper">
+                    <div class="result-item" data-aos="fade-left" data-aos-delay="100">
+                        <div>
+                            <span class="result-tag">FIFA DRC Dispute</span>
+                            <div class="result-amount">€850k</div>
+                        </div>
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.2rem; text-transform: none;">Salary Recovery</h3>
+                            <p>Litigated against a top-tier European club attempting to withhold salaries. Secured full payment and immediate release of registration rights.</p>
+                        </div>
                     </div>
                     
-                    <div style="margin-top: 3rem;">
-                        <h4 style="margin-bottom: 1rem;">Response Time</h4>
-                        <p style="color: var(--text-secondary);">
-                            <i class="fas fa-clock" style="color: var(--accent-teal); margin-right: 10px;"></i>
-                            Initial response within 24 hours
-                        </p>
+                    <div class="result-item" data-aos="fade-left" data-aos-delay="200">
+                        <div>
+                            <span class="result-tag">CAS Arbitration</span>
+                            <div class="result-amount">€500k</div>
+                        </div>
+                        <div>
+                            <h3 style="color: #fff; font-size: 1.2rem; text-transform: none;">Commission Defense</h3>
+                            <p>Defeated a club's appeal to bypass agency structures. The Court of Arbitration for Sport fully upheld our client's contract.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journal">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Legal Journal</span>
+                <h2>Industry Intelligence</h2>
+            </div>
+            
+            <div class="grid-3">
+                <a href="article-fifa-regulations.html" class="journal-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="journal-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&q=80&w=800" class="journal-img" alt="Stadium" loading="lazy">
+                    </div>
+                    <span class="journal-meta">Regulatory Update</span>
+                    <h3>The New Agent Regulations (FFAR)</h3>
+                    <p>How elite agencies must restructure commission models to comply with global caps and mandatory examinations.</p>
+                    <span class="read-link">Read Briefing <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="article-cas-arbitration.html" class="journal-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="journal-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800" class="journal-img" alt="Gavel" loading="lazy">
+                    </div>
+                    <span class="journal-meta">CAS Jurisprudence</span>
+                    <h3>Just Cause in Terminations</h3>
+                    <p>A deep dive into recent landmark rulings defining "just cause" when unilaterally severing professional athletic contracts.</p>
+                    <span class="read-link">Read Briefing <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="article-image-rights.html" class="journal-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="journal-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800" class="journal-img" alt="Contract" loading="lazy">
+                    </div>
+                    <span class="journal-meta">Commercial Rights</span>
+                    <h3>Asset Protection in the Digital Age</h3>
+                    <p>Strategies for structuring image rights to maximize commercial revenue while remaining strictly tax compliant.</p>
+                    <span class="read-link">Read Briefing <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background-color: var(--bg-surface);">
+        <div class="container">
+            <div class="grid-2">
+                <div data-aos="fade-right">
+                    <span class="section-label">Confidential Inquiry</span>
+                    <h2>Secure Your<br>Position.</h2>
+                    <p style="margin-bottom: 40px; max-width: 400px;">We provide discrete, high-level counsel to elite sports professionals. Submit an inquiry to schedule a private consultation with our chambers.</p>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <span style="display: block; color: var(--gold-primary); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Direct Line</span>
+                        <a href="tel:+995597982202" style="color: #fff; font-size: clamp(1.4rem, 4vw, 1.8rem); text-decoration: none; font-family: var(--font-display);">+995 597 982 202</a>
+                    </div>
+                    <div>
+                        <span style="display: block; color: var(--gold-primary); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px;">Electronic Mail</span>
+                        <a href="mailto:legal@dutchmanandpartners.com" style="color: #fff; font-size: clamp(1rem, 2vw, 1.1rem); text-decoration: none;">legal@dutchmanandpartners.com</a>
                     </div>
                 </div>
                 
-                <div class="contact-form">
+                <div data-aos="fade-left">
                     <form id="contactForm" action="https://formspree.io/f/xzzrnpqq" method="POST">
                         <div class="form-group">
-                            <label class="form-label" for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required placeholder="Your full name">
+                            <input type="text" name="name" class="form-control" required placeholder="Full Name or Representation Entity">
                         </div>
-                        
                         <div class="form-group">
-                            <label class="form-label" for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" required placeholder="your.email@example.com">
+                            <input type="email" name="email" class="form-control" required placeholder="Confidential Email Address">
                         </div>
-                        
                         <div class="form-group">
-                            <label class="form-label" for="subject">Subject *</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required placeholder="What is this regarding?">
+                            <textarea name="message" class="form-control" required placeholder="Brief description of your legal requirements..."></textarea>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label" for="message">Your Message *</label>
-                            <textarea id="message" name="message" class="form-control" required placeholder="Briefly describe your legal needs..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </button>
-                        
-                        <div id="formMessage" style="margin-top: 1.5rem; text-align: center; min-height: 24px;"></div>
+                        <button type="submit" class="btn btn-gold" style="width: 100%;">Transmit Inquiry Securely</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="logo" style="margin-bottom: 1.5rem;">
-                        <img src="https://raw.githubusercontent.com/Dalland1/logo/10919cf56aab995c332ec288c263056416f7e422/Perfect%20logo%20(1).png" alt="Dutchman & Partners Logo" class="logo-image" style="height: 35px; filter: brightness(0) invert(1);">
-                        <div class="logo-text">
-                            <div class="firm-name" style="color: white;">DUTCHMAN & PARTNERS</div>
-                            <div class="tagline" style="color: var(--accent-teal-light);">SPORTS LAW</div>
-                        </div>
-                    </div>
-                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
-                        Professional legal representation for athletes, clubs, and sports organizations worldwide.
-                    </p>
-                    <div style="display: flex; gap: 1.2rem;">
-                        <a href="#" style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; transition: var(--transition);">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; transition: var(--transition);">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; transition: var(--transition);">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Athlete Representation</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> FIFA/CAS Disputes</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Contract Drafting</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Agency Advisory</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="#cases"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
-                        <li><a href="#success"><i class="fas fa-chevron-right"></i> Success Stories</a></li>
-                        <li><a href="#languages"><i class="fas fa-chevron-right"></i> Languages</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3>Languages</h3>
-                    <div style="color: rgba(255, 255, 255, 0.8);">
-                        <p style="margin-bottom: 0.8rem;">🇬🇧 English</p>
-                        <p style="margin-bottom: 0.8rem;">🇫🇷 French</p>
-                        <p style="margin-bottom: 0.8rem;">🇬🇪 Georgian</p>
-                        <p style="margin-bottom: 0.8rem;">🇷🇺 Russian</p>
-                        <p style="margin-bottom: 0.8rem;">🇺🇦 Ukrainian</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2024 Dutchman & Partners Sports Law. All rights reserved.</p>
+            <span class="footer-logo">DUTCHMAN & PARTNERS</span>
+            <div class="footer-bottom">
+                <span>&copy; 2024 Dutchman & Partners Sports Law.</span>
+                <span>Headquarters: Tbilisi, Georgia</span>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/995597982202?text=Hello%20Dutchman%20%26%20Partners,%20I%20need%20legal%20advice%20regarding%20sports%20law" 
-       target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/995597982202" target="_blank" class="whatsapp-float" aria-label="WhatsApp Contact">
         <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Instant WhatsApp Call</span>
     </a>
 
-    <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Menu
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
+            // Check if mobile for simpler animations
+            const isMobile = window.innerWidth <= 768;
             
-            mobileMenuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+            AOS.init({ 
+                duration: isMobile ? 800 : 1200, 
+                once: true, 
+                offset: 50, 
+                disable: 'mobile' 
             });
             
-            // Header Scroll Effect
             const header = document.getElementById('header');
-            const backToTop = document.getElementById('backToTop');
-            
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                    backToTop.classList.add('visible');
-                } else {
-                    header.classList.remove('scrolled');
-                    backToTop.classList.remove('visible');
-                }
-            });
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            }, { passive: true });
+
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            const icon = menuToggle.querySelector('i');
             
-            // Back to Top
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                if(navLinks.classList.contains('active')) icon.classList.replace('fa-bars', 'fa-times');
+                else icon.classList.replace('fa-times', 'fa-bars');
             });
-            
-            // Smooth Scrolling
+
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
-                    
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 90,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu
-                        if (navLinks.classList.contains('active')) {
+                        window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+                        if(navLinks.classList.contains('active')) {
                             navLinks.classList.remove('active');
-                            const icon = mobileMenuBtn.querySelector('i');
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
+                            icon.classList.replace('fa-times', 'fa-bars');
                         }
                     }
                 });
             });
-            
-            // Form Submission
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.innerHTML;
-                    
-                    // Show loading state
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    submitBtn.disabled = true;
-                    
-                    try {
-                        const response = await fetch(contactForm.action, {
-                            method: 'POST',
-                            body: new FormData(contactForm),
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
-                        
-                        if (response.ok) {
-                            formMessage.innerHTML = '<span style="color: var(--accent-teal); font-weight: 600;">✓ Thank you! We will contact you within 24 hours.</span>';
-                            contactForm.reset();
-                        } else {
-                            throw new Error('Form submission failed');
-                        }
-                    } catch (error) {
-                        formMessage.innerHTML = '<span style="color: #dc3545;">✗ Please contact us directly at legal@dutchmanandpartners.com</span>';
-                    } finally {
-                        // Reset button
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                        
-                        // Clear message after 10 seconds
-                        setTimeout(() => {
-                            formMessage.innerHTML = '';
-                        }, 10000);
-                    }
-                });
-            }
-            
-            // Animate elements on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe cards
-            document.querySelectorAll('.service-card, .case-card, .story-card, .language-card').forEach((card) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                observer.observe(card);
-            });
-            
-            // Initialize header state
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-                backToTop.classList.add('visible');
-            }
         });
     </script>
 </body>
