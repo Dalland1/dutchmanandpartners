@@ -63,17 +63,16 @@
         .nav-links a:hover { color: var(--gold-primary); }
         .menu-btn { display: none; color: var(--white); font-size: 1.5rem; background: none; border: none; cursor: pointer; z-index: 1001; }
 
-        /* REAL Stadium Background */
+       /* REAL Stadium Background - Fixed and Brightened */
         .hero { 
             min-height: 100vh; 
             display: flex; 
             align-items: center; 
             position: relative; 
-            background-color: var(--bg-deep);
-            background-image: linear-gradient(to right, rgba(3,5,8,0.98) 0%, rgba(3,5,8,0.6) 50%, rgba(3,5,8,0.1) 100%), url('https://images.unsplash.com/photo-1518605368461-1ee71168f8ce?auto=format&fit=crop&q=80&w=2000');
-            background-position: center;
+            /* This is a much lighter, even dark overlay so the stadium pops through beautifully */
+            background: linear-gradient(rgba(3, 5, 8, 0.75), rgba(3, 5, 8, 0.65)), 
+                        url('https://images.unsplash.com/photo-1518605368461-1ee71168f8ce?q=80&w=2500&auto=format&fit=crop') no-repeat center center;
             background-size: cover;
-            background-repeat: no-repeat;
         }
         .hero-content { position: relative; z-index: 2; max-width: 900px; padding-top: 80px; }
         .hero-subtitle { display: inline-block; color: var(--gold-primary); font-size: clamp(0.7rem, 2vw, 0.8rem); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; border-left: 2px solid var(--gold-primary); padding-left: 15px; }
@@ -353,3 +352,4 @@
     </script>
 </body>
 </html>
+
